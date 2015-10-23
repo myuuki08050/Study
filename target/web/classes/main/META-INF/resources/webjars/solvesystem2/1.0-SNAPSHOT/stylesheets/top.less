@@ -1,0 +1,88 @@
+@all-char-col : #333333;    /* ページ全体の文字色 */
+@all-back-col : #999999;    /* ページ全体の背景色 */
+@all-content-back-col : #FFFFFF;
+@header-col : #CCCCCC;
+@mainmenu-col : #EEEEEE;
+
+/*============================================
+関数各種
+============================================*/
+
+/* リストの設定を行う関数 */
+.li-menu(@width,@height,@filename){
+    float:left;			            /*リスト項目を横に並べる*/
+	display:inline;			        /*リスト項目をインライン表示にする*/
+	list-style-type:none;		    /*リストマーカー無しにする*/
+	background-repeat:no-repeat; 	/*背景画像を繰り返さない*/
+	width:@width; height:@height;   /*背景画像に合わせたサイズ指定*/
+    background-image:url(@filename);/*背景画像*/
+}
+
+/*============================================
+全般的なスタイル
+============================================*/
+* {
+	margin:0; padding:0; 	/*全要素のマージン・パディングをリセット*/
+	line-height:1.5;	    /*全要素の行の高さを1.5倍にする*/
+	color:@all-char-col;		/*文字色*/
+} 
+
+body {
+	background-color:@all-back-col;	/*ページ全体の背景色*/
+	text-align:center;		        /*IE6以下でセンタリングするための対策*/
+}
+div#pagebody {
+	width:796px; margin:0 auto;	                    /*内容全体をセンタリング*/
+	text-align:left;	                            /*テキストの配置を左揃えにする*/
+	background-image:url("images/bg_pagebody.gif");	/*内容全体の背景*/
+	background-repeat:repeat-y;		                /*背景画像を縦方向に繰り返す*/
+	background-color:@all-content-back-col;		        /*内容全体の背景色*/
+}
+
+/*============================================
+ヘッダ
+============================================*/
+div#header {
+	height:77px;	                                /*背景画像のサイズに合わせてボックスの高さを指定*/
+	background-image:url("images/bg_header.jpg");	/*ヘッダ部分の背景画像*/
+	background-repeat:no-repeat;	            	/*背景画像を繰り返さない*/
+	background-color:@header-col;		                /*ヘッダ部分の背景色*/
+            }
+            h1 {
+            padding:20px 0px 0px 30px;		            /*見出し内容の位置調整*/
+    	    font-family:Arial, Helvetica, sans-serif;	/*フォントの種類*/
+                }
+                a {
+                text-decoration:none; /*リンクの下線を無くす*/
+} 			
+                
+
+/*============================================
+メインメニュー
+============================================*/
+
+ul#menu {
+	height:42px; background-color:#eeeeee; font-weight:bold;
+        }
+        a {
+	    display:block;				                        /*リンクをブロック表示にする*/
+	    height:42px; padding-top:4px; text-align:center;
+	    text-decoration:none; 			                    /*リンクの下線を無くす*/
+	    font-family:Arial, Helvetica, sans-serif;	        /*フォントの種類*/
+}
+        
+li#menu01 {
+    .li-menu(164px,42px,"images/bg_menu01.jpg");
+}
+li#menu02 {
+    .li-menu(156px,42px,"images/bg_menu02.jpg");
+}
+li#menu03 {
+    .li-menu(156px,42px,"images/bg_menu03.jpg");
+}
+li#menu04 {
+    .li-menu(156px,42px,"images/bg_menu04.jpg");
+}
+li#menu05 {
+    .li-menu(164px,42px,"images/bg_menu05.jpg");
+}
