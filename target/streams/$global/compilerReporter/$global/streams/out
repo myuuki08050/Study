@@ -1,4 +1,3 @@
-[error] C:\git local\activator-1.3.6-minimal\SolveSystem2\app\views\top.scala.html:17: value index is not a member of object controllers.Login
-[error]     		<li id="menu01"><a href="@{Login.index()}">Login</a></li>
-[error]     		                                                 ^
-[error] one error found
+[error] C:\git local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Login.java:34:  エラー: Fileに適切なコンストラクタが見つかりません(String[])
+[error]             File file = new File(idlist_url);
+[error]                         ^

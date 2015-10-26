@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/git local/activator-1.3.6-minimal/SolveSystem2/conf/routes
-// @DATE:Sun Oct 25 12:07:53 JST 2015
+// @DATE:Tue Oct 27 00:07:31 JST 2015
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -35,7 +35,37 @@ package controllers.javascript {
   
   }
 
-  // @LINE:12
+  // @LINE:10
+  class ReverseLogin(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:10
+    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Login.index",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "login"})
+        }
+      """
+    )
+  
+    // @LINE:11
+    def LoginJudge: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Login.LoginJudge",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "home"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:14
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -43,7 +73,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:12
+    // @LINE:14
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

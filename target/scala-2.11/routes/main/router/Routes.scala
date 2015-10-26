@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/git local/activator-1.3.6-minimal/SolveSystem2/conf/routes
-// @DATE:Sun Oct 25 12:07:53 JST 2015
+// @DATE:Tue Oct 27 00:07:31 JST 2015
 
 package router
 
@@ -19,8 +19,10 @@ class Routes(
   // @LINE:6
   Application_1: controllers.Application,
   // @LINE:9
-  SystemTop_2: controllers.SystemTop,
-  // @LINE:12
+  SystemTop_3: controllers.SystemTop,
+  // @LINE:10
+  Login_2: controllers.Login,
+  // @LINE:14
   Assets_0: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -30,16 +32,18 @@ class Routes(
     // @LINE:6
     Application_1: controllers.Application,
     // @LINE:9
-    SystemTop_2: controllers.SystemTop,
-    // @LINE:12
+    SystemTop_3: controllers.SystemTop,
+    // @LINE:10
+    Login_2: controllers.Login,
+    // @LINE:14
     Assets_0: controllers.Assets
-  ) = this(errorHandler, Application_1, SystemTop_2, Assets_0, "/")
+  ) = this(errorHandler, Application_1, SystemTop_3, Login_2, Assets_0, "/")
 
   import ReverseRouteContext.empty
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, Application_1, SystemTop_2, Assets_0, prefix)
+    new Routes(errorHandler, Application_1, SystemTop_3, Login_2, Assets_0, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -49,6 +53,8 @@ class Routes(
   def documentation = List(
     ("""GET""", this.prefix, """controllers.Application.index()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """top""", """controllers.SystemTop.index()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """controllers.Login.index()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """home""", """controllers.Login.LoginJudge()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -79,7 +85,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("top")))
   )
   private[this] lazy val controllers_SystemTop_index1_invoker = createInvoker(
-    SystemTop_2.index(),
+    SystemTop_3.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.SystemTop",
@@ -91,11 +97,45 @@ class Routes(
     )
   )
 
-  // @LINE:12
-  private[this] lazy val controllers_Assets_versioned2_route = Route("GET",
+  // @LINE:10
+  private[this] lazy val controllers_Login_index2_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login")))
+  )
+  private[this] lazy val controllers_Login_index2_invoker = createInvoker(
+    Login_2.index(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Login",
+      "index",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """login"""
+    )
+  )
+
+  // @LINE:11
+  private[this] lazy val controllers_Login_LoginJudge3_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("home")))
+  )
+  private[this] lazy val controllers_Login_LoginJudge3_invoker = createInvoker(
+    Login_2.LoginJudge(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Login",
+      "LoginJudge",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """home"""
+    )
+  )
+
+  // @LINE:14
+  private[this] lazy val controllers_Assets_versioned4_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned2_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned4_invoker = createInvoker(
     Assets_0.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -120,13 +160,25 @@ class Routes(
     // @LINE:9
     case controllers_SystemTop_index1_route(params) =>
       call { 
-        controllers_SystemTop_index1_invoker.call(SystemTop_2.index())
+        controllers_SystemTop_index1_invoker.call(SystemTop_3.index())
       }
   
-    // @LINE:12
-    case controllers_Assets_versioned2_route(params) =>
+    // @LINE:10
+    case controllers_Login_index2_route(params) =>
+      call { 
+        controllers_Login_index2_invoker.call(Login_2.index())
+      }
+  
+    // @LINE:11
+    case controllers_Login_LoginJudge3_route(params) =>
+      call { 
+        controllers_Login_LoginJudge3_invoker.call(Login_2.LoginJudge())
+      }
+  
+    // @LINE:14
+    case controllers_Assets_versioned4_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned2_invoker.call(Assets_0.versioned(path, file))
+        controllers_Assets_versioned4_invoker.call(Assets_0.versioned(path, file))
       }
   }
 }
