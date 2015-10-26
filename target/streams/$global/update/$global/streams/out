@@ -7,7 +7,7 @@
 [debug] == resolving dependencies for solvesystem2#solvesystem2_2.11;1.0-SNAPSHOT [compile]
 [debug] == resolving dependencies solvesystem2#solvesystem2_2.11;1.0-SNAPSHOT->org.scala-lang#scala-library;2.11.6 [compile->default(compile)]
 [info] Resolving org.scala-lang#scala-library;2.11.6 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1a7bab2
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@33a0ad
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.6
 [debug] 	found org.scala-lang#scala-library;2.11.6 in sbt-chain
 [debug] 	[2.11.6] org.scala-lang#scala-library;2.11.6
@@ -440,7 +440,7 @@
 [debug] 	public: downloading https://repo1.maven.org/maven2/com/google/inject/extensions/guice-assistedinject/4.0/guice-assistedinject-4.0.pom
 [debug] 	public: downloading https://repo1.maven.org/maven2/com/google/inject/extensions/guice-assistedinject/4.0/guice-assistedinject-4.0.pom.sha1
 [debug] sha1 OK for https://repo1.maven.org/maven2/com/google/inject/extensions/guice-assistedinject/4.0/guice-assistedinject-4.0.pom
-[debug] 	[SUCCESSFUL ] com.google.inject.extensions#guice-assistedinject;4.0!guice-assistedinject.pom(pom.original) (464ms)
+[debug] 	[SUCCESSFUL ] com.google.inject.extensions#guice-assistedinject;4.0!guice-assistedinject.pom(pom.original) (544ms)
 [info] Resolving com.google.inject.extensions#extensions-parent;4.0 ...
 [debug] sbt-chain: Checking cache for: dependency: com.google.inject.extensions#extensions-parent;4.0 {}
 [debug] sbt-chain: module revision found in cache: com.google.inject.extensions#extensions-parent;4.0
@@ -7882,7 +7882,7 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#control_2.11;0.13.8-M3!control_2.11.jar
 [debug] 	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.11;2.3.8!akka-actor_2.11.jar
 [debug] 	[NOT REQUIRED] com.typesafe.akka#akka-testkit_2.11;2.3.8!akka-testkit_2.11.jar
-[debug] :: resolution report :: resolve 8217ms :: artifacts dl 287ms
+[debug] :: resolution report :: resolve 8784ms :: artifacts dl 434ms
 [debug] 	report for solvesystem2#solvesystem2_2.11;1.0-SNAPSHOT compile produced in C:\git local\activator-1.3.6-minimal\SolveSystem2\target\resolution-cache\reports\solvesystem2-solvesystem2_2.11-compile.xml
 [debug] 	report for solvesystem2#solvesystem2_2.11;1.0-SNAPSHOT runtime produced in C:\git local\activator-1.3.6-minimal\SolveSystem2\target\resolution-cache\reports\solvesystem2-solvesystem2_2.11-runtime.xml
 [debug] 	report for solvesystem2#solvesystem2_2.11;1.0-SNAPSHOT test produced in C:\git local\activator-1.3.6-minimal\SolveSystem2\target\resolution-cache\reports\solvesystem2-solvesystem2_2.11-test.xml
@@ -7897,5 +7897,5 @@
 [debug] 	report for solvesystem2#solvesystem2_2.11;1.0-SNAPSHOT pom produced in C:\git local\activator-1.3.6-minimal\SolveSystem2\target\resolution-cache\reports\solvesystem2-solvesystem2_2.11-pom.xml
 [debug] 	report for solvesystem2#solvesystem2_2.11;1.0-SNAPSHOT scala-tool produced in C:\git local\activator-1.3.6-minimal\SolveSystem2\target\resolution-cache\reports\solvesystem2-solvesystem2_2.11-scala-tool.xml
 [debug] 	report for solvesystem2#solvesystem2_2.11;1.0-SNAPSHOT fork-run produced in C:\git local\activator-1.3.6-minimal\SolveSystem2\target\resolution-cache\reports\solvesystem2-solvesystem2_2.11-fork-run.xml
-[debug] 	resolve done (8217ms resolve - 287ms download)
+[debug] 	resolve done (8784ms resolve - 434ms download)
 [info] Done updating.

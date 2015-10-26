@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/git local/activator-1.3.6-minimal/SolveSystem2/conf/routes
-// @DATE:Sat Oct 24 00:32:57 JST 2015
+// @DATE:Sun Oct 25 12:07:53 JST 2015
 
 package router
 
@@ -18,9 +18,9 @@ class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
   Application_1: controllers.Application,
-  // @LINE:7
+  // @LINE:9
   SystemTop_2: controllers.SystemTop,
-  // @LINE:11
+  // @LINE:12
   Assets_0: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -29,9 +29,9 @@ class Routes(
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
     Application_1: controllers.Application,
-    // @LINE:7
+    // @LINE:9
     SystemTop_2: controllers.SystemTop,
-    // @LINE:11
+    // @LINE:12
     Assets_0: controllers.Assets
   ) = this(errorHandler, Application_1, SystemTop_2, Assets_0, "/")
 
@@ -74,7 +74,7 @@ class Routes(
     )
   )
 
-  // @LINE:7
+  // @LINE:9
   private[this] lazy val controllers_SystemTop_index1_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("top")))
   )
@@ -86,12 +86,12 @@ class Routes(
       "index",
       Nil,
       "GET",
-      """""",
+      """ add page""",
       this.prefix + """top"""
     )
   )
 
-  // @LINE:11
+  // @LINE:12
   private[this] lazy val controllers_Assets_versioned2_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
@@ -117,13 +117,13 @@ class Routes(
         controllers_Application_index0_invoker.call(Application_1.index())
       }
   
-    // @LINE:7
+    // @LINE:9
     case controllers_SystemTop_index1_route(params) =>
       call { 
         controllers_SystemTop_index1_invoker.call(SystemTop_2.index())
       }
   
-    // @LINE:11
+    // @LINE:12
     case controllers_Assets_versioned2_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
         controllers_Assets_versioned2_invoker.call(Assets_0.versioned(path, file))

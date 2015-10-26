@@ -19,4 +19,6 @@ routesGenerator := InjectedRoutesGenerator
 
 fork in run := true
 
-includeFilter in (Assets, LessKeys.less) := "top.less"
+includeFilter in (Assets, LessKeys.less) := "top.less" | "login.less"
+
+fork in run := true
