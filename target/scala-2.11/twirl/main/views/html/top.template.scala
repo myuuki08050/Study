@@ -35,17 +35,17 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" media="screen" href=""""),_display_(/*6.54*/routes/*6.60*/.Assets.versioned("stylesheets/top.css")),format.raw/*6.100*/("""">
-        <title>Programing Learning</title>
+        <title>PROGRAM Learning</title>
     </head>
     <body>
         <div id="pagebody">
     
     	<!-- ヘッダ -->
-    	<div id="header"><h1><a href="index.html">CSS learning</a></h1></div>
+    	<div id="header"><h1><a href="index.html">PROGRAM learning</a></h1></div>
     	
     	<!-- メインメニュー -->
     	<ul id="menu">
-    		<li id="menu01"><a href="xxx.html">Home</a></li>
+    		<li id="menu01"><a href="login.scala.html">Login</a></li>
     		<li id="menu02"><a href="xxx.html">Overview</a></li>
     		<li id="menu03"><a href="xxx.html">Property</a></li>
     		<li id="menu04"><a href="xxx.html">Tips</a></li>
@@ -139,9 +139,9 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object top extends top_Scope0.top
               /*
                   -- GENERATED --
-                  DATE: Sat Oct 24 00:32:58 JST 2015
+                  DATE: Sun Oct 25 12:07:18 JST 2015
                   SOURCE: C:/git local/activator-1.3.6-minimal/SolveSystem2/app/views/top.scala.html
-                  HASH: 70c34188dacb1237156f16efe29898208ee0b766
+                  HASH: 342f37c1c23a5b9ebe051bebf5ca926f476b2fea
                   MATRIX: 823->0|1213->364|1227->370|1288->410
                   LINES: 32->1|37->6|37->6|37->6
                   -- GENERATED --
