@@ -34,7 +34,7 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link rel="stylesheet" media="screen" href=""""),_display_(/*6.54*/routes/*6.60*/.Assets.versioned("stylesheets/login.css")),format.raw/*6.102*/("""">
+        <link rel="stylesheet" media="screen" href=""""),_display_(/*6.54*/routes/*6.60*/.Assets.versioned("stylesheets/top.css")),format.raw/*6.100*/("""">
         <title>User Login</title>
     <body>
      <div id="pagebody">
@@ -44,36 +44,14 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
     	
     	<!-- メインメニュー -->
     	<ul id="menu">
-    		<li id="menu01"><a href="/login">Login</a></li>
-    		<li id="menu02"><a href="xxx.html">Overview</a></li>
-    		<li id="menu03"><a href="xxx.html">Property</a></li>
-    		<li id="menu04"><a href="xxx.html">Tips</a></li>
-    		<li id="menu05"><a href="xxx.html">Contact</a></li>
+    		<li id="menu01"><a href="/login">LOGIN</a></li>
+    		<li id="menu02"><a href="xxx.html">HOME</a></li>
+    		<li id="menu03"><a href="xxx.html">PROBREM</a></li>
+    		<li id="menu04"><a href="xxx.html">SOLVE</a></li>
+    		<li id="menu05"><a href="xxx.html">INFOMATION</a></li>
     	</ul>
     
-    	<!-- サブメニュー -->
-    	<div id="submenu">
-    		<div id="submenu_header">目的で探す</div>
-    		<ul id="submenu_body">
-    			<li><a href="xxx.html">CSSの適用</a></li>
-    			<li><a href="xxx.html">セレクタ</a></li>
-    			<li><a href="xxx.html">フォント</a></li>
-    			<li><a href="xxx.html">テキスト</a></li>
-    			<li><a href="xxx.html">文字色・背景</a></li>
-    			<li><a href="xxx.html">幅・高さ・余白</a></li>
-    			<li><a href="xxx.html">ボーダー</a></li>
-    			<li><a href="xxx.html">表示・配置</a></li>
-    			<li><a href="xxx.html">リスト</a></li>
-    			<li><a href="xxx.html">テーブル</a></li>
-    			<li><a href="xxx.html">生成内容の挿入</a></li>
-    			<li><a href="xxx.html">インターフェース</a></li>
-    			<li><a href="xxx.html">フィルタ・ズーム</a></li>
-    			<li><a href="xxx.html">テキスト（IE独自）</a></li>
-    			<li><a href="xxx.html">印刷</a></li>
-    			<li><a href="xxx.html">音声</a></li>
-    		</ul>
-    	</div>
-        <div id="content">
+        <div id="login">
         <h1>ログイン</h1>
             <form action="/home" method="POST">
             ユーザID
@@ -83,6 +61,12 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
             <input type="submit" value="LOGIN"/>
             </form>
         </div>
+        
+        <div id="register">
+            <h1><a href="/register">新規登録</a></h1>
+        </div>
+        
+    </div>    
     </body>
 </html>"""))
       }
@@ -104,10 +88,10 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object login extends login_Scope0.login
               /*
                   -- GENERATED --
-                  DATE: Tue Oct 27 00:33:09 JST 2015
-                  SOURCE: C:/git local/activator-1.3.6-minimal/SolveSystem2/app/views/login.scala.html
-                  HASH: b6668bda9413fdbf7c00b11cb6d316b36ef44c38
-                  MATRIX: 827->0|1217->364|1231->370|1294->412
+                  DATE: Tue Oct 27 14:46:30 JST 2015
+                  SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/login.scala.html
+                  HASH: ff3915ab466952a47fac0f2df22ae5d2db199b39
+                  MATRIX: 827->0|1217->364|1231->370|1292->410
                   LINES: 32->1|37->6|37->6|37->6
                   -- GENERATED --
               */

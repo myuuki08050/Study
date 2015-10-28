@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/git local/activator-1.3.6-minimal/SolveSystem2/conf/routes
-// @DATE:Tue Oct 27 00:07:31 JST 2015
+// @SOURCE:C:/git_local/activator-1.3.6-minimal/SolveSystem2/conf/routes
+// @DATE:Tue Oct 27 14:49:46 JST 2015
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -29,16 +29,28 @@ package controllers {
   }
 
   // @LINE:10
-  class ReverseLogin(_prefix: => String) {
+  class ReverseUserInf(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
+    // @LINE:12
+    def ShowRegister(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "register")
+    }
+  
     // @LINE:10
-    def index(): Call = {
+    def ShowLogin(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "login")
+    }
+  
+    // @LINE:13
+    def NewRegister(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "regicomplete")
     }
   
     // @LINE:11
@@ -49,14 +61,14 @@ package controllers {
   
   }
 
-  // @LINE:14
+  // @LINE:16
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:14
+    // @LINE:16
     def versioned(file:Asset): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[Asset]].unbind("file", file))

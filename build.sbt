@@ -16,9 +16,10 @@ libraryDependencies ++= Seq(
 // other, legacy style, accesses its actions statically.
 routesGenerator := InjectedRoutesGenerator
 
+includeFilter in (Assets, LessKeys.less) := "top.less"
+
+lazy val myProject = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
 
 fork in run := true
-
-includeFilter in (Assets, LessKeys.less) := "top.less" | "login.less"
 
 fork in run := true

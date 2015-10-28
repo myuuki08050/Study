@@ -1,1 +1,4 @@
 test,pass
+testuser,testuser
+testuser2,testuser2
+testuser3,testuser3
