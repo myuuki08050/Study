@@ -6,10 +6,21 @@ import views.html.*;
 import play.data.DynamicForm;
 import play.data.Form;
 
+import java.util.List;
+ 
+import models.Parent;
+import com.avaje.ebean.Model;
+import com.avaje.ebean.Model.Find;
+
 import java.io.*;
 import java.net.*;
 
 public class UserInf extends Controller {
+    
+    private static final int TEXT_MODE = 1;
+    private static final int DATABASE_MODE = 2;
+
+    private static final int mode = TEXT_MODE ; /*　読み出し・書き込みにTEXTを使うかDATABASEを使うか。*/
 
     public Result ShowLogin() {
         return ok(login.render());
@@ -18,7 +29,6 @@ public class UserInf extends Controller {
      public Result ShowRegister() {
         return ok(register.render());
     }
-    
     
     public Result LoginJudge(){
         String[] params = { "user_id" , "password" };
@@ -33,36 +43,46 @@ public class UserInf extends Controller {
         String temp = url.toString();
         String idlist_url[] = temp.split("/",2); //「file:」の部分を取り除く 
         
-        try{
-            File file = new File(idlist_url[1]);
-            FileReader filereader = new FileReader(file);
-            
-            // 入力チェック
-            if ((user_id == null || user_id.trim().equals("")) && (password == null || password.trim().equals(""))) {
-                return badRequest("ID・PASSを入力してください。");
+        //form入力データの判定
+        if ((user_id == null || user_id.trim().equals("")) && (password == null || password.trim().equals(""))) {
+            return badRequest("ID・PASSを入力してください。");
+        }
+        else if(user_id == null || user_id.trim().equals("")){
+            return badRequest("IDを入力してください。");
+        }
+        else if(password == null || password.trim().equals("")){
+            return badRequest("PASSを入力してください。");
+        }
+        else {
+            if(mode == TEXT_MODE){
+                try{
+                    File file = new File(idlist_url[1]);
+                    FileReader filereader = new FileReader(file);
+                    BufferedReader br = new BufferedReader(filereader);
+                    while((temp = br.readLine()) != null){
+                        if(temp.equals(user_id + "," + password)){
+                            filereader.close();
+                            return ok(home.render(user_id,password));
+                        }
+                    }
+                filereader.close();
+                }catch(FileNotFoundException e){
+                    return badRequest("IDリストが見つかりません");
+                }catch(IOException e){
+                    return badRequest("IDリストが開けません");
+                }
             }
-            else if(user_id == null || user_id.trim().equals("")){
-                return badRequest("IDを入力してください。");
-            }
-            else if(password == null || password.trim().equals("")){
-                return badRequest("PASSを入力してください。");
-            }
-            else {
-                BufferedReader br = new BufferedReader(filereader);
-                while((temp = br.readLine()) != null){
-                    if(temp.equals(user_id + "," + password)){
-                        filereader.close();
+            else if(mode == DATABASE_MODE){
+                List<Parent> parents = Parent.finder.all();
+                StringBuilder msg = new StringBuilder();
+                for (Parent parent : parents) {
+                    if(parent.user_id == user_id && parent.password == password){
                         return ok(home.render(user_id,password));
                     }
                 }
             }
-            filereader.close();
-            return badRequest(user_id + "は未登録のユーザーです。またはパスワードが正しくありません。" );
-        }catch(FileNotFoundException e){
-            return badRequest("IDリストが見つかりません");
-        }catch(IOException e){
-            return badRequest("IDリストが開けません");
         }
+        return badRequest("ユーザが見つからない。またはパスワードが違います。");
     }
     
     public Result NewRegister(){
@@ -112,13 +132,25 @@ public class UserInf extends Controller {
             }
             filereader.close();
             
-            //チェックオーケーだったら新しく追加する。
+            //チェックオーケーだったらtextに新しく追加する。
             
             FileWriter filewriter = new FileWriter(file, true);
             filewriter.write("\n" + user_id + "," + password);
             filewriter.close();
             
-            return ok(regicomplete.render(user_id,password));
+            //データベースに追加する。
+            Parent newparent = new Parent();
+            newparent.user_id = user_id;
+            newparent.password = password;
+            newparent.save();
+            
+            List<Parent> parents = Parent.finder.all();
+            StringBuilder msg = new StringBuilder();
+            for (Parent parent : parents) {
+                msg.append(parent.toString()).append("\n");
+            }
+            
+            return ok(msg.toString());
     
         }catch(FileNotFoundException e){
             return badRequest("IDリストが見つかりません");

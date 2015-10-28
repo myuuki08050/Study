@@ -4,11 +4,11 @@
 # --- !Ups
 
 create table parent (
-  id                        bigint not null,
-  name                      varchar(255) not null,
+  user_id                   varchar(255) not null,
+  password                  varchar(255) not null,
   create_date               timestamp not null,
   update_date               timestamp not null,
-  constraint pk_parent primary key (id))
+  constraint pk_parent primary key (user_id))
 ;
 
 create sequence parent_seq;

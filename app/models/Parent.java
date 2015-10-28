@@ -1,34 +1,31 @@
 package models;
-
+ 
 import java.util.Date;
  
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Version;
- 
-import play.db.ebean.Model;
-
+import javax.persistence.*;
+import com.avaje.ebean.Model;
 import com.avaje.ebean.annotation.CreatedTimestamp;
 import javax.validation.constraints.NotNull;
-
+ 
 @Entity
-public class Parent {
-
+public class Parent extends Model {
+ 
     @Id
-    public Long id;
+    public String user_id;
  
     @NotNull
-    public String name;
+    public String password;
  
     @CreatedTimestamp
     public Date createDate;
  
     @Version
     public Date updateDate;
+    
+    public static Find<Long,Parent> finder = new Find<Long,Parent>(){};
  
     public String toString() {
-        return "Parent [id=" + id + ", name=" + name + ", createDate="
+        return "Parent [user_id=" + user_id + ", password=" + password + ", createDate="
                 + createDate + ", updateDate=" + updateDate + "]";
     }
-	
 }

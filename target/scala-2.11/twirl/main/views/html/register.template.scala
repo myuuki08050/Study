@@ -86,10 +86,10 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object register extends register_Scope0.register
               /*
                   -- GENERATED --
-                  DATE: Tue Oct 27 15:02:54 JST 2015
-                  SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/register.scala.html
-                  HASH: 71296ccd494850381dd1bf405a73ae49e9777c4e
-                  MATRIX: 833->0|1218->359|1232->365|1293->405
+                  DATE: Wed Oct 28 11:55:51 JST 2015
+                  SOURCE: C:/Users/yuki/eclipse_play/activator-1.3.6-minimal/SolveSystem2/app/views/register.scala.html
+                  HASH: dd0f2d51ebc70b7cbe83b32bdf03dc7709c102f7
+                  MATRIX: 833->0|1223->364|1237->370|1298->410
                   LINES: 32->1|37->6|37->6|37->6
                   -- GENERATED --
               */
