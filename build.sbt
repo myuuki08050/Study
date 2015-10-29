@@ -21,7 +21,3 @@ includeFilter in (Assets, LessKeys.less) := "top.less"
 lazy val myProject = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
 
 fork in run := true
-
-fork in run := true
-
-fork in run := true

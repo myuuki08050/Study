@@ -20,7 +20,7 @@ public class UserInf extends Controller {
     private static final int TEXT_MODE = 1;
     private static final int DATABASE_MODE = 2;
 
-    private static final int mode = TEXT_MODE ; /*　読み出し・書き込みにTEXTを使うかDATABASEを使うか。*/
+    private static final int mode = DATABASE_MODE ; /*　読み出し・書き込みにTEXTを使うかDATABASEを使うか。*/
 
     public Result ShowLogin() {
         return ok(login.render());
@@ -76,13 +76,23 @@ public class UserInf extends Controller {
                 List<Parent> parents = Parent.finder.all();
                 StringBuilder msg = new StringBuilder();
                 for (Parent parent : parents) {
-                    if(parent.user_id == user_id && parent.password == password){
+                    if(parent.user_id.equals(user_id) && parent.password.equals(password)){
                         return ok(home.render(user_id,password));
                     }
                 }
             }
         }
-        return badRequest("ユーザが見つからない。またはパスワードが違います。");
+        
+        return badRequest("そのIDは登録されていないか、パスワードが違います。");
+        
+        /*
+        List<Parent> parents = Parent.finder.all();
+        StringBuilder msg = new StringBuilder();
+        for (Parent parent : parents) {
+            msg.append(parent.toString()).append("\n");
+        }
+        return badRequest("user_id = " + user_id + ",password  " + password + "\n" + msg.toString());
+        */
     }
     
     public Result NewRegister(){
@@ -97,10 +107,6 @@ public class UserInf extends Controller {
         URL url = Play.application().classloader().getResource("ID_list.txt");
         String temp = url.toString();
         String idlist_url[] = temp.split("/",2); //「file:」の部分を取り除く 
-        
-        try{
-            File file = new File(idlist_url[1]);
-            FileReader filereader = new FileReader(file);
             
             // 入力チェック
             if ((user_id == null || user_id.trim().equals("")) && (password == null || password.trim().equals(""))) {
@@ -120,42 +126,61 @@ public class UserInf extends Controller {
                 else if(password.length() < 8 || password.length() >20){
                     return badRequest("PASSは数字アルファベット8文字以上20文字以内で入力してください");
                 }
-                
-                BufferedReader br = new BufferedReader(filereader);
-                while((temp = br.readLine()) != null){
-                    String regiinf[] = temp.split(",",2);
-                    if(regiinf[0].equals(user_id)){
-                        filereader.close();
-                        return badRequest("そのIDは既に登録済みです。");
+                else{
+                    if(mode == TEXT_MODE){
+                        try{
+                            File file = new File(idlist_url[1]);
+                            FileReader filereader = new FileReader(file);
+                            BufferedReader br = new BufferedReader(filereader);
+                            
+                            //ID重複チェック
+                            while((temp = br.readLine()) != null){
+                                String regiinf[] = temp.split(",",2);
+                                if(regiinf[0].equals(user_id)){
+                                    filereader.close();
+                                    return badRequest("そのIDは既に登録済みです。");
+                                }
+                            }
+                            filereader.close();
+    
+                            //チェックオーケーだったらtextに新しく追加する。
+                            FileWriter filewriter = new FileWriter(file, true);
+                            filewriter.write("\n" + user_id + "," + password);
+                            filewriter.close();
+                            
+                        }catch(FileNotFoundException e){
+                            return badRequest("IDリストが見つかりません");
+                        }catch(IOException e){
+                            return badRequest("IDリストが開けません");
+                        }
+                    }
+                    else if(mode == DATABASE_MODE){
+                        
+                        //ID重複チェック
+                        List<Parent> parents = Parent.finder.all();
+                        for (Parent parent : parents) {
+                            if(parent.user_id.equals(user_id)){
+                                return badRequest("そのIDは既に登録済みです。");
+                            }
+                        }
+                        
+                        //データベースに登録
+                        Parent newparent = new Parent();
+                        newparent.user_id = user_id;
+                        newparent.password = password;
+                        newparent.save();
+                        
+                        //データベースの内容表示
+                        StringBuilder msg = new StringBuilder();
+                        for (Parent parent : parents) {
+                            msg.append(parent.toString()).append("\n");
+                        }
+                        
+                        return ok(msg.toString());
                     }
                 }
             }
-            filereader.close();
-            
-            //チェックオーケーだったらtextに新しく追加する。
-            
-            FileWriter filewriter = new FileWriter(file, true);
-            filewriter.write("\n" + user_id + "," + password);
-            filewriter.close();
-            
-            //データベースに追加する。
-            Parent newparent = new Parent();
-            newparent.user_id = user_id;
-            newparent.password = password;
-            newparent.save();
-            
-            List<Parent> parents = Parent.finder.all();
-            StringBuilder msg = new StringBuilder();
-            for (Parent parent : parents) {
-                msg.append(parent.toString()).append("\n");
-            }
-            
-            return ok(msg.toString());
-    
-        }catch(FileNotFoundException e){
-            return badRequest("IDリストが見つかりません");
-        }catch(IOException e){
-            return badRequest("IDリストが開けません");
-        }
-    }
+        
+        return ok(user_id,password);
+    }        
 }
