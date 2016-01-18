@@ -1,4 +1,4 @@
-@(user_id: String)(password: String)
+@(user_id: String)(password: String)(logintimes: String)
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -22,13 +22,13 @@
         		<li id="menu05"><a href="xxx.html">INFOMATION</a></li>
         	</ul>
         	
+        	<div id="content">
             <h1>COMPLETE REGISTER!</h1>
-            <div id="regicomp">
                 登録が完了しました(ID:@user_id,PASS:@password)
-            </div>
         
             <h1><a href="/login">ログイン画面にもどる</a></h1>
             
+            </div>
             
             
         </div>    

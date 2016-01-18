@@ -2,7 +2,7 @@ name := """SolveSystem2"""
 
 version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(PlayJava)
+lazy val myProject = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
 
 scalaVersion := "2.11.6"
 
@@ -18,6 +18,6 @@ routesGenerator := InjectedRoutesGenerator
 
 includeFilter in (Assets, LessKeys.less) := "top.less"
 
-lazy val myProject = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
+fork in run := true
 
 fork in run := true

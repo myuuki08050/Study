@@ -51,7 +51,7 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
     		<li id="menu05"><a href="xxx.html">INFOMATION</a></li>
     	</ul>
     
-        <div id="login">
+        <div id="content">
         <h1>ログイン</h1>
             <form action="/home" method="POST">
             ユーザID
@@ -60,9 +60,6 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
             <input type="password" name="password"/>
             <input type="submit" value="LOGIN"/>
             </form>
-        </div>
-        
-        <div id="register">
             <h1><a href="/register">新規登録</a></h1>
         </div>
         
@@ -88,9 +85,9 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object login extends login_Scope0.login
               /*
                   -- GENERATED --
-                  DATE: Wed Oct 28 19:18:45 JST 2015
+                  DATE: Mon Jan 11 18:27:33 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/login.scala.html
-                  HASH: ff3915ab466952a47fac0f2df22ae5d2db199b39
+                  HASH: 2f990cd1c13741ec79e6cebc436da092a1ff4989
                   MATRIX: 827->0|1217->364|1231->370|1292->410
                   LINES: 32->1|37->6|37->6|37->6
                   -- GENERATED --

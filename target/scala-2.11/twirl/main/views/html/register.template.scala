@@ -46,14 +46,14 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
     	<!-- メインメニュー -->
     	<ul id="menu">
     		<li id="menu01"><a href="/login">LOGIN</a></li>
-    		<li id="menu02"><a href="xxx.html">HOME</a></li>
-    		<li id="menu03"><a href="xxx.html">PROBREM</a></li>
+    		<li id="menu02"><a href="/home">HOME</a></li>
+    		<li id="menu03"><a href="/probrem">PROBREM</a></li>
     		<li id="menu04"><a href="xxx.html">SOLVE</a></li>
     		<li id="menu05"><a href="xxx.html">INFOMATION</a></li>
     	</ul>
     
     	<!-- コンテンツ -->
-    	<div id="regi">
+    	<div id="content">
             <h1>新規登録</h1>
             <form action="/regicomplete" method="POST">
             希望ユーザID
@@ -86,9 +86,9 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object register extends register_Scope0.register
               /*
                   -- GENERATED --
-                  DATE: Wed Oct 28 19:18:45 JST 2015
+                  DATE: Mon Jan 11 18:21:55 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/register.scala.html
-                  HASH: 71296ccd494850381dd1bf405a73ae49e9777c4e
+                  HASH: 0c4da5626a77faa0209293a6efe8c8b561ecbf45
                   MATRIX: 833->0|1218->359|1232->365|1293->405
                   LINES: 32->1|37->6|37->6|37->6
                   -- GENERATED --

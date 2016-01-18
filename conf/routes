@@ -8,9 +8,18 @@ GET     /                           controllers.Application.index()
 # add page
 GET     /top                        controllers.SystemTop.index()
 GET     /login                      controllers.UserInf.ShowLogin()
+GET     /home                       controllers.UserInf.LoginJudge()
 POST    /home                       controllers.UserInf.LoginJudge()
 GET     /register                   controllers.UserInf.ShowRegister()
 POST    /regicomplete               controllers.UserInf.NewRegister()
+POST    /shimon                     controllers.ShimonManage.ShowShimon()
+GET     /shimon_fregi               controllers.ShimonManage.ShowFShimonregi()
+POST    /shimon_fregi               controllers.ShimonManage.ShowFShimonregi()
+POST    /shimon_regicomp            controllers.ShimonManage.MakeShimon()
+POST    /doril                      controllers.DorilManage.ShowDoril()
+GET     /doril_fregi                controllers.DorilManage.ShowFDorilregi()
+POST    /doril_fregi                controllers.DorilManage.ShowFDorilregi()
+POST    /doril_regicomp             controllers.DorilManage.MakeDoril()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
