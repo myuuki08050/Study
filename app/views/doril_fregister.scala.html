@@ -27,7 +27,12 @@
         <h1>試問登録</h1>
         ファイルをアップロードできます。
             @form(action = routes.DorilManage.MakeDoril, 'enctype -> "multipart/form-data") {
+                問題ファイル:
                 <input type="file" name="doril_file">
+                <br>
+                正答ファイル:
+                <input type="file" name="s_doril_file">
+                <br>
                 <input type="submit" value="UPLOAD">
             }
             

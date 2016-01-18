@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/top.css")">
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/flotr2.min.js")" ></script>
+        <title>User Model</title>
+    </head>    
+    <body>
+     <div id="pagebody">
+    
+    	<!-- ヘッダ -->
+    	<div id="header"><h1>User Model</h1></div>
+    	
+    	<!-- メインメニュー -->
+    	<ul id="menu">
+    		<li id="menu01"><a href="/login">LOGIN</a></li>
+    		<li id="menu02"><a href="xxx.html">HOME</a></li>
+    		<li id="menu03"><a href="xxx.html">PROBREM</a></li>
+    		<li id="menu04"><a href="xxx.html">SOLVE</a></li>
+    		<li id="menu05"><a href="xxx.html">INFOMATION</a></li>
+    	</ul>
+    
+        <div id="content">
+            <div id="graph"></div>
+            <h1><a href="/home">ホームにもどる</a></h1>
+    	</div>
+    	<script type="text/javascript">
+    	
+    	(function basic_radar(container) {
+            var s1 = {
+            label: 'データ名1',
+            data: [[0, 3],[1, 8],[2, 5],[3, 5],[4, 3],[5, 9]]},
+            graph, ticks;
+            ticks = [
+            [0, "項目1"],
+            [1, "項目2"],
+            [2, "項目3"],
+            [3, "項目4"],
+            [4, "項目5"],
+            [5, "項目6"]];
+     
+            graph = Flotr.draw(container, [s1], { //canvasへの描画。変数を配列で指定して
+                radar: {show: true},  //radar特有のオプション。デフォがfalseなのでtrueにして
+                grid: {
+                    circular: true,   //罫線を多角形に。必須。
+                    minorHorizontalLines: true},  //細かい（マイナーな）水平の罫線を表示する
+                yaxis: {    //yaxisはy軸。この場合は中心から各頂点への軸
+                    min: 0,
+                    max: 10,
+                    minorTickFreq: 2},  //小目盛りのテキストを表示する頻度
+                xaxis: {ticks: ticks},  //xaxisはx軸。変数ticksを各頂点に表示
+                legend: {
+                    position: 'se',
+                    backgroundColor: '#ffc'  //円グラフと同じように位置と背景色を変更
+                }
+            });
+        })(document.getElementById("graph"));
+        
+        </script>
+    </div>    
+    </body>
+</html>

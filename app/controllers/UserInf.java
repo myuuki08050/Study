@@ -6,9 +6,8 @@ import views.html.*;
 import play.data.DynamicForm;
 import play.data.Form;
 
-import java.util.List;
-import java.util.Date;
- 
+import java.util.*;
+
 import models.User;
 import com.avaje.ebean.Model;
 import com.avaje.ebean.Model.Find;

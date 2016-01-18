@@ -59,11 +59,16 @@ Seq[Any](format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
         <h1>試問登録</h1>
         ファイルをアップロードできます。
             """),_display_(/*29.14*/form(action = routes.ShimonManage.MakeShimon, 'enctype -> "multipart/form-data")/*29.94*/ {_display_(Seq[Any](format.raw/*29.96*/("""
-                """),format.raw/*30.17*/("""<input type="file" name="shimon_file">
+                """),format.raw/*30.17*/("""問題ファイル:
+                <input type="file" name="shimon_file">
+                <br>
+                正答ファイル:
+                <input type="file" name="s_shimon_file">
+                <br>
                 <input type="submit" value="UPLOAD">
-            """)))}),format.raw/*32.14*/("""
+            """)))}),format.raw/*37.14*/("""
             
-            """),format.raw/*34.13*/("""<h1><a href="/shimon_fregi">ホームにもどる</a></h1>
+            """),format.raw/*39.13*/("""<h1><a href="/shimon_fregi">ホームにもどる</a></h1>
     	</div>
         
     </div>    
@@ -89,11 +94,11 @@ Seq[Any](format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object shimon_fregister extends shimon_fregister_Scope0.shimon_fregister_Scope1.shimon_fregister
               /*
                   -- GENERATED --
-                  DATE: Mon Jan 18 22:13:06 JST 2016
+                  DATE: Tue Jan 19 02:15:46 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/shimon_fregister.scala.html
-                  HASH: 40582e40d7afbf5354644722f0330a88d816cea0
-                  MATRIX: 904->20|1294->384|1308->390|1369->430|2022->1056|2111->1136|2151->1138|2197->1156|2335->1263|2391->1291
-                  LINES: 35->3|40->8|40->8|40->8|61->29|61->29|61->29|62->30|64->32|66->34
+                  HASH: 9427d95cf3e999c97dc35fa3e67a3a5b6ca2bb27
+                  MATRIX: 904->20|1294->384|1308->390|1369->430|2022->1056|2111->1136|2151->1138|2197->1156|2487->1415|2543->1443
+                  LINES: 35->3|40->8|40->8|40->8|61->29|61->29|61->29|62->30|69->37|71->39
                   -- GENERATED --
               */
           

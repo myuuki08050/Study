@@ -246,4 +246,9 @@ div#tab3 {
 div.tab p {
   margin: 0.5em;
 }
+div#graph {
+  width: 500px;
+  height: 300px;
+  margin: 1em auto;
+}
 /*# sourceMappingURL=top.css.map */

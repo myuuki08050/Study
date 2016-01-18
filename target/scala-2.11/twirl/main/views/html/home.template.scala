@@ -75,7 +75,7 @@ Seq[Any](format.raw/*1.56*/("""
             </form>
             
             <h1>モデル確認画面へ</h1>
-            <form action="/model" method="POST">
+            <form action="/user_model" method="POST">
                 <input type="submit" value="モデル確認"/>
             </form>
             
@@ -105,9 +105,9 @@ Seq[Any](format.raw/*1.56*/("""
 object home extends home_Scope0.home
               /*
                   -- GENERATED --
-                  DATE: Tue Jan 19 00:07:15 JST 2016
+                  DATE: Tue Jan 19 05:31:55 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/home.scala.html
-                  HASH: 88b720dd398becdcff0211cce1b735dc6822286c
+                  HASH: 62f4dccb04612e375260bf35c5304d1abf5dd5ed
                   MATRIX: 757->1|906->55|934->57|1319->416|1333->422|1394->462
                   LINES: 27->1|32->1|34->3|39->8|39->8|39->8
                   -- GENERATED --

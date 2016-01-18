@@ -149,22 +149,52 @@ public class DorilManage extends Controller {
     }
     
     public Result MakeDoril(){
+        String fileName = "";
+        String fileName2 = "";
         MultipartFormData body = request().body().asMultipartFormData();
+        //ドリルの登録
         FilePart text = body.getFile("doril_file");
         if (text != null) {
-            String fileName = text.getFilename();
+            fileName = text.getFilename();
             String contentType = text.getContentType();
             File file = text.getFile();
             if (contentType.equals("text/plain")) {
                 String fullPath = Play.application().path().getPath() + "/public/problems/doril";
                 file.renameTo(new File(fullPath, fileName));
             }
-            return ok(doril_regicomplete.render());
         } 
         else {
              flash("error", "Missing file");
              return redirect(routes.DorilManage.ShowFDorilregi());
         }
+        
+        //正答ファイルの登録
+        FilePart text2 = body.getFile("s_doril_file");
+        if (text2 != null) {
+            fileName2 = text2.getFilename();
+            String contentType = text2.getContentType();
+            File file = text2.getFile();
+            if (contentType.equals("text/plain")) {
+                String fullPath = Play.application().path().getPath() + "/public/problems/doril_solve";
+                file.renameTo(new File(fullPath, fileName2));
+            }
+        } 
+        else {
+             flash("error", "Missing file");
+             return redirect(routes.DorilManage.ShowFDorilregi());
+        }
+        
+        List<Doril> dorils = Doril.finder.all();
+        
+        //データベースへの登録
+        Doril newdoril = new Doril();
+        newdoril.problem_id = dorils.size() + 1;
+        newdoril.problem_name = fileName;
+        newdoril.solve_name = fileName2;
+        newdoril.save();
+        
+        return ok(doril_regicomplete.render());
+    
     }
 }
     

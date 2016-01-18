@@ -59,11 +59,16 @@ Seq[Any](format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
         <h1>試問登録</h1>
         ファイルをアップロードできます。
             """),_display_(/*29.14*/form(action = routes.DorilManage.MakeDoril, 'enctype -> "multipart/form-data")/*29.92*/ {_display_(Seq[Any](format.raw/*29.94*/("""
-                """),format.raw/*30.17*/("""<input type="file" name="doril_file">
+                """),format.raw/*30.17*/("""問題ファイル:
+                <input type="file" name="doril_file">
+                <br>
+                正答ファイル:
+                <input type="file" name="s_doril_file">
+                <br>
                 <input type="submit" value="UPLOAD">
-            """)))}),format.raw/*32.14*/("""
+            """)))}),format.raw/*37.14*/("""
             
-            """),format.raw/*34.13*/("""<h1><a href="/doril_fregi">ホームにもどる</a></h1>
+            """),format.raw/*39.13*/("""<h1><a href="/doril_fregi">ホームにもどる</a></h1>
     	</div>
         
     </div>    
@@ -89,11 +94,11 @@ Seq[Any](format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object doril_fregister extends doril_fregister_Scope0.doril_fregister_Scope1.doril_fregister
               /*
                   -- GENERATED --
-                  DATE: Mon Jan 18 23:53:26 JST 2016
+                  DATE: Tue Jan 19 02:15:46 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/doril_fregister.scala.html
-                  HASH: c5179d97946e7dfb44789e398a8be3db9dd200ea
-                  MATRIX: 901->20|1291->384|1305->390|1366->430|2017->1054|2104->1132|2144->1134|2190->1152|2327->1258|2383->1286
-                  LINES: 35->3|40->8|40->8|40->8|61->29|61->29|61->29|62->30|64->32|66->34
+                  HASH: a4e8d177a795a4e4931863088f614596d06c9b53
+                  MATRIX: 901->20|1291->384|1305->390|1366->430|2017->1054|2104->1132|2144->1134|2190->1152|2478->1409|2534->1437
+                  LINES: 35->3|40->8|40->8|40->8|61->29|61->29|61->29|62->30|69->37|71->39
                   -- GENERATED --
               */
           

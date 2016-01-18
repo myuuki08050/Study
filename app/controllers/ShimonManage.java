@@ -149,22 +149,49 @@ public class ShimonManage extends Controller {
     }
     
     public Result MakeShimon(){
+        String fileName ="";
+        String fileName2 ="";
         MultipartFormData body = request().body().asMultipartFormData();
         FilePart text = body.getFile("shimon_file");
         if (text != null) {
-            String fileName = text.getFilename();
+            fileName = text.getFilename();
             String contentType = text.getContentType();
             File file = text.getFile();
             if (contentType.equals("text/plain")) {
                 String fullPath = Play.application().path().getPath() + "/public/problems/shimon";
                 file.renameTo(new File(fullPath, fileName));
             }
-            return ok(shimon_regicomplete.render());
         } 
         else {
              flash("error", "Missing file");
              return redirect(routes.ShimonManage.ShowFShimonregi());
         }
+        //正答ファイルの登録
+        FilePart text2 = body.getFile("s_shimon_file");
+        if (text2 != null) {
+            fileName2 = text2.getFilename();
+            String contentType = text2.getContentType();
+            File file = text2.getFile();
+            if (contentType.equals("text/plain")) {
+                String fullPath = Play.application().path().getPath() + "/public/problems/shimon_solve";
+                file.renameTo(new File(fullPath, fileName2));
+            }
+        } 
+        else {
+             flash("error", "Missing file");
+             return redirect(routes.ShimonManage.ShowFShimonregi());
+        }
+        
+        List<Shimon> shimons = Shimon.finder.all();
+        
+        //データベースへの登録
+        Shimon newshimon = new Shimon();
+        newshimon.problem_id = shimons.size() + 1;
+        newshimon.problem_name = fileName;
+        newshimon.solve_name = fileName2;
+        newshimon.save();
+        
+        return ok(shimon_regicomplete.render());
     }
 }
     

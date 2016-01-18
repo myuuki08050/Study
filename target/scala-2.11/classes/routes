@@ -20,6 +20,8 @@ POST    /doril                      controllers.DorilManage.ShowDoril()
 GET     /doril_fregi                controllers.DorilManage.ShowFDorilregi()
 POST    /doril_fregi                controllers.DorilManage.ShowFDorilregi()
 POST    /doril_regicomp             controllers.DorilManage.MakeDoril()
+POST    /user_model                 controllers.ModelManage.ShowUserModel()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
