@@ -18,16 +18,16 @@ create table shimon (
 ;
 
 create table user (
-  user_id                   varchar(255) not null,
-  password                  varchar(255) not null,
+  id                        bigint not null,
+  user_id                   varchar(255),
+  password                  varchar(255),
   logintimes                integer,
-  logindate                 timestamp,
-  logoutdate                timestamp,
-  constraint pk_user primary key (user_id))
+  is_admin                  boolean,
+  constraint pk_user primary key (id))
 ;
 
 create table user_model (
-  user_id                   varchar(255),
+  user_id                   bigint,
   param1                    integer not null,
   param2                    integer not null,
   param3                    integer not null,
@@ -44,7 +44,7 @@ create sequence shimon_seq;
 
 create sequence user_seq;
 
-alter table user_model add constraint fk_user_model_user_1 foreign key (user_id) references user (user_id) on delete restrict on update restrict;
+alter table user_model add constraint fk_user_model_user_1 foreign key (user_id) references user (id) on delete restrict on update restrict;
 create index ix_user_model_user_1 on user_model (user_id);
 
 

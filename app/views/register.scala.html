@@ -1,38 +1,44 @@
+@(title: String)(form: Form[User])
+
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/top.css")">
-        <title>REGISTER</title>
-    </head>
+        <title>User Login</title>
     <body>
-        <div id="pagebody">
+     <div id="pagebody">
     
     	<!-- ヘッダ -->
-    	<div id="header"><h1>PROGRAM learning</h1></div>
+    	<div id="header"><h1>User Login</h1></div>
     	
     	<!-- メインメニュー -->
     	<ul id="menu">
     		<li id="menu01"><a href="/login">LOGIN</a></li>
-    		<li id="menu02"><a href="/home">HOME</a></li>
-    		<li id="menu03"><a href="/probrem">PROBREM</a></li>
+    		<li id="menu02"><a href="xxx.html">HOME</a></li>
+    		<li id="menu03"><a href="xxx.html">PROBREM</a></li>
     		<li id="menu04"><a href="xxx.html">SOLVE</a></li>
     		<li id="menu05"><a href="xxx.html">INFOMATION</a></li>
     	</ul>
-    
-    	<!-- コンテンツ -->
+    	
     	<div id="content">
-            <h1>新規登録</h1>
-            <form action="/regicomplete" method="POST">
-            希望ユーザID
-            <input type="text" name="user_id"/>
-            希望パスワード
-            <input type="password" name="password"/>
-            <input type="submit" value="REGISTER"/>
-            </form>
-    	</div>
+        <h1>@title</h1>
     
-    </div>
+        @helper.form(action = routes.Application.NewRegister) {
+        	@helper.inputText(form("user_id"))
+        	@helper.inputPassword(form("password"))
+             <input type="radio" id="a" name="use_kind" value="nonadmin"  >
+                <label for="a">通常利用者として登録</label>
+                <input type="radio" id="b" name="use_kind" value="admin"  >
+                <label for="gender_female">管理者として登録</label>
+        	<input type="submit" value="登録"/>
+        }
+        
+        </div>
+        </div>
+        
     </body>
 </html>

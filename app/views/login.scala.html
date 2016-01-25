@@ -1,3 +1,5 @@
+@(title: String)(form: Form[User])
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
@@ -19,19 +21,20 @@
     		<li id="menu04"><a href="xxx.html">SOLVE</a></li>
     		<li id="menu05"><a href="xxx.html">INFOMATION</a></li>
     	</ul>
+    	
+    	<div id="content">
+        <h1>@title</h1>
     
-        <div id="content">
-        <h1>ログイン</h1>
-            <form action="/home" method="POST">
-            ユーザID
-            <input type="text" name="user_id"/>
-            パスワード
-            <input type="password" name="password"/>
-            <input type="submit" value="LOGIN"/>
-            </form>
-            <h1><a href="/register">新規登録</a></h1>
+        @helper.form(action = routes.Application.auth) {
+        	@helper.inputText(form("user_id"))
+        	@helper.inputPassword(form("password"))
+        	<input type="submit" value="LOGIN"/>
+        }
+        
+        <h1><a href="/register">新規登録</a></h1>
+        
+        </div>
         </div>
         
-    </div>    
     </body>
 </html>

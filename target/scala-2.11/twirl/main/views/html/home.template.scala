@@ -21,15 +21,15 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class home extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template3[String,String,String,play.twirl.api.HtmlFormat.Appendable] {
+class home extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template2[String,String,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(user_id: String)(password: String)(logintime: String):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(user_id: String)(logintime: String):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.56*/("""
+Seq[Any](format.raw/*1.38*/("""
 
 """),format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -54,6 +54,9 @@ Seq[Any](format.raw/*1.56*/("""
     	</ul>
 
         <div id="content">
+            ようこそ<div>"""),_display_(/*26.23*/user_id),format.raw/*26.30*/("""</div>さん。あなたは<div>"""),_display_(/*26.49*/logintime),format.raw/*26.58*/("""</div>回目のログインです。
+            ゆっくりしていってね！
+        
             <h1>試問回答画面へ</h1>
             <form action="/shimon" method="POST">
                 <input type="submit" value="試問回答"/>
@@ -90,9 +93,9 @@ Seq[Any](format.raw/*1.56*/("""
     }
   }
 
-  def render(user_id:String,password:String,logintime:String): play.twirl.api.HtmlFormat.Appendable = apply(user_id)(password)(logintime)
+  def render(user_id:String,logintime:String): play.twirl.api.HtmlFormat.Appendable = apply(user_id)(logintime)
 
-  def f:((String) => (String) => (String) => play.twirl.api.HtmlFormat.Appendable) = (user_id) => (password) => (logintime) => apply(user_id)(password)(logintime)
+  def f:((String) => (String) => play.twirl.api.HtmlFormat.Appendable) = (user_id) => (logintime) => apply(user_id)(logintime)
 
   def ref: this.type = this
 
@@ -105,11 +108,11 @@ Seq[Any](format.raw/*1.56*/("""
 object home extends home_Scope0.home
               /*
                   -- GENERATED --
-                  DATE: Tue Jan 19 05:31:55 JST 2016
+                  DATE: Tue Jan 26 05:10:28 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/home.scala.html
-                  HASH: 62f4dccb04612e375260bf35c5304d1abf5dd5ed
-                  MATRIX: 757->1|906->55|934->57|1319->416|1333->422|1394->462
-                  LINES: 27->1|32->1|34->3|39->8|39->8|39->8
+                  HASH: e63883bda0da21a192207b5070b0b016b924f05e
+                  MATRIX: 750->1|881->37|909->39|1294->398|1308->404|1369->444|1948->996|1976->1003|2022->1022|2052->1031
+                  LINES: 27->1|32->1|34->3|39->8|39->8|39->8|57->26|57->26|57->26|57->26
                   -- GENERATED --
               */
           

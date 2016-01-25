@@ -66,47 +66,60 @@ Seq[Any](format.raw/*1.147*/("""
         """),format.raw/*35.9*/("""</script>
         
         <div id="content">
+        
+        
     	
     	<div class="tabbox">
         
         <p class="tabs">
             <a href="#tab1" class="tab1" onclick="ChangeTab('tab1'); return false;">大問</a>
             <a href="#tab2" class="tab2" onclick="ChangeTab('tab2'); return false;">タグ</a>
-            <a href="#tab3" class="tab3" onclick="ChangeTab('tab3'); return false;">回答</a>
+            <a href="#tab3" class="tab3" onclick="ChangeTab('tab3'); return false;">小問</a>
         </p>
         
         <div id="tab1" class="tab">
-            """),_display_(/*48.14*/problem_state),format.raw/*48.27*/("""
+            """),_display_(/*50.14*/problem_state),format.raw/*50.27*/("""
             
-            """),_display_(/*50.14*/for(program <- programs) yield /*50.38*/ {_display_(Seq[Any](format.raw/*50.40*/("""
-                """),format.raw/*51.17*/("""<div>"""),_display_(/*51.23*/program),format.raw/*51.30*/("""</div>
-            """)))}),format.raw/*52.14*/("""
+            """),_display_(/*52.14*/for(program <- programs) yield /*52.38*/ {_display_(Seq[Any](format.raw/*52.40*/("""
+                """),format.raw/*53.17*/("""<div>"""),_display_(/*53.23*/program),format.raw/*53.30*/("""</div>
+            """)))}),format.raw/*54.14*/("""
             
-        """),format.raw/*54.9*/("""</div>
+        """),format.raw/*56.9*/("""</div>
 
         <div id="tab2" class="tab">
-        
-            """),_display_(/*58.14*/for(tag <- tags) yield /*58.30*/ {_display_(Seq[Any](format.raw/*58.32*/("""
-                """),format.raw/*59.17*/("""<div>"""),_display_(/*59.23*/tag),format.raw/*59.26*/("""</div>
-            """)))}),format.raw/*60.14*/("""
+            """),_display_(/*59.14*/for(tag <- tags) yield /*59.30*/ {_display_(Seq[Any](format.raw/*59.32*/("""
+                """),format.raw/*60.17*/("""<div>"""),_display_(/*60.23*/tag),format.raw/*60.26*/("""</div>
+            """)))}),format.raw/*61.14*/("""
             
-"""),format.raw/*62.1*/("""　      </div>
+"""),format.raw/*63.1*/("""　      </div>
 
         <div id="tab3" class="tab">
         
-            """),_display_(/*66.14*/for(smallproblem <- smallproblems) yield /*66.48*/ {_display_(Seq[Any](format.raw/*66.50*/("""
-                """),format.raw/*67.17*/("""<div>"""),_display_(/*67.23*/smallproblem),format.raw/*67.35*/("""</div>
-                """),_display_(/*68.18*/for(subprogram <- subprograms) yield /*68.48*/ {_display_(Seq[Any](format.raw/*68.50*/("""
-                    """),format.raw/*69.21*/("""<div>"""),_display_(/*69.27*/subprogram),format.raw/*69.37*/("""</div>
-                """)))}),format.raw/*70.18*/("""
-                """),_display_(/*71.18*/for(solve <- solves) yield /*71.38*/ {_display_(Seq[Any](format.raw/*71.40*/("""
-                    """),format.raw/*72.21*/("""<div>"""),_display_(/*72.27*/solve),format.raw/*72.32*/("""</div>
-                """)))}),format.raw/*73.18*/("""
-                
-            """)))}),format.raw/*75.14*/("""
+            """),_display_(/*67.14*/for(smallproblem <- smallproblems) yield /*67.48*/ {_display_(Seq[Any](format.raw/*67.50*/("""
+                """),format.raw/*68.17*/("""<div>"""),_display_(/*68.23*/smallproblem),format.raw/*68.35*/("""</div>
+            """)))}),format.raw/*69.14*/("""
+            """),_display_(/*70.14*/for(subprogram <- subprograms) yield /*70.44*/ {_display_(Seq[Any](format.raw/*70.46*/("""
+                """),format.raw/*71.17*/("""<div>"""),_display_(/*71.23*/subprogram),format.raw/*71.33*/("""</div>
+            """)))}),format.raw/*72.14*/("""
             
-        """),format.raw/*77.9*/("""</div>
-   
+            """),_display_(/*74.14*/if(solves.size() == 0)/*74.36*/{_display_(Seq[Any](format.raw/*74.37*/("""
+                """),format.raw/*75.17*/("""<form action="/solve_check" method="POST">
+                    <input type="text" name="tx_solve"/>
+                    <br>
+                    <input type="submit" value="SOLVE"/>
+                </form>
+            """)))}/*80.15*/else/*80.20*/{_display_(Seq[Any](format.raw/*80.21*/("""
+                """),format.raw/*81.17*/("""<form action="/solve_check" method="POST">
+                """),_display_(/*82.18*/for(solve <- solves) yield /*82.38*/ {_display_(Seq[Any](format.raw/*82.40*/(""" 
+                    """),format.raw/*83.21*/("""<div>"""),_display_(/*83.27*/solve),format.raw/*83.32*/("""</div>
+                    <input type="radio" name="tx_solve"/>
+                """)))}),format.raw/*85.18*/("""
+                """),format.raw/*86.17*/("""<br>
+                <input type="submit" value="SOLVE"/>
+                </form>
+            """)))}),format.raw/*89.14*/("""
+        """),format.raw/*90.9*/("""</div>
+            
         </div>
         </div>
         
@@ -136,11 +149,11 @@ Seq[Any](format.raw/*1.147*/("""
 object shimon extends shimon_Scope0.shimon
               /*
                   -- GENERATED --
-                  DATE: Mon Jan 18 19:36:41 JST 2016
+                  DATE: Mon Jan 25 19:21:01 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/shimon.scala.html
-                  HASH: ec241abf58ef679149f0cbf4610caab62f3c2131
-                  MATRIX: 812->1|1053->146|1083->150|1473->514|1487->520|1548->560|2181->1165|2210->1166|2252->1180|2603->1504|2632->1505|2669->1515|3165->1984|3199->1997|3255->2026|3295->2050|3335->2052|3381->2070|3414->2076|3442->2083|3494->2104|3545->2128|3642->2198|3674->2214|3714->2216|3760->2234|3793->2240|3817->2243|3869->2264|3912->2280|4016->2357|4066->2391|4106->2393|4152->2411|4185->2417|4218->2429|4270->2454|4316->2484|4356->2486|4406->2508|4439->2514|4470->2524|4526->2549|4572->2568|4608->2588|4648->2590|4698->2612|4731->2618|4757->2623|4813->2648|4877->2681|4928->2705
-                  LINES: 27->1|32->1|34->3|39->8|39->8|39->8|58->27|58->27|59->28|65->34|65->34|66->35|79->48|79->48|81->50|81->50|81->50|82->51|82->51|82->51|83->52|85->54|89->58|89->58|89->58|90->59|90->59|90->59|91->60|93->62|97->66|97->66|97->66|98->67|98->67|98->67|99->68|99->68|99->68|100->69|100->69|100->69|101->70|102->71|102->71|102->71|103->72|103->72|103->72|104->73|106->75|108->77
+                  HASH: 8a1ab0d917499acaeb5059b24e8842b1ff8e4bb6
+                  MATRIX: 812->1|1053->146|1083->150|1473->514|1487->520|1548->560|2181->1165|2210->1166|2252->1180|2603->1504|2632->1505|2669->1515|3185->2004|3219->2017|3275->2046|3315->2070|3355->2072|3401->2090|3434->2096|3462->2103|3514->2124|3565->2148|3652->2208|3684->2224|3724->2226|3770->2244|3803->2250|3827->2253|3879->2274|3922->2290|4026->2367|4076->2401|4116->2403|4162->2421|4195->2427|4228->2439|4280->2460|4322->2475|4368->2505|4408->2507|4454->2525|4487->2531|4518->2541|4570->2562|4626->2591|4657->2613|4696->2614|4742->2632|4985->2857|4998->2862|5037->2863|5083->2881|5171->2942|5207->2962|5247->2964|5298->2987|5331->2993|5357->2998|5472->3082|5518->3100|5647->3198|5684->3208
+                  LINES: 27->1|32->1|34->3|39->8|39->8|39->8|58->27|58->27|59->28|65->34|65->34|66->35|81->50|81->50|83->52|83->52|83->52|84->53|84->53|84->53|85->54|87->56|90->59|90->59|90->59|91->60|91->60|91->60|92->61|94->63|98->67|98->67|98->67|99->68|99->68|99->68|100->69|101->70|101->70|101->70|102->71|102->71|102->71|103->72|105->74|105->74|105->74|106->75|111->80|111->80|111->80|112->81|113->82|113->82|113->82|114->83|114->83|114->83|116->85|117->86|120->89|121->90
                   -- GENERATED --
               */
           

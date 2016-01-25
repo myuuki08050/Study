@@ -2,6 +2,7 @@ package controllers;
 
 import play.*;
 import play.mvc.*;
+import play.cache.Cache;
 import views.html.*;
 import play.data.DynamicForm;
 import play.data.Form;
@@ -17,6 +18,7 @@ import java.net.*;
 
 public class UserInf extends Controller {
     
+    
     public Result ShowLogin() {
         return ok(login.render());
     }
@@ -26,7 +28,7 @@ public class UserInf extends Controller {
     }
     
     public Result LoginJudge(){
-        String[] params = { "user_id" , "password" };
+        String[] params = { "user_id" , "password" , "tag[0]"};
         DynamicForm input = Form.form();
         input = input.bindFromRequest(params);
         String user_id = input.data().get("user_id");
@@ -47,21 +49,26 @@ public class UserInf extends Controller {
             StringBuilder msg = new StringBuilder();
             for (User user : users) {
                 if(user.user_id.equals(user_id) && user.password.equals(password)){
-                    user.logindate = new Date();
+                    //セッション管理
+                    Cache.set("nowuser", user);
+              
+                    //ユーザ情報更新
                     user.logintimes++;
+                    user.save();
+                    
                     return ok(home.render(user.user_id,user.password,String.valueOf(user.logintimes)));
                 }
             }
         }
         
-        /* return badRequest("そのIDは登録されていないか、パスワードが違います。"); */
+        //return badRequest("そのIDは登録されていないか、パスワードが違います。"); 
         
         List<User> users = User.finder.all();
         StringBuilder msg = new StringBuilder();
         for (User user : users) {
             msg.append(user.toString()).append("\n");
         }
-        return badRequest("user_id " + user_id + ",password  " + password + "\n" + msg.toString());
+        return badRequest("user_id " + user_id + ",password  " + password +  "\n" + msg.toString());
     }
     
     public Result NewRegister(){
@@ -70,6 +77,7 @@ public class UserInf extends Controller {
         input = input.bindFromRequest(params);
         String user_id = input.data().get("user_id");
         String password = input.data().get("password");
+        String isAdmin = input.data().get("tag[0]");
         
         // 入力チェック
         if ((user_id == null || user_id.trim().equals("")) && (password == null || password.trim().equals(""))) {
@@ -103,6 +111,14 @@ public class UserInf extends Controller {
                 newuser.user_id = user_id;
                 newuser.password = password;
                 newuser.logintimes = 0;
+                
+                if(isAdmin.equals("on") == true){
+                    newuser.isAdmin = true;
+                }
+                else{
+                    newuser.isAdmin = false;
+                }
+                
                 newuser.save();
                         
                 //データベースの内容表示
@@ -110,9 +126,9 @@ public class UserInf extends Controller {
                 for (User user : users) {
                     msg.append(user.toString()).append("\n");
                 }
-                return ok(regicomplete.render(""/*msg.toString()*/,"",""));
+                //return ok(regicomplete.render(""/*msg.toString()*/,"",""));
             }
         }
-        //return ok(regicomplete.render(user_id,password,String.valueOf(0)));
+        return ok(regicomplete.render(user_id,password,isAdmin,String.valueOf(0)));
     }        
 }

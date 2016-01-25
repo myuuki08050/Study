@@ -91,38 +91,43 @@ public class ShimonManage extends Controller {
                     //問題文の読み込み
                     problem_state = br.readLine();
                     //プログラムの読み込み
-                    String tmp = br.readLine();
-                    for(int i=0 ; i < Integer.parseInt(tmp);i++){
+                    String tmp1 = br.readLine();
+                    for(int i=0 ; i < Integer.parseInt(tmp1);i++){
                         program.add(br.readLine());
                     }
+                    
                     //タグの読み込み
-                    tmp = br.readLine();
-                    for(int i=0 ; i < Integer.parseInt(tmp);i++){
+                    String tmp2 = br.readLine();
+                    for(int i=0 ; i < Integer.parseInt(tmp2);i++){
                         tags.add(br.readLine());
                     }
+                    
                     //小問の読み込み
-                    tmp = br.readLine();
-                    for(int i=0 ; i < Integer.parseInt(tmp);i++){
+                    String tmp3 = br.readLine();
+                    for(int i=0 ;i<Integer.parseInt(tmp3);i++){
                         SmallProblem sp = new SmallProblem();
                         //問題文
                         sp.setProblem(br.readLine());
                         //小問用プログラム
-                        tmp = br.readLine();
-                        for(int j=0 ; j < Integer.parseInt(tmp);j++){
+                        String tmp4 = br.readLine();
+                        for(int j=0 ; j < Integer.parseInt(tmp4);j++){
                             sp.addSubProgram(br.readLine());
                         }
                         //選択肢
-                        tmp = br.readLine();
-                        for(int k=0 ; k < Integer.parseInt(tmp);k++){
+                        String tmp5 = br.readLine();
+                        for(int k=0 ; k < Integer.parseInt(tmp5);k++){
                             sp.addSolve(br.readLine());
                         }
                         s_problems.add(sp);
                     }
-                     br.close();
+                    br.close();
                 }catch (IOException ioe){
                     return badRequest(ioe.toString());        
                 }catch (Exception e){
-                    return badRequest(e.toString());
+                    StringWriter stringWriter = new StringWriter();
+                    PrintWriter printWriter = new PrintWriter( stringWriter );
+                    e.printStackTrace( printWriter );
+                    return badRequest(stringWriter.toString());
                 }
             }
         }
@@ -132,6 +137,7 @@ public class ShimonManage extends Controller {
         List <String> d_sprog = new ArrayList<String>();
         List <String> d_slv = new ArrayList<String>();
         
+      
         for(int i=0; i<s_problems.size() ;i++){
             d_sp.add(s_problems.get(i).getProblem());
             d_sp.add("\n");
@@ -146,6 +152,13 @@ public class ShimonManage extends Controller {
         }
         
         return ok(shimon.render(problem_state,program,tags,d_sp,d_sprog,d_slv));
+    }
+    
+    public Result CheckAnserShimon(){
+        String[] params = { "tx_solve"};
+        DynamicForm input = Form.form();
+        input = input.bindFromRequest(params);    
+        return badRequest("");
     }
     
     public Result MakeShimon(){

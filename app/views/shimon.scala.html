@@ -35,13 +35,15 @@
         </script>
         
         <div id="content">
+        
+        
     	
     	<div class="tabbox">
         
         <p class="tabs">
             <a href="#tab1" class="tab1" onclick="ChangeTab('tab1'); return false;">大問</a>
             <a href="#tab2" class="tab2" onclick="ChangeTab('tab2'); return false;">タグ</a>
-            <a href="#tab3" class="tab3" onclick="ChangeTab('tab3'); return false;">回答</a>
+            <a href="#tab3" class="tab3" onclick="ChangeTab('tab3'); return false;">小問</a>
         </p>
         
         <div id="tab1" class="tab">
@@ -54,7 +56,6 @@
         </div>
 
         <div id="tab2" class="tab">
-        
             @for(tag <- tags) {
                 <div>@tag</div>
             }
@@ -65,17 +66,29 @@
         
             @for(smallproblem <- smallproblems) {
                 <div>@smallproblem</div>
-                @for(subprogram <- subprograms) {
-                    <div>@subprogram</div>
-                }
-                @for(solve <- solves) {
-                    <div>@solve</div>
-                }
-                
+            }
+            @for(subprogram <- subprograms) {
+                <div>@subprogram</div>
             }
             
+            @if(solves.size() == 0){
+                <form action="/solve_check" method="POST">
+                    <input type="text" name="tx_solve"/>
+                    <br>
+                    <input type="submit" value="SOLVE"/>
+                </form>
+            } else {
+                <form action="/solve_check" method="POST">
+                @for(solve <- solves) { 
+                    <div>@solve</div>
+                    <input type="radio" name="tx_solve"/>
+                }
+                <br>
+                <input type="submit" value="SOLVE"/>
+                </form>
+            }
         </div>
-   
+            
         </div>
         </div>
         

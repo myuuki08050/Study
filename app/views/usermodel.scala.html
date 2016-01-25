@@ -1,3 +1,5 @@
+@(user_id: String)(param1: Int)(param2: Int)(param3: Int)(param4: Int)(param5: Int)(param6: Int)
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
@@ -30,8 +32,8 @@
     	
     	(function basic_radar(container) {
             var s1 = {
-            label: 'データ名1',
-            data: [[0, 3],[1, 8],[2, 5],[3, 5],[4, 3],[5, 9]]},
+            label: @user_id,
+            data: [[0, @param1],[1, @param2],[2, @param3],[3, @param4],[4, @param5],[5, @param6]]},
             graph, ticks;
             ticks = [
             [0, "項目1"],

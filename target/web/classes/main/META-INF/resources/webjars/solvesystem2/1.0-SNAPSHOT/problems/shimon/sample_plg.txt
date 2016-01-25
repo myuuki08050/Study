@@ -1,4 +1,4 @@
-﻿次のプログラムを読んで、以下の設問に答えよ。
+次のプログラムを読んで、以下の設問に答えよ。
 6
 #include <stdio.h>
 int main( void )
@@ -20,4 +20,6 @@ Int main(void)
 Void Print_HelloWorld(void){
 	/* “Hello World を出力する */
 }
-0
+2
+A
+B

@@ -8,6 +8,7 @@ import com.avaje.ebean.annotation.CreatedTimestamp;
 import javax.validation.constraints.NotNull;
  
 @Entity
+@PersistenceUnit(name = "usrmodel")
 public class UserModel extends Model {
  
     @ManyToOne

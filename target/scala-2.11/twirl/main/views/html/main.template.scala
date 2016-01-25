@@ -21,37 +21,61 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class main extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template2[String,Html,play.twirl.api.HtmlFormat.Appendable] {
+class main extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template2[String,Form[User],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(title: String)(content: Html):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(title: String)(form: Form[User]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.32*/("""
+Seq[Any](format.raw/*1.35*/("""
 
-"""),format.raw/*3.1*/("""<!DOCTYPE html>
-
-<html lang="en">
+"""),format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
     <head>
-        <title>"""),_display_(/*7.17*/title),format.raw/*7.22*/("""</title>
-        <link rel="stylesheet" media="screen" href=""""),_display_(/*8.54*/routes/*8.60*/.Assets.versioned("stylesheets/main.css")),format.raw/*8.101*/("""">
-        <link rel="shortcut icon" type="image/png" href=""""),_display_(/*9.59*/routes/*9.65*/.Assets.versioned("images/favicon.png")),format.raw/*9.104*/("""">
-        <script src=""""),_display_(/*10.23*/routes/*10.29*/.Assets.versioned("javascripts/hello.js")),format.raw/*10.70*/("""" type="text/javascript"></script>
-    </head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" media="screen" href=""""),_display_(/*8.54*/routes/*8.60*/.Assets.versioned("stylesheets/top.css")),format.raw/*8.100*/("""">
+        <title>User Login</title>
     <body>
-        """),_display_(/*13.10*/content),format.raw/*13.17*/("""
-    """),format.raw/*14.5*/("""</body>
-</html>
-"""))
+     <div id="pagebody">
+    
+    	<!-- ヘッダ -->
+    	<div id="header"><h1>User Login</h1></div>
+    	
+    	<!-- メインメニュー -->
+    	<ul id="menu">
+    		<li id="menu01"><a href="/login">LOGIN</a></li>
+    		<li id="menu02"><a href="xxx.html">HOME</a></li>
+    		<li id="menu03"><a href="xxx.html">PROBREM</a></li>
+    		<li id="menu04"><a href="xxx.html">SOLVE</a></li>
+    		<li id="menu05"><a href="xxx.html">INFOMATION</a></li>
+    	</ul>
+    	
+    	<div id="content">
+        <h1>ログイン</h1>
+    
+        """),_display_(/*28.10*/helper/*28.16*/.form(action = routes.Application.auth)/*28.55*/ {_display_(Seq[Any](format.raw/*28.57*/("""
+        	"""),_display_(/*29.11*/helper/*29.17*/.inputText(form("user_id"))),format.raw/*29.44*/("""
+        	"""),_display_(/*30.11*/helper/*30.17*/.inputPassword(form("password"))),format.raw/*30.49*/("""
+        	"""),format.raw/*31.10*/("""<input type="submit" value="LOGIN"/>
+        """)))}),format.raw/*32.10*/("""
+        
+        """),format.raw/*34.9*/("""<h1><a href="/register">新規登録</a></h1>
+        
+        </div>
+        </div>
+        
+    </body>
+</html>"""))
       }
     }
   }
 
-  def render(title:String,content:Html): play.twirl.api.HtmlFormat.Appendable = apply(title)(content)
+  def render(title:String,form:Form[User]): play.twirl.api.HtmlFormat.Appendable = apply(title)(form)
 
-  def f:((String) => (Html) => play.twirl.api.HtmlFormat.Appendable) = (title) => (content) => apply(title)(content)
+  def f:((String) => (Form[User]) => play.twirl.api.HtmlFormat.Appendable) = (title) => (form) => apply(title)(form)
 
   def ref: this.type = this
 
@@ -64,11 +88,11 @@ Seq[Any](format.raw/*1.32*/("""
 object main extends main_Scope0.main
               /*
                   -- GENERATED --
-                  DATE: Mon Dec 21 08:39:21 JST 2015
+                  DATE: Tue Jan 26 03:32:59 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/main.scala.html
-                  HASH: 1d71e5a57e6705098fc1b5447ce76b35638f9469
-                  MATRIX: 748->1|873->31|901->33|988->94|1013->99|1101->161|1115->167|1177->208|1264->269|1278->275|1338->314|1390->339|1405->345|1467->386|1561->453|1589->460|1621->465
-                  LINES: 27->1|32->1|34->3|38->7|38->7|39->8|39->8|39->8|40->9|40->9|40->9|41->10|41->10|41->10|44->13|44->13|45->14
+                  HASH: c894716157efc64c2c26adb0d3c56ce1e06cb60d
+                  MATRIX: 754->1|882->34|910->36|1295->395|1309->401|1370->441|1950->994|1965->1000|2013->1039|2053->1041|2091->1052|2106->1058|2154->1085|2192->1096|2207->1102|2260->1134|2298->1144|2375->1190|2420->1208
+                  LINES: 27->1|32->1|34->3|39->8|39->8|39->8|59->28|59->28|59->28|59->28|60->29|60->29|60->29|61->30|61->30|61->30|62->31|63->32|65->34
                   -- GENERATED --
               */
           

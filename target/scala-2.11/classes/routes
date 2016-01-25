@@ -3,15 +3,13 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
-
+GET     /                           controllers.Application.showTop()
 # add page
-GET     /top                        controllers.SystemTop.index()
-GET     /login                      controllers.UserInf.ShowLogin()
+GET     /login                      controllers.Application.showLogin()
 GET     /home                       controllers.UserInf.LoginJudge()
 POST    /home                       controllers.UserInf.LoginJudge()
-GET     /register                   controllers.UserInf.ShowRegister()
-POST    /regicomplete               controllers.UserInf.NewRegister()
+GET     /register                   controllers.Application.showNewRegister()
+POST    /regicomplete               controllers.Application.NewRegister()
 POST    /shimon                     controllers.ShimonManage.ShowShimon()
 GET     /shimon_fregi               controllers.ShimonManage.ShowFShimonregi()
 POST    /shimon_fregi               controllers.ShimonManage.ShowFShimonregi()
@@ -22,6 +20,12 @@ POST    /doril_fregi                controllers.DorilManage.ShowFDorilregi()
 POST    /doril_regicomp             controllers.DorilManage.MakeDoril()
 POST    /user_model                 controllers.ModelManage.ShowUserModel()
 
+# test
+GET		/logout		controllers.Application.logout()
+POST	/auth		controllers.Application.auth()
+POST    /newregi    controllers.Application.NewRegister()
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
+

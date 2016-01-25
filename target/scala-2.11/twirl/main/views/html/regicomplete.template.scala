@@ -21,22 +21,20 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class regicomplete extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template3[String,String,String,play.twirl.api.HtmlFormat.Appendable] {
+class regicomplete extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(user_id: String)(password: String)(logintimes: String):play.twirl.api.HtmlFormat.Appendable = {
+  def apply():play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.57*/("""
-
-"""),format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
+Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link rel="stylesheet" media="screen" href=""""),_display_(/*8.54*/routes/*8.60*/.Assets.versioned("stylesheets/top.css")),format.raw/*8.100*/("""">
+        <link rel="stylesheet" media="screen" href=""""),_display_(/*6.54*/routes/*6.60*/.Assets.versioned("stylesheets/top.css")),format.raw/*6.100*/("""">
         <title>REGISTER COMPLETE</title>
     <body>
         <div id="pagebody">
@@ -69,9 +67,9 @@ Seq[Any](format.raw/*1.57*/("""
     }
   }
 
-  def render(user_id:String,password:String,logintimes:String): play.twirl.api.HtmlFormat.Appendable = apply(user_id)(password)(logintimes)
+  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
 
-  def f:((String) => (String) => (String) => play.twirl.api.HtmlFormat.Appendable) = (user_id) => (password) => (logintimes) => apply(user_id)(password)(logintimes)
+  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
 
   def ref: this.type = this
 
@@ -84,11 +82,11 @@ Seq[Any](format.raw/*1.57*/("""
 object regicomplete extends regicomplete_Scope0.regicomplete
               /*
                   -- GENERATED --
-                  DATE: Tue Jan 19 02:15:46 JST 2016
+                  DATE: Tue Jan 26 04:34:41 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/regicomplete.scala.html
-                  HASH: f7409f9afbceadcc959fa40e9ae3afcfed53026a
-                  MATRIX: 773->1|923->56|951->58|1336->417|1350->423|1411->463
-                  LINES: 27->1|32->1|34->3|39->8|39->8|39->8
+                  HASH: 42f1003a2b4a8c9b251b09e3f8c850e523a6cc4f
+                  MATRIX: 841->0|1226->359|1240->365|1301->405
+                  LINES: 32->1|37->6|37->6|37->6
                   -- GENERATED --
               */
           
