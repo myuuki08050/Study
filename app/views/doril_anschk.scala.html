@@ -1,0 +1,38 @@
+@(doril_state: String)(doril_tag: String)
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/top.css")">
+        <title>Doril Solve</title>
+    </head>
+    <body>
+     <div id="pagebody">
+    
+    	<!-- ヘッダ -->
+    	<div id="header"><h1>Doril Solve</h1></div>
+    	
+    	<!-- メインメニュー -->
+    	<ul id="menu">
+    		<li id="menu01"><a href="/login">LOGIN</a></li>
+    		<li id="menu02"><a href="/home">HOME</a></li>
+    		<li id="menu03"><a href="xxx.html">PROBREM</a></li>
+    		<li id="menu04"><a href="xxx.html">SOLVE</a></li>
+    		<li id="menu05"><a href="/logout">LOGOUT</a></li>
+    	</ul>
+    
+        <div id="content">
+            <div>@doril_state</div>
+            <div>(タグ：@doril_tag)</div>
+            <br>
+            <form action="/doril_solve" method="POST">
+                <input type="submit" id="image-btn1" name=d_solve value="maru" />
+                <input type="submit" id="image-btn2" name=d_solve value="batu" />
+            </form>
+            </div>
+        </div>
+    </div>    
+    </body>
+</html>

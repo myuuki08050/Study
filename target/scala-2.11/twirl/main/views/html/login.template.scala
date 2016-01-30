@@ -47,10 +47,10 @@ Seq[Any](format.raw/*1.35*/("""
     	<!-- メインメニュー -->
     	<ul id="menu">
     		<li id="menu01"><a href="/login">LOGIN</a></li>
-    		<li id="menu02"><a href="xxx.html">HOME</a></li>
+    		<li id="menu02"><a href="/home">HOME</a></li>
     		<li id="menu03"><a href="xxx.html">PROBREM</a></li>
     		<li id="menu04"><a href="xxx.html">SOLVE</a></li>
-    		<li id="menu05"><a href="xxx.html">INFOMATION</a></li>
+    		<li id="menu05"><a href="/logout">LOGOUT</a></li>
     	</ul>
     	
     	<div id="content">
@@ -88,10 +88,10 @@ Seq[Any](format.raw/*1.35*/("""
 object login extends login_Scope0.login
               /*
                   -- GENERATED --
-                  DATE: Tue Jan 26 04:34:41 JST 2016
+                  DATE: Sat Jan 30 20:31:12 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/login.scala.html
-                  HASH: 343679bbef8084c54fb488925890f8f7feb6ea92
-                  MATRIX: 756->1|884->34|912->36|1297->395|1311->401|1372->441|1929->971|1955->976|2002->996|2017->1002|2065->1041|2105->1043|2143->1054|2158->1060|2206->1087|2244->1098|2259->1104|2312->1136|2350->1146|2427->1192|2472->1210
+                  HASH: 59bb58bdb5b44c070083c94cfe2db0402e969f1d
+                  MATRIX: 756->1|884->34|912->36|1297->395|1311->401|1372->441|1921->963|1947->968|1994->988|2009->994|2057->1033|2097->1035|2135->1046|2150->1052|2198->1079|2236->1090|2251->1096|2304->1128|2342->1138|2419->1184|2464->1202
                   LINES: 27->1|32->1|34->3|39->8|39->8|39->8|57->26|57->26|59->28|59->28|59->28|59->28|60->29|60->29|60->29|61->30|61->30|61->30|62->31|63->32|65->34
                   -- GENERATED --
               */

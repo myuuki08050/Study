@@ -190,6 +190,7 @@
 [0m[[0minfo[0m] [0m[0m
 [0m[[0minfo[0m] [0m(Server started, use Ctrl+D to stop and go back to the console...)[0m
 [0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
 [0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'dorilproblem'[0m
 [0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [dorilproblem] connected at jdbc:h2:mem:dorilprobrem[0m
 [0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'mainproblem'[0m
@@ -200,7 +201,7 @@
 [0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
 [0m[[31merror[0m] [0m- application - [0m
 [0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m! @6oponb3gb - Internal server error, for (GET) [/] ->[0m
+[0m[[0minfo[0m] [0m! @6p185b56e - Internal server error, for (GET) [/logout] ->[0m
 [0m[[0minfo[0m] [0m [0m
 [0m[[0minfo[0m] [0mplay.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.][0m
 [0m[[0minfo[0m] [0m	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:76) ~[play-jdbc-evolutions_2.11-2.4.0.jar:2.4.0][0m
@@ -262,102 +263,7 @@
 [0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'usrmodel'[0m
 [0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
 [0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
-[0m[[31merror[0m] [0m- akka.actor.ActorSystemImpl - Uncaught fatal error from thread [application-akka.actor.default-dispatcher-4] shutting down ActorSystem [application][0m
-[0m[[0minfo[0m] [0mjava.lang.IncompatibleClassChangeError: Expecting non-static method controllers.Application.index()Lplay/mvc/Result;[0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$1$$anonfun$apply$1.apply(Routes.scala:457) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$1$$anonfun$apply$1.apply(Routes.scala:457) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) ~[akka-actor_2.11-2.3.13.jar:na][0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.13.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m--- (RELOAD) ---[0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
-[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
-[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
-[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'dorilproblem'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [dorilproblem] connected at jdbc:h2:mem:dorilprobrem[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'mainproblem'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [mainproblem] connected at jdbc:h2:mem:mainproblem[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:mem:default[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'usrmodel'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
-[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
-[0m[[31merror[0m] [0m- akka.actor.ActorSystemImpl - Uncaught fatal error from thread [application-akka.actor.default-dispatcher-7] shutting down ActorSystem [application][0m
-[0m[[0minfo[0m] [0mjava.lang.IncompatibleClassChangeError: Expecting non-static method controllers.Application.index()Lplay/mvc/Result;[0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$1$$anonfun$apply$1.apply(Routes.scala:457) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$1$$anonfun$apply$1.apply(Routes.scala:457) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) ~[akka-actor_2.11-2.3.13.jar:na][0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.13.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na][0m
+[0m[[33mwarn[0m] [0m- application - application.langs is deprecated, use play.i18n.langs instead[0m
 [0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
 [0m[[0minfo[0m] [0m[0m
 [0m[[0minfo[0m] [0m--- (RELOAD) ---[0m
@@ -376,260 +282,102 @@
 [0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
 [0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
 [0m[[33mwarn[0m] [0m- application - application.langs is deprecated, use play.i18n.langs instead[0m
-[0m[[31merror[0m] [0m- play.core.server.netty.PlayDefaultUpstreamHandler - Cannot invoke the action[0m
-[0m[[0minfo[0m] [0mjava.lang.NullPointerException: null[0m
-[0m[[0minfo[0m] [0m	at controllers.Application.auth(Application.java:28) ~[classes/:2.4.3][0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$19$$anonfun$apply$19.apply(Routes.scala:565) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$19$$anonfun$apply$19.apply(Routes.scala:565) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [akka-actor_2.11-2.3.13.jar:na][0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.13.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na][0m
-[0m[[31merror[0m] [0m- application - [0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
 [0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m! @6oponnl18 - Internal server error, for (POST) [/auth] ->[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[0minfo[0m] [0mplay.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPointerException: null]][0m
-[0m[[0minfo[0m] [0m	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:191) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.GlobalSettings$class.onError(GlobalSettings.scala:179) [play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.DefaultGlobal$.onError(GlobalSettings.scala:212) [play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:94) [play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:273) [play-netty-server_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$3.applyOrElse(PlayDefaultUpstreamHandler.scala:269) [play-netty-server_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.executeScheduled(Execution.scala:109) [play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:71) [play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:23) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [akka-actor_2.11-2.3.13.jar:na][0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.13.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0mCaused by: java.lang.NullPointerException: null[0m
-[0m[[0minfo[0m] [0m	at controllers.Application.auth(Application.java:28) ~[classes/:2.4.3][0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$19$$anonfun$apply$19.apply(Routes.scala:565) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$19$$anonfun$apply$19.apply(Routes.scala:565) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) [play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	... 6 common frames omitted[0m
+[0m[[0minfo[0m] [0m--- (RELOAD) ---[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'dorilproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [dorilproblem] connected at jdbc:h2:mem:dorilprobrem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'mainproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [mainproblem] connected at jdbc:h2:mem:mainproblem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:mem:default[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'usrmodel'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
+[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
+[0m[[33mwarn[0m] [0m- application - application.langs is deprecated, use play.i18n.langs instead[0m
 [0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[Application.LoginForm])[0m
-[0m[[31merror[0m] [0m^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[Application.LoginForm])[0m
-[0m[[31merror[0m] [0m                                        ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:40: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m</html>[0m
-[0m[[31merror[0m] [0m       ^[0m
-[0m[[31merror[0m] [0mthree errors found[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[Application.LoginForm])[0m
-[0m[[31merror[0m] [0m^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[Application.LoginForm])[0m
-[0m[[31merror[0m] [0m                                        ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:40: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m</html>[0m
-[0m[[31merror[0m] [0m       ^[0m
-[0m[[31merror[0m] [0mthree errors found[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[Application.LoginForm])[0m
-[0m[[31merror[0m] [0m^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[Application.LoginForm])[0m
-[0m[[31merror[0m] [0m                                        ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:40: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m</html>[0m
-[0m[[31merror[0m] [0m       ^[0m
-[0m[[31merror[0m] [0mthree errors found[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[Application.LoginForm])[0m
-[0m[[31merror[0m] [0m^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[Application.LoginForm])[0m
-[0m[[31merror[0m] [0m                                        ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:42: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m</html>[0m
-[0m[[31merror[0m] [0m       ^[0m
-[0m[[31merror[0m] [0mthree errors found[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[controllers.Application.LoginForm])[0m
-[0m[[31merror[0m] [0m^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[controllers.Application.LoginForm])[0m
-[0m[[31merror[0m] [0m                                                    ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:40: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m</html>[0m
-[0m[[31merror[0m] [0m       ^[0m
-[0m[[31merror[0m] [0mthree errors found[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[controllers.Application.LoginForm])[0m
-[0m[[31merror[0m] [0m^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[controllers.Application.LoginForm])[0m
-[0m[[31merror[0m] [0m                                                    ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:31: reference to form is ambiguous;[0m
-[0m[[0minfo[0m] [0mit is both defined in method apply and imported subsequently by [0m
-[0m[[0minfo[0m] [0mimport helper._[0m
-[0m[[31merror[0m] [0m        	@helper.inputText(form("user_id"))[0m
-[0m[[31merror[0m] [0m        	                  ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:32: reference to form is ambiguous;[0m
-[0m[[0minfo[0m] [0mit is both defined in method apply and imported subsequently by [0m
-[0m[[0minfo[0m] [0mimport helper._[0m
-[0m[[31merror[0m] [0m        	@helper.inputPassword(form("password"))[0m
-[0m[[31merror[0m] [0m        	                      ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:42: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m</html>[0m
-[0m[[31merror[0m] [0m       ^[0m
-[0m[[31merror[0m] [0m5 errors found[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[Application.LoginForm])[0m
-[0m[[31merror[0m] [0m^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[Application.LoginForm])[0m
-[0m[[31merror[0m] [0m                                        ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:40: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m</html>[0m
-[0m[[31merror[0m] [0m       ^[0m
-[0m[[31merror[0m] [0mthree errors found[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[Application.LoginForm])[0m
-[0m[[31merror[0m] [0m^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[Application.LoginForm])[0m
-[0m[[31merror[0m] [0m                                        ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:40: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m</html>[0m
-[0m[[31merror[0m] [0m       ^[0m
-[0m[[31merror[0m] [0mthree errors found[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[Application.LoginForm])[0m
-[0m[[31merror[0m] [0m^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[Application.LoginForm])[0m
-[0m[[31merror[0m] [0m                                        ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:40: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m</html>[0m
-[0m[[31merror[0m] [0m       ^[0m
-[0m[[31merror[0m] [0mthree errors found[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[Application.LoginForm])[0m
-[0m[[31merror[0m] [0m^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[Application.LoginForm])[0m
-[0m[[31merror[0m] [0m                                        ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:40: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m</html>[0m
-[0m[[31merror[0m] [0m       ^[0m
-[0m[[31merror[0m] [0mthree errors found[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[Application.LoginForm])[0m
-[0m[[31merror[0m] [0m^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:1: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m@(title: String)(form: Form[Application.LoginForm])[0m
-[0m[[31merror[0m] [0m                                        ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\main.scala.html:40: type LoginForm is not a member of object controllers.Application[0m
-[0m[[31merror[0m] [0m</html>[0m
-[0m[[31merror[0m] [0m       ^[0m
-[0m[[31merror[0m] [0mthree errors found[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:8:  エラー: シンボルを見つけられません[0m
-[0m[[31merror[0m] [0mimport play.data.Form.form;[0m
-[0m[[0minfo[0m] [0m                     ^[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
 [0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:11:  エラー: ';'がありません[0m
-[0m[[31merror[0m] [0mimport models.*[0m
-[0m[[0minfo[0m] [0m               ^[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m--- (RELOAD) ---[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'dorilproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [dorilproblem] connected at jdbc:h2:mem:dorilprobrem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'mainproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [mainproblem] connected at jdbc:h2:mem:mainproblem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:mem:default[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'usrmodel'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
+[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
+[0m[[33mwarn[0m] [0m- application - application.langs is deprecated, use play.i18n.langs instead[0m
 [0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:16:  エラー: 不適合な型: 推論型が等価制約に適合しません[0m
-[0m[[31merror[0m] [0m		return ok(main.render("ログインしてください。", form(User.class)));[0m
-[0m[[0minfo[0m] [0m		                                         ^[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m--- (RELOAD) ---[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'dorilproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [dorilproblem] connected at jdbc:h2:mem:dorilprobrem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'mainproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [mainproblem] connected at jdbc:h2:mem:mainproblem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:mem:default[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'usrmodel'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
+[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
+[0m[[33mwarn[0m] [0m- application - application.langs is deprecated, use play.i18n.langs instead[0m
 [0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:21:  エラー: シンボルを見つけられません[0m
-[0m[[31merror[0m] [0m	   Form<LoginForm> inputForm = form(User.class).bindFromRequest();[0m
-[0m[[0minfo[0m] [0m	        ^[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m--- (RELOAD) ---[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'dorilproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [dorilproblem] connected at jdbc:h2:mem:dorilprobrem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'mainproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [mainproblem] connected at jdbc:h2:mem:mainproblem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:mem:default[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'usrmodel'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
+[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
+[0m[[33mwarn[0m] [0m- application - application.langs is deprecated, use play.i18n.langs instead[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\DorilManage.java:143:  エラー: 不適合な型: Stringをbooleanに変換できません:[0m
+[0m[[31merror[0m] [0m        if(input.data().get("d_solve") + " ".equals(doril_solve)){[0m
+[0m[[0minfo[0m] [0m                                       ^[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m--- (RELOAD) ---[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'dorilproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [dorilproblem] connected at jdbc:h2:mem:dorilprobrem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'mainproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [mainproblem] connected at jdbc:h2:mem:mainproblem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:mem:default[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'usrmodel'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
+[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
+[0m[[33mwarn[0m] [0m- application - application.langs is deprecated, use play.i18n.langs instead[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
 [0m[[0minfo[0m] [0m[0m
 [0m[[0minfo[0m] [0m--- (RELOAD) ---[0m
 [0m[[0minfo[0m] [0m[0m
@@ -650,61 +398,34 @@
 [0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
 [0m[[0minfo[0m] [0mCompiling 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
 [0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0mCompiling 4 Scala sources and 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\conf\routes:8: type Aplication is not a member of package controllers[0m
-[0m[[31merror[0m] [0mGET     /login                      controllers.Aplication.index()[0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\conf\routes:8: type Aplication is not a member of package controllers[0m
-[0m[[31merror[0m] [0mGET     /login                      controllers.Aplication.index()[0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\conf\routes:8: type Aplication is not a member of package controllers[0m
-[0m[[31merror[0m] [0mGET     /login                      controllers.Aplication.index()[0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[31merror[0m] [0mthree errors found[0m
-[0m[[0minfo[0m] [0mCompiling 4 Scala sources and 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\conf\routes:8: type Aplication is not a member of package controllers[0m
-[0m[[31merror[0m] [0mGET     /login                      controllers.Aplication.index()[0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\conf\routes:8: type Aplication is not a member of package controllers[0m
-[0m[[31merror[0m] [0mGET     /login                      controllers.Aplication.index()[0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\conf\routes:8: type Aplication is not a member of package controllers[0m
-[0m[[31merror[0m] [0mGET     /login                      controllers.Aplication.index()[0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[31merror[0m] [0mthree errors found[0m
-[0m[[0minfo[0m] [0mCompiling 4 Scala sources and 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:27:  エラー: シンボルを見つけられません[0m
-[0m[[31merror[0m] [0m            List<User> users = User.finder.all();[0m
-[0m[[0minfo[0m] [0m            ^[0m
-[0m[[0minfo[0m] [0mCompiling 4 Scala sources and 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:30:  エラー: シンボルを見つけられません[0m
-[0m[[31merror[0m] [0m            List<User> users = User.finder.all();[0m
-[0m[[0minfo[0m] [0m            ^[0m
-[0m[[0minfo[0m] [0mCompiling 4 Scala sources and 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:51:  エラー: シンボルを見つけられません[0m
-[0m[[31merror[0m] [0m		return redirect(routes.SystemTop.index());[0m
-[0m[[0minfo[0m] [0m		                      ^[0m
-[0m[[0minfo[0m] [0mCompiling 4 Scala sources and 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:50: `.' character expected[0m
-[0m[[31merror[0m] [0m		return redirect(routes..index());[0m
-[0m[[31merror[0m] [0m		                       ^[0m
-[0m[[31merror[0m] [0mone error found[0m
-[0m[[0minfo[0m] [0mCompiling 4 Scala sources and 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:28:  エラー: シンボルを見つけられません[0m
-[0m[[31merror[0m] [0m            return redirect(routes.Application.index());[0m
-[0m[[0minfo[0m] [0m                                              ^[0m
-[0m[[0minfo[0m] [0mCompiling 4 Scala sources and 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0m		return redirect(routes.Application.ShowLogin());[0m
-[0m[[0minfo[0m] [0m		                                  ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:45:  エラー: シンボルを見つけられません[0m
-[0m[[0minfo[0m] [0mCompiling 4 Scala sources and 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0mCompiling 18 Scala sources and 11 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\MySecured.java:19:  エラー: シンボルを見つけられません[0m
-[0m[[31merror[0m] [0m		return redirect(routes.Application.index());[0m
-[0m[[0minfo[0m] [0m		                                  ^[0m
-[0m[[0minfo[0m] [0mCompiling 5 Scala sources and 5 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0mCompiling 18 Scala sources and 11 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0mCompiling 3 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\models\Shimon.java:24:  エラー: シンボルを見つけられません[0m
+[0m[[31merror[0m] [0m        return "Problem [problem_id=" + String.valueOf(problem_id) + ", problem_name=" + problem_name + ", solve_name=" + problem_name + "]"; [0m
+[0m[[0minfo[0m] [0m                                                       ^[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\ShimonManage.java:330:  エラー: シンボルを見つけられません[0m
+[0m[[31merror[0m] [0m        newshimon.problem_id = shimons.size() + 1;[0m
+[0m[[0minfo[0m] [0m                 ^[0m
+[0m[[0minfo[0m] [0mCompiling 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\ShimonManage.java:330:  エラー: 不適合な型: intをLongに変換できません:[0m
+[0m[[31merror[0m] [0m        newshimon.id = shimons.size() + 1;[0m
+[0m[[0minfo[0m] [0m                                      ^[0m
+[0m[[0minfo[0m] [0mCompiling 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\DorilManage.java:198:  エラー: 不適合な型: intをLongに変換できません:[0m
+[0m[[31merror[0m] [0m        newdoril.problem_id = dorils.size() + 1;[0m
+[0m[[0minfo[0m] [0m                                            ^[0m
+[0m[[0minfo[0m] [0mCompiling 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\DorilManage.java:143:  エラー: ')'がありません[0m
+[0m[[31merror[0m] [0m        if((input.data().get("d_solve").equals(doril_solve)){[0m
+[0m[[0minfo[0m] [0m                                                            ^[0m
+[0m[[0minfo[0m] [0mCompiling 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
 [0m[[0minfo[0m] [0m[0m
 [0m[[0minfo[0m] [0m--- (RELOAD) ---[0m
 [0m[[0minfo[0m] [0m[0m
@@ -722,7 +443,7 @@
 [0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
 [0m[[31merror[0m] [0m- application - [0m
 [0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m! @6opp7fmj4 - Internal server error, for (GET) [/] ->[0m
+[0m[[0minfo[0m] [0m! @6p18am22k - Internal server error, for (GET) [/logout] ->[0m
 [0m[[0minfo[0m] [0m [0m
 [0m[[0minfo[0m] [0mplay.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.][0m
 [0m[[0minfo[0m] [0m	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:76) ~[play-jdbc-evolutions_2.11-2.4.0.jar:2.4.0][0m
@@ -776,34 +497,37 @@
 [0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.6.jar:na][0m
 [0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.6.jar:na][0m
 [0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'dorilproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [dorilproblem] connected at jdbc:h2:mem:dorilprobrem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'mainproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [mainproblem] connected at jdbc:h2:mem:mainproblem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:mem:default[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'usrmodel'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
+[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
+[0m[[33mwarn[0m] [0m- application - application.langs is deprecated, use play.i18n.langs instead[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\ModelManage.java:44:  エラー: パッケージusrmodelは存在しません[0m
+[0m[[31merror[0m] [0m        return ok(usermodel.render(usrmodel.user.user_id,usrmodel.param1,usrmodel.param2,usrmodel.param3,usrmodel.param4,usrmodel.param5,usrmodel.param6));[0m
+[0m[[0minfo[0m] [0m                                           ^[0m
+[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\ModelManage.java:44:  エラー: シンボルを見つけられません[0m
+[0m[[31merror[0m] [0m        return ok(usermodel.render(usrmodel.user.user_id,usrmodel.param1,usrmodel.param2,usrmodel.param3,usrmodel.param4,usrmodel.param5,usrmodel.param6));[0m
+[0m[[0minfo[0m] [0m                                                         ^[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
 [0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
 [0m[[0minfo[0m] [0mCompiling 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0m        DynamicForm input = Form.form();[0m
-[0m[[0minfo[0m] [0m        ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:50:  エラー: シンボルを見つけられません[0m
-[0m[[0minfo[0m] [0mCompiling 7 Scala sources and 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\conf\routes:27: value Newregister is not a member of controllers.Application[0m
-[0m[[31merror[0m] [0mPOST    /newregi    controllers.Application.Newregister()[0m
 [0m[[0minfo[0m] [0m[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\register.scala.html:28: value NewRegister is not a member of controllers.ReverseApplication[0m
-[0m[[31merror[0m] [0m        @helper.form(action = routes.Application.NewRegister) {[0m
-[0m[[31merror[0m] [0m                                                 ^[0m
-[0m[[31merror[0m] [0mtwo errors found[0m
-[0m[[0minfo[0m] [0mCompiling 7 Scala sources and 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:69:  エラー: ';'がありません[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:70:  エラー: ';'がありません[0m
-[0m[[31merror[0m] [0m            newuser.password = inputForm.get().password);[0m
-[0m[[0minfo[0m] [0m                                                       ^[0m
-[0m[[31merror[0m] [0m            newuser.user_id = inputForm.get().user_id);[0m
-[0m[[0minfo[0m] [0m                                                     ^[0m
-[0m[[0minfo[0m] [0mCompiling 7 Scala sources and 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:56:  エラー: シンボルを見つけられません[0m
-[0m[[31merror[0m] [0m            return redirect(routes.Application.showNewRegister());[0m
-[0m[[0minfo[0m] [0m                                              ^[0m
-[0m[[0minfo[0m] [0mCompiling 7 Scala sources and 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0mCompiling 3 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0mCompiling 3 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0m--- (RELOAD) ---[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
 [0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'dorilproblem'[0m
 [0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [dorilproblem] connected at jdbc:h2:mem:dorilprobrem[0m
 [0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'mainproblem'[0m
@@ -814,7 +538,7 @@
 [0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
 [0m[[31merror[0m] [0m- application - [0m
 [0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m! @6oppb5e6n - Internal server error, for (GET) [/] ->[0m
+[0m[[0minfo[0m] [0m! @6p18cbcmb - Internal server error, for (GET) [/login] ->[0m
 [0m[[0minfo[0m] [0m [0m
 [0m[[0minfo[0m] [0mplay.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.][0m
 [0m[[0minfo[0m] [0m	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:76) ~[play-jdbc-evolutions_2.11-2.4.0.jar:2.4.0][0m
@@ -862,663 +586,93 @@
 [0m[[0minfo[0m] [0m	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:111) ~[play-server_2.11-2.4.3.jar:2.4.3][0m
 [0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
 [0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(Unknown Source) ~[na:1.8.0_71][0m
-[0m[[0minfo[0m] [0m	at java.util.concurrent.ForkJoinTask.doExec(Unknown Source) ~[na:1.8.0_71][0m
-[0m[[0minfo[0m] [0m	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(Unknown Source) ~[na:1.8.0_71][0m
-[0m[[0minfo[0m] [0m	at java.util.concurrent.ForkJoinPool.runWorker(Unknown Source) ~[na:1.8.0_71][0m
-[0m[[0minfo[0m] [0m	at java.util.concurrent.ForkJoinWorkerThread.run(Unknown Source) ~[na:1.8.0_71][0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'dorilproblem'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [dorilproblem] connected at jdbc:h2:mem:dorilprobrem[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'mainproblem'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [mainproblem] connected at jdbc:h2:mem:mainproblem[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:mem:default[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'usrmodel'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
-[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
-[0m[[33mwarn[0m] [0m- application - application.langs is deprecated, use play.i18n.langs instead[0m
-[0m[[31merror[0m] [0m- application - [0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m! @6oppb765n - Internal server error, for (GET) [/login] ->[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[0minfo[0m] [0mplay.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[IllegalArgumentException: Unmatched braces in the pattern.]][0m
-[0m[[0minfo[0m] [0m	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:191) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.GlobalSettings$class.onError(GlobalSettings.scala:179) [play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.DefaultGlobal$.onError(GlobalSettings.scala:212) [play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:94) [play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$9$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:158) [play-netty-server_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$9$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:155) [play-netty-server_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.util.Failure$$anonfun$recover$1.apply(Try.scala:215) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.util.Try$.apply(Try.scala:191) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.util.Failure.recover(Try.scala:215) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.executeScheduled(Execution.scala:109) [play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:71) [play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:23) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [akka-actor_2.11-2.3.13.jar:na][0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.13.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0mCaused by: java.lang.IllegalArgumentException: Unmatched braces in the pattern.[0m
-[0m[[0minfo[0m] [0m	at java.text.MessageFormat.applyPattern(Unknown Source) ~[na:1.8.0_71][0m
-[0m[[0minfo[0m] [0m	at java.text.MessageFormat.<init>(Unknown Source) ~[na:1.8.0_71][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.DefaultMessagesApi$$anonfun$translate$1.apply(Messages.scala:516) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.DefaultMessagesApi$$anonfun$translate$1.apply(Messages.scala:515) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.DefaultMessagesApi.translate(Messages.scala:515) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.DefaultMessagesApi.apply(Messages.scala:497) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.Messages.apply(Messages.scala:350) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements$$anonfun$infos$2$$anonfun$apply$1.apply(Helpers.scala:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements$$anonfun$infos$2$$anonfun$apply$1.apply(Helpers.scala:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:245) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:245) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.TraversableLike$class.map(TraversableLike.scala:245) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.AbstractTraversable.map(Traversable.scala:104) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements$$anonfun$infos$2.apply(Helpers.scala:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements$$anonfun$infos$2.apply(Helpers.scala:16) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.Option.getOrElse(Option.scala:121) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements.infos(Helpers.scala:15) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.defaultFieldConstructor_Scope0$defaultFieldConstructor.apply(defaultFieldConstructor.template.scala:45) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.defaultFieldConstructor_Scope0$defaultFieldConstructor$$anonfun$f$1.apply(defaultFieldConstructor.template.scala:56) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.defaultFieldConstructor_Scope0$defaultFieldConstructor$$anonfun$f$1.apply(defaultFieldConstructor.template.scala:56) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldConstructor$$anon$1.apply(Helpers.scala:65) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.input_Scope0$input.apply(input.template.scala:25) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.inputText_Scope0$inputText.apply(inputText.template.scala:34) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.login_Scope0$login$$anonfun$apply$1.apply(login.template.scala:60) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at views.html.login_Scope0$login$$anonfun$apply$1.apply(login.template.scala:59) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.form_Scope0$form.apply(form.template.scala:35) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.login_Scope0$login.apply(login.template.scala:59) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at views.html.login_Scope0$login.render(login.template.scala:76) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at views.html.login.render(login.template.scala) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at controllers.Application.showLogin(Application.java:20) ~[classes/:2.4.3][0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.apply(Routes.scala:459) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.apply(Routes.scala:459) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) [play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	... 6 common frames omitted[0m
-[0m[[31merror[0m] [0m- application - [0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m! @6oppb86d3 - Internal server error, for (GET) [/login] ->[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[0minfo[0m] [0mplay.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[IllegalArgumentException: Unmatched braces in the pattern.]][0m
-[0m[[0minfo[0m] [0m	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:191) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.GlobalSettings$class.onError(GlobalSettings.scala:179) [play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.DefaultGlobal$.onError(GlobalSettings.scala:212) [play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:94) [play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$9$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:158) [play-netty-server_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$9$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:155) [play-netty-server_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.util.Failure$$anonfun$recover$1.apply(Try.scala:215) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.util.Try$.apply(Try.scala:191) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.util.Failure.recover(Try.scala:215) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.executeScheduled(Execution.scala:109) [play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:71) [play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:23) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [akka-actor_2.11-2.3.13.jar:na][0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.13.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0mCaused by: java.lang.IllegalArgumentException: Unmatched braces in the pattern.[0m
-[0m[[0minfo[0m] [0m	at java.text.MessageFormat.applyPattern(Unknown Source) ~[na:1.8.0_71][0m
-[0m[[0minfo[0m] [0m	at java.text.MessageFormat.<init>(Unknown Source) ~[na:1.8.0_71][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.DefaultMessagesApi$$anonfun$translate$1.apply(Messages.scala:516) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.DefaultMessagesApi$$anonfun$translate$1.apply(Messages.scala:515) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.DefaultMessagesApi.translate(Messages.scala:515) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.DefaultMessagesApi.apply(Messages.scala:497) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.Messages.apply(Messages.scala:350) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements$$anonfun$infos$2$$anonfun$apply$1.apply(Helpers.scala:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements$$anonfun$infos$2$$anonfun$apply$1.apply(Helpers.scala:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:245) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:245) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.TraversableLike$class.map(TraversableLike.scala:245) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.AbstractTraversable.map(Traversable.scala:104) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements$$anonfun$infos$2.apply(Helpers.scala:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements$$anonfun$infos$2.apply(Helpers.scala:16) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.Option.getOrElse(Option.scala:121) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements.infos(Helpers.scala:15) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.defaultFieldConstructor_Scope0$defaultFieldConstructor.apply(defaultFieldConstructor.template.scala:45) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.defaultFieldConstructor_Scope0$defaultFieldConstructor$$anonfun$f$1.apply(defaultFieldConstructor.template.scala:56) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.defaultFieldConstructor_Scope0$defaultFieldConstructor$$anonfun$f$1.apply(defaultFieldConstructor.template.scala:56) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldConstructor$$anon$1.apply(Helpers.scala:65) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.input_Scope0$input.apply(input.template.scala:25) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.inputText_Scope0$inputText.apply(inputText.template.scala:34) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.login_Scope0$login$$anonfun$apply$1.apply(login.template.scala:60) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at views.html.login_Scope0$login$$anonfun$apply$1.apply(login.template.scala:59) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.form_Scope0$form.apply(form.template.scala:35) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.login_Scope0$login.apply(login.template.scala:59) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at views.html.login_Scope0$login.render(login.template.scala:76) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at views.html.login.render(login.template.scala) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at controllers.Application.showLogin(Application.java:20) ~[classes/:2.4.3][0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.apply(Routes.scala:459) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.apply(Routes.scala:459) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) [play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	... 6 common frames omitted[0m
-[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0mCompiling 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m--- (RELOAD) ---[0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
-[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
-[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
-[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'dorilproblem'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [dorilproblem] connected at jdbc:h2:mem:dorilprobrem[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'mainproblem'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [mainproblem] connected at jdbc:h2:mem:mainproblem[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:mem:default[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'usrmodel'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
-[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
-[0m[[33mwarn[0m] [0m- application - application.langs is deprecated, use play.i18n.langs instead[0m
-[0m[[31merror[0m] [0m- application - [0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m! @6oppbj14a - Internal server error, for (GET) [/login] ->[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[0minfo[0m] [0mplay.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[IllegalArgumentException: Unmatched braces in the pattern.]][0m
-[0m[[0minfo[0m] [0m	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:191) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.GlobalSettings$class.onError(GlobalSettings.scala:179) [play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.DefaultGlobal$.onError(GlobalSettings.scala:212) [play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:94) [play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$9$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:158) [play-netty-server_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$9$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:155) [play-netty-server_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.util.Failure$$anonfun$recover$1.apply(Try.scala:215) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.util.Try$.apply(Try.scala:191) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.util.Failure.recover(Try.scala:215) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.executeScheduled(Execution.scala:109) [play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:71) [play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:23) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [akka-actor_2.11-2.3.13.jar:na][0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.13.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0mCaused by: java.lang.IllegalArgumentException: Unmatched braces in the pattern.[0m
-[0m[[0minfo[0m] [0m	at java.text.MessageFormat.applyPattern(Unknown Source) ~[na:1.8.0_71][0m
-[0m[[0minfo[0m] [0m	at java.text.MessageFormat.<init>(Unknown Source) ~[na:1.8.0_71][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.DefaultMessagesApi$$anonfun$translate$1.apply(Messages.scala:516) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.DefaultMessagesApi$$anonfun$translate$1.apply(Messages.scala:515) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.DefaultMessagesApi.translate(Messages.scala:515) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.DefaultMessagesApi.apply(Messages.scala:497) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.Messages.apply(Messages.scala:350) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements$$anonfun$infos$2$$anonfun$apply$1.apply(Helpers.scala:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements$$anonfun$infos$2$$anonfun$apply$1.apply(Helpers.scala:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:245) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:245) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.TraversableLike$class.map(TraversableLike.scala:245) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.AbstractTraversable.map(Traversable.scala:104) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements$$anonfun$infos$2.apply(Helpers.scala:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements$$anonfun$infos$2.apply(Helpers.scala:16) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.Option.getOrElse(Option.scala:121) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements.infos(Helpers.scala:15) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.defaultFieldConstructor_Scope0$defaultFieldConstructor.apply(defaultFieldConstructor.template.scala:45) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.defaultFieldConstructor_Scope0$defaultFieldConstructor$$anonfun$f$1.apply(defaultFieldConstructor.template.scala:56) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.defaultFieldConstructor_Scope0$defaultFieldConstructor$$anonfun$f$1.apply(defaultFieldConstructor.template.scala:56) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldConstructor$$anon$1.apply(Helpers.scala:65) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.input_Scope0$input.apply(input.template.scala:25) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.inputText_Scope0$inputText.apply(inputText.template.scala:34) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.login_Scope0$login$$anonfun$apply$1.apply(login.template.scala:60) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at views.html.login_Scope0$login$$anonfun$apply$1.apply(login.template.scala:59) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.form_Scope0$form.apply(form.template.scala:35) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.login_Scope0$login.apply(login.template.scala:59) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at views.html.login_Scope0$login.render(login.template.scala:76) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at views.html.login.render(login.template.scala) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at controllers.Application.showLogin(Application.java:20) ~[classes/:2.4.3][0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.apply(Routes.scala:459) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.apply(Routes.scala:459) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) [play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	... 6 common frames omitted[0m
-[0m[[31merror[0m] [0m- application - [0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m! @6oppbke2c - Internal server error, for (GET) [/login] ->[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[0minfo[0m] [0mplay.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[IllegalArgumentException: Unmatched braces in the pattern.]][0m
-[0m[[0minfo[0m] [0m	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:191) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.GlobalSettings$class.onError(GlobalSettings.scala:179) [play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.DefaultGlobal$.onError(GlobalSettings.scala:212) [play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:94) [play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$9$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:158) [play-netty-server_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$9$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:155) [play-netty-server_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.util.Failure$$anonfun$recover$1.apply(Try.scala:215) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.util.Try$.apply(Try.scala:191) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.util.Failure.recover(Try.scala:215) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$$anonfun$recover$1.apply(Future.scala:324) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.executeScheduled(Execution.scala:109) [play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:71) [play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Promise$class.complete(Promise.scala:55) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:23) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) [akka-actor_2.11-2.3.13.jar:na][0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.13.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0mCaused by: java.lang.IllegalArgumentException: Unmatched braces in the pattern.[0m
-[0m[[0minfo[0m] [0m	at java.text.MessageFormat.applyPattern(Unknown Source) ~[na:1.8.0_71][0m
-[0m[[0minfo[0m] [0m	at java.text.MessageFormat.<init>(Unknown Source) ~[na:1.8.0_71][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.DefaultMessagesApi$$anonfun$translate$1.apply(Messages.scala:516) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.DefaultMessagesApi$$anonfun$translate$1.apply(Messages.scala:515) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.DefaultMessagesApi.translate(Messages.scala:515) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.DefaultMessagesApi.apply(Messages.scala:497) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.i18n.Messages.apply(Messages.scala:350) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements$$anonfun$infos$2$$anonfun$apply$1.apply(Helpers.scala:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements$$anonfun$infos$2$$anonfun$apply$1.apply(Helpers.scala:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:245) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:245) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.TraversableLike$class.map(TraversableLike.scala:245) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.collection.AbstractTraversable.map(Traversable.scala:104) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements$$anonfun$infos$2.apply(Helpers.scala:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements$$anonfun$infos$2.apply(Helpers.scala:16) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.Option.getOrElse(Option.scala:121) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldElements.infos(Helpers.scala:15) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.defaultFieldConstructor_Scope0$defaultFieldConstructor.apply(defaultFieldConstructor.template.scala:45) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.defaultFieldConstructor_Scope0$defaultFieldConstructor$$anonfun$f$1.apply(defaultFieldConstructor.template.scala:56) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.defaultFieldConstructor_Scope0$defaultFieldConstructor$$anonfun$f$1.apply(defaultFieldConstructor.template.scala:56) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.FieldConstructor$$anon$1.apply(Helpers.scala:65) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.input_Scope0$input.apply(input.template.scala:25) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.inputText_Scope0$inputText.apply(inputText.template.scala:34) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.login_Scope0$login$$anonfun$apply$1.apply(login.template.scala:60) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at views.html.login_Scope0$login$$anonfun$apply$1.apply(login.template.scala:59) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at views.html.helper.form_Scope0$form.apply(form.template.scala:35) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at views.html.login_Scope0$login.apply(login.template.scala:59) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at views.html.login_Scope0$login.render(login.template.scala:76) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at views.html.login.render(login.template.scala) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at controllers.Application.showLogin(Application.java:20) ~[classes/:2.4.3][0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.apply(Routes.scala:459) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.apply(Routes.scala:459) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) [play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$13.apply(Iteratee.scala:536) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	... 6 common frames omitted[0m
-[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0mCompiling 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m--- (RELOAD) ---[0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
-[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
-[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
-[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'dorilproblem'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [dorilproblem] connected at jdbc:h2:mem:dorilprobrem[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'mainproblem'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [mainproblem] connected at jdbc:h2:mem:mainproblem[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:mem:default[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'usrmodel'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
-[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
-[0m[[33mwarn[0m] [0m- application - application.langs is deprecated, use play.i18n.langs instead[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\register.scala.html:31: not enough arguments for method apply: (field: play.api.data.Field, options: Seq[(String, String)], args: (Symbol, Any)*)(implicit handler: views.html.helper.FieldConstructor, implicit messages: play.api.i18n.Messages)play.twirl.api.HtmlFormat.Appendable in class inputRadioGroup.[0m
-[0m[[0minfo[0m] [0mUnspecified value parameters options, args.[0m
-[0m[[31merror[0m] [0m        	@helper.inputRadioGroup(form("管理者として登録の場合チェック"))[0m
-[0m[[31merror[0m] [0m        	                       ^[0m
-[0m[[31merror[0m] [0mone error found[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\register.scala.html:31: not enough arguments for method apply: (field: play.api.data.Field, options: Seq[(String, String)], args: (Symbol, Any)*)(implicit handler: views.html.helper.FieldConstructor, implicit messages: play.api.i18n.Messages)play.twirl.api.HtmlFormat.Appendable in class inputRadioGroup.[0m
-[0m[[0minfo[0m] [0mUnspecified value parameters options, args.[0m
-[0m[[31merror[0m] [0m        	@helper.inputRadioGroup(form("isAdmin"))[0m
-[0m[[31merror[0m] [0m        	                       ^[0m
-[0m[[31merror[0m] [0mone error found[0m
-[0m[[0minfo[0m] [0mCompiling 6 Scala sources and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\home.scala.html:26: not found: value user_idさん[0m
-[0m[[31merror[0m] [0m            ようこそ@user_idさん。あなたは@logintime回目のログインです。[0m
-[0m[[31merror[0m] [0m                 ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\views\home.scala.html:26: not found: value logintime回目のログインです[0m
-[0m[[31merror[0m] [0m            ようこそ@user_idさん。あなたは@logintime回目のログインです。[0m
-[0m[[31merror[0m] [0m                                ^[0m
-[0m[[31merror[0m] [0mtwo errors found[0m
-[0m[[0minfo[0m] [0mCompiling 6 Scala sources and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0mCompiling 3 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0mCompiling 3 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m--- (RELOAD) ---[0m
-[0m[[0minfo[0m] [0m[0m
-[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
-[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
-[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
-[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'dorilproblem'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [dorilproblem] connected at jdbc:h2:mem:dorilprobrem[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'mainproblem'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [mainproblem] connected at jdbc:h2:mem:mainproblem[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:mem:default[0m
-[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'usrmodel'[0m
-[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
-[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
-[0m[[33mwarn[0m] [0m- application - application.langs is deprecated, use play.i18n.langs instead[0m
-[0m[[31merror[0m] [0m- akka.actor.ActorSystemImpl - Uncaught fatal error from thread [application-akka.actor.default-dispatcher-7] shutting down ActorSystem [application][0m
-[0m[[0minfo[0m] [0mjava.lang.NoSuchMethodError: views.html.home.render(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lplay/twirl/api/Html;[0m
-[0m[[0minfo[0m] [0m	at controllers.Application.auth(Application.java:40) ~[classes/:2.4.3][0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$17$$anonfun$apply$17.apply(Routes.scala:531) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$17$$anonfun$apply$17.apply(Routes.scala:531) ~[classes/:na][0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$.apply(Future.scala:31) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$.apply(Future.scala:492) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction.apply(JavaAction.scala:94) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.Option.map(Option.scala:146) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96) ~[play_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537) ~[play-iteratees_2.11-2.4.3.jar:2.4.3][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library-2.11.6.jar:na][0m
 [0m[[0minfo[0m] [0m	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40) ~[akka-actor_2.11-2.3.13.jar:na][0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) [akka-actor_2.11-2.3.13.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.6.jar:na][0m
-[0m[[0minfo[0m] [0m[ERROR] [01/26/2016 05:12:59.727] [application-akka.actor.default-dispatcher-16] [ActorSystem(application)] Uncaught fatal error from thread [application-akka.actor.default-dispatcher-16] shutting down ActorSystem [application][0m
-[0m[[0minfo[0m] [0mjava.lang.NoSuchMethodError: views.html.home.render(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lplay/twirl/api/Html;[0m
-[0m[[0minfo[0m] [0m	at controllers.Application.auth(Application.java:40)[0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$17$$anonfun$apply$17.apply(Routes.scala:531)[0m
-[0m[[0minfo[0m] [0m	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$17$$anonfun$apply$17.apply(Routes.scala:531)[0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:136)[0m
-[0m[[0minfo[0m] [0m	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:127)[0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:70)[0m
-[0m[[0minfo[0m] [0m	at play.http.DefaultHttpRequestHandler$1.call(DefaultHttpRequestHandler.java:20)[0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94)[0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:94)[0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)[0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)[0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:40)[0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70)[0m
-[0m[[0minfo[0m] [0m	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:32)[0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$.apply(Future.scala:31)[0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.Future$.apply(Future.scala:492)[0m
-[0m[[0minfo[0m] [0m	at play.core.j.JavaAction.apply(JavaAction.scala:94)[0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105)[0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4$$anonfun$apply$5.apply(Action.scala:105)[0m
-[0m[[0minfo[0m] [0m	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)[0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:104)[0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1$$anonfun$apply$4.apply(Action.scala:103)[0m
-[0m[[0minfo[0m] [0m	at scala.Option.map(Option.scala:146)[0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:103)[0m
-[0m[[0minfo[0m] [0m	at play.api.mvc.Action$$anonfun$apply$1.apply(Action.scala:96)[0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524)[0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$mapM$1.apply(Iteratee.scala:524)[0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560)[0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMapM$1.apply(Iteratee.scala:560)[0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537)[0m
-[0m[[0minfo[0m] [0m	at play.api.libs.iteratee.Iteratee$$anonfun$flatMap$1$$anonfun$apply$14.apply(Iteratee.scala:537)[0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)[0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)[0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)[0m
-[0m[[0minfo[0m] [0m	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397)[0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)[0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)[0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)[0m
-[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)[0m
+[0m[[0minfo[0m] [0m	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:397) ~[akka-actor_2.11-2.3.13.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.11.6.jar:na][0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'dorilproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [dorilproblem] connected at jdbc:h2:mem:dorilprobrem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'mainproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [mainproblem] connected at jdbc:h2:mem:mainproblem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:mem:default[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'usrmodel'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
+[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
+[0m[[33mwarn[0m] [0m- application - application.langs is deprecated, use play.i18n.langs instead[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
 [0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m--- (RELOAD) ---[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'dorilproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [dorilproblem] connected at jdbc:h2:mem:dorilprobrem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'mainproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [mainproblem] connected at jdbc:h2:mem:mainproblem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:mem:default[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'usrmodel'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
+[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
 [0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:40:  エラー: 不適合な型: intをStringに変換できません:[0m
-[0m[[31merror[0m] [0m			        session("logintimes", inputForm.get().logintimes);[0m
-[0m[[0minfo[0m] [0m			                                             ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:41:  エラー: クラス homeのメソッド renderは指定された型に適用できません。[0m
-[0m[[31merror[0m] [0m                    return ok(home.render(user.user_id,user.password,String.valueOf(user.logintimes)));[0m
-[0m[[0minfo[0m] [0m                                  ^[0m
-[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:40:  エラー: 不適合な型: intをStringに変換できません:[0m
-[0m[[31merror[0m] [0m			        session("logintimes", inputForm.get().logintimes);[0m
-[0m[[0minfo[0m] [0m			                                             ^[0m
-[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:40:  エラー: シンボルを見つけられません[0m
-[0m[[31merror[0m] [0m			        session("logintimes", String.inputForm.get().logintimes);[0m
-[0m[[0minfo[0m] [0m			                                    ^[0m
-[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:40:  エラー: <identifier>がありません[0m
-[0m[[31merror[0m] [0m			        session("logintimes", String.(inputForm.get().logintimes));[0m
-[0m[[0minfo[0m] [0m			                                     ^[0m
-[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:70:  エラー: 不適合な型: intをLongに変換できません:[0m
-[0m[[31merror[0m] [0m            newuser.id = users.size() + 1;[0m
-[0m[[0minfo[0m] [0m                                      ^[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:70:  エラー: 不適合な型: intをLongに変換できません:[0m
-[0m[[31merror[0m] [0m            newuser.id = (Long)users.size() + (Long)1;[0m
-[0m[[0minfo[0m] [0m                                         ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:70:  エラー: 不適合な型: intをLongに変換できません:[0m
-[0m[[31merror[0m] [0m            newuser.id = (Long)users.size() + (Long)1;[0m
-[0m[[0minfo[0m] [0m                                                    ^[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:70:  エラー: intは間接参照できません[0m
-[0m[[31merror[0m] [0m            newuser.id = users.size().longValue() + 1;[0m
-[0m[[0minfo[0m] [0m                                     ^[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0m            newuser.id = (users.size()+1).longValue();[0m
-[0m[[0minfo[0m] [0m                                         ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:70:  エラー: intは間接参照できません[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:70:  エラー: 不適合な型: intをLongに変換できません:[0m
-[0m[[31merror[0m] [0m            newuser.id = (Long)(users.size() + 1);[0m
-[0m[[0minfo[0m] [0m                               ^[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:70:  エラー: 不適合な型: Longをintに変換できません:[0m
-[0m[[31merror[0m] [0m            (int)newuser.id = users.size() + 1;[0m
-[0m[[0minfo[0m] [0m                        ^[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0m            newuser.id = users.size() + 1;[0m
-[0m[[0minfo[0m] [0m                                      ^[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:70:  エラー: 不適合な型: intをLongに変換できません:[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:72:  エラー: 不適合な型: intをLongに変換できません:[0m
-[0m[[31merror[0m] [0m            newuser.id = (Long)(users.size() + 1);[0m
-[0m[[0minfo[0m] [0m                               ^[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:72:  エラー: 不適合な型: intをLongに変換できません:[0m
-[0m[[31merror[0m] [0m            newuser.id = (Long)(users.size() + 1);[0m
-[0m[[0minfo[0m] [0m                               ^[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:72:  エラー: intは間接参照できません[0m
-[0m[[31merror[0m] [0m            newuser.id = (users.size() + 1).longValue();[0m
-[0m[[0minfo[0m] [0m                                           ^[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:72:  エラー: ';'がありません[0m
-[0m[[31merror[0m] [0m            newuser.id = 1[0m
+[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\ModelManage.java:36:  エラー: 不適合な型: List<UserModel>をUserModelに変換できません:[0m
+[0m[[31merror[0m] [0m            usrmodel = usr.children;[0m
 [0m[[0minfo[0m] [0m                          ^[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:72:  エラー: 不適合な型: intをLongに変換できません:[0m
-[0m[[31merror[0m] [0m            newuser.id = 1;[0m
-[0m[[0minfo[0m] [0m                         ^[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source and 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0mCompiling 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
 [0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0mCompiling 4 Scala sources and 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:22:  エラー: 不適合な型: 型変数Tのインスタンスが存在しないので、Form<T>はStringに適合しません[0m
-[0m[[31merror[0m] [0m		return ok(home.render("ログイン", form(User.class)));[0m
-[0m[[0minfo[0m] [0m		                                  ^[0m
-[0m[[0minfo[0m] [0mCompiling 4 Scala sources and 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:22:  エラー: 不適合な型: 型変数Tのインスタンスが存在しないので、Form<T>はStringに適合しません[0m
-[0m[[31merror[0m] [0m		return ok(home.render("ログイン", form(User.class)));[0m
-[0m[[0minfo[0m] [0m		                                  ^[0m
-[0m[[0minfo[0m] [0mCompiling 4 Scala sources and 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[31merror[0m] [0mC:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:22:  エラー: 不適合な型: 型変数Tのインスタンスが存在しないので、Form<T>はStringに適合しません[0m
-[0m[[31merror[0m] [0m		return ok(home.render("ログイン", form(User.class)));[0m
-[0m[[0minfo[0m] [0m		                                  ^[0m
-[0m[[0minfo[0m] [0mCompiling 4 Scala sources and 2 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
-[0m[[0minfo[0m] [0mCompiling 3 Java sources to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0mCompiling 1 Java source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m--- (RELOAD) ---[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'dorilproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [dorilproblem] connected at jdbc:h2:mem:dorilprobrem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'mainproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [mainproblem] connected at jdbc:h2:mem:mainproblem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:mem:default[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'usrmodel'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
+[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m--- (RELOAD) ---[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'dorilproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [dorilproblem] connected at jdbc:h2:mem:dorilprobrem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'mainproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [mainproblem] connected at jdbc:h2:mem:mainproblem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:mem:default[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'usrmodel'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
+[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m
+[0m[[0minfo[0m] [0mCompiling 1 Scala source to C:\git_local\activator-1.3.6-minimal\SolveSystem2\target\scala-2.11\classes...[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m--- (RELOAD) ---[0m
+[0m[[0minfo[0m] [0m[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Shutting down connection pool.[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'dorilproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [dorilproblem] connected at jdbc:h2:mem:dorilprobrem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'mainproblem'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [mainproblem] connected at jdbc:h2:mem:mainproblem[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'default'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [default] connected at jdbc:h2:mem:default[0m
+[0m[[0minfo[0m] [0m- application - Creating Pool for datasource 'usrmodel'[0m
+[0m[[0minfo[0m] [0m- play.api.db.DefaultDBApi - Database [usrmodel] connected at jdbc:h2:mem:usrmodel[0m
+[0m[[0minfo[0m] [0m- play.api.Play - Application started (Dev)[0m

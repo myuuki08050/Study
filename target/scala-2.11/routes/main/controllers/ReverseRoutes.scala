@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/git_local/activator-1.3.6-minimal/SolveSystem2/conf/routes
-// @DATE:Tue Jan 26 05:52:32 JST 2016
+// @DATE:Sat Jan 30 20:53:02 JST 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -13,20 +13,20 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers {
 
-  // @LINE:29
+  // @LINE:33
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:30
+    // @LINE:34
     def at(file:String): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
     }
   
-    // @LINE:29
+    // @LINE:33
     def versioned(file:Asset): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[Asset]].unbind("file", file))
@@ -34,14 +34,14 @@ package controllers {
   
   }
 
-  // @LINE:21
+  // @LINE:26
   class ReverseModelManage(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:21
+    // @LINE:26
     def ShowUserModel(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "user_model")
@@ -49,31 +49,45 @@ package controllers {
   
   }
 
-  // @LINE:17
+  // @LINE:20
   class ReverseDorilManage(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:17
+    // @LINE:23
+    def CheckAnserDoril(): Call = {
+    
+      () match {
+      
+        // @LINE:23
+        case ()  =>
+          import ReverseRouteContext.empty
+          Call("GET", _prefix + { _defaultPrefix } + "doril_solve")
+      
+      }
+    
+    }
+  
+    // @LINE:20
     def ShowDoril(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "doril")
     }
   
-    // @LINE:20
+    // @LINE:25
     def MakeDoril(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "doril_regicomp")
     }
   
-    // @LINE:18
+    // @LINE:21
     def ShowFDorilregi(): Call = {
     
       () match {
       
-        // @LINE:18
+        // @LINE:21
         case ()  =>
           import ReverseRouteContext.empty
           Call("GET", _prefix + { _defaultPrefix } + "doril_fregi")
@@ -91,7 +105,13 @@ package controllers {
     }
 
   
-    // @LINE:25
+    // @LINE:30
+    def showError(errorstring:String): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "error" + queryString(List(Some(implicitly[QueryStringBindable[String]].unbind("errorstring", errorstring)))))
+    }
+  
+    // @LINE:28
     def auth(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "auth")
@@ -123,7 +143,7 @@ package controllers {
     
     }
   
-    // @LINE:24
+    // @LINE:27
     def logout(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "logout")
@@ -131,8 +151,16 @@ package controllers {
   
     // @LINE:9
     def showHome(): Call = {
-      import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "home")
+    
+      () match {
+      
+        // @LINE:9
+        case ()  =>
+          import ReverseRouteContext.empty
+          Call("GET", _prefix + { _defaultPrefix } + "home")
+      
+      }
+    
     }
   
     // @LINE:8
@@ -150,7 +178,7 @@ package controllers {
     }
 
   
-    // @LINE:16
+    // @LINE:19
     def MakeShimon(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "shimon_regicomp")
@@ -158,16 +186,24 @@ package controllers {
   
     // @LINE:13
     def ShowShimon(): Call = {
-      import ReverseRouteContext.empty
-      Call("POST", _prefix + { _defaultPrefix } + "shimon")
+    
+      () match {
+      
+        // @LINE:13
+        case ()  =>
+          import ReverseRouteContext.empty
+          Call("GET", _prefix + { _defaultPrefix } + "shimon")
+      
+      }
+    
     }
   
-    // @LINE:14
+    // @LINE:17
     def ShowFShimonregi(): Call = {
     
       () match {
       
-        // @LINE:14
+        // @LINE:17
         case ()  =>
           import ReverseRouteContext.empty
           Call("GET", _prefix + { _defaultPrefix } + "shimon_fregi")
@@ -176,19 +212,18 @@ package controllers {
     
     }
   
-  }
-
-  // @LINE:10
-  class ReverseUserInf(_prefix: => String) {
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:10
-    def LoginJudge(): Call = {
-      import ReverseRouteContext.empty
-      Call("POST", _prefix + { _defaultPrefix } + "home")
+    // @LINE:15
+    def CheckAnserShimon(): Call = {
+    
+      () match {
+      
+        // @LINE:15
+        case ()  =>
+          import ReverseRouteContext.empty
+          Call("GET", _prefix + { _defaultPrefix } + "shimon_solve")
+      
+      }
+    
     }
   
   }

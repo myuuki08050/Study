@@ -15,8 +15,8 @@ import play.data.validation.*;
 public class User extends Model {
     
     @Id
-    public int id;
-
+    public Long id;
+    
     public String user_id;
  
     public String password;
@@ -24,6 +24,12 @@ public class User extends Model {
     public int logintimes;
  
     public boolean isAdmin;
+    
+    @CreatedTimestamp
+    public Date createDate;
+ 
+    @Version
+    public Date updateDate;
     
     public static Find<Long,User> finder = new Find<Long,User>(){};
  

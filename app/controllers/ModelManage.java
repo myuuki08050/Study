@@ -5,30 +5,49 @@ import play.mvc.*;
 import views.html.*;
 import play.data.DynamicForm;
 import play.data.Form;
-
+import static play.data.Form.form;
+import play.mvc.Security.Authenticated;
+import play.cache.Cache;
 import play.mvc.Http.MultipartFormData;
 import play.mvc.Http.MultipartFormData.FilePart;
-
 import java.util.*;
- 
-import models.User;
-import models.UserModel;
+import models.*;
+import views.html.*;
 import com.avaje.ebean.Model;
 import com.avaje.ebean.Model.Find;
-
+import com.avaje.ebean.Model.Finder;
+import com.avaje.ebean.Query;
 import java.io.*;
 import java.net.*;
 
 public class ModelManage extends Controller {
     
+    @Authenticated(MySecured.class)
     public Result ShowUserModel(){
-        List<User> nowuser = User.finder.where().gt("isLogin", true).findList();
-        List<UserModel> usrmodels = UserModel.finder.where().gt("user_id", nowuser.get(1).user_id).findList();
+        String user = session("user_id");
+        List<User> usrs = new ArrayList<User>();
+        User usr = new User();
+        List<UserModel> usrmodels = new ArrayList<UserModel>();
+        UserModel usrmodel = new UserModel();
         
-        UserModel usrmodel = usrmodels.get(1);
+        try{
+            usrs = new ArrayList<User>(User.finder.where().eq("user_id", user).findList());
+            usr = usrs.get(0);
+            usrmodels = usr.children;
+            usrmodel = usrmodels.get(0);
+        }
+        catch (Exception e) {
+            StringWriter stringWriter = new StringWriter();
+            PrintWriter printWriter = new PrintWriter( stringWriter );
+            e.printStackTrace( printWriter );
+            return badRequest(stringWriter.toString());
+        }
         
         return ok(usermodel.render(usrmodel.user.user_id,usrmodel.param1,usrmodel.param2,usrmodel.param3,usrmodel.param4,usrmodel.param5,usrmodel.param6));
+    }
     
+    public Result changeUserModel(){
+        return ok(error.render("仮"));
     }
 }
     

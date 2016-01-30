@@ -49,10 +49,10 @@ Seq[Any](format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
     	<!-- メインメニュー -->
     	<ul id="menu">
     		<li id="menu01"><a href="/login">LOGIN</a></li>
-    		<li id="menu02"><a href="xxx.html">HOME</a></li>
+    		<li id="menu02"><a href="/home">HOME</a></li>
     		<li id="menu03"><a href="xxx.html">PROBREM</a></li>
     		<li id="menu04"><a href="xxx.html">SOLVE</a></li>
-    		<li id="menu05"><a href="xxx.html">INFOMATION</a></li>
+    		<li id="menu05"><a href="/logout">LOGOUT</a></li>
     	</ul>
     
         <div id="content">
@@ -68,7 +68,7 @@ Seq[Any](format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
                 <input type="submit" value="UPLOAD">
             """)))}),format.raw/*37.14*/("""
             
-            """),format.raw/*39.13*/("""<h1><a href="/doril_fregi">ホームにもどる</a></h1>
+            """),format.raw/*39.13*/("""<h1><a href="/home">ホームにもどる</a></h1>
     	</div>
         
     </div>    
@@ -94,10 +94,10 @@ Seq[Any](format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object doril_fregister extends doril_fregister_Scope0.doril_fregister_Scope1.doril_fregister
               /*
                   -- GENERATED --
-                  DATE: Tue Jan 19 02:15:46 JST 2016
+                  DATE: Sat Jan 30 20:27:56 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/doril_fregister.scala.html
-                  HASH: a4e8d177a795a4e4931863088f614596d06c9b53
-                  MATRIX: 901->20|1291->384|1305->390|1366->430|2017->1054|2104->1132|2144->1134|2190->1152|2478->1409|2534->1437
+                  HASH: ffe8b7eb2b7e34a5a45f7b731c91de3416206010
+                  MATRIX: 901->20|1291->384|1305->390|1366->430|2009->1046|2096->1124|2136->1126|2182->1144|2470->1401|2526->1429
                   LINES: 35->3|40->8|40->8|40->8|61->29|61->29|61->29|62->30|69->37|71->39
                   -- GENERATED --
               */

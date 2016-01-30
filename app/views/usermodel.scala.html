@@ -18,22 +18,23 @@
     	<!-- メインメニュー -->
     	<ul id="menu">
     		<li id="menu01"><a href="/login">LOGIN</a></li>
-    		<li id="menu02"><a href="xxx.html">HOME</a></li>
+    		<li id="menu02"><a href="/home">HOME</a></li>
     		<li id="menu03"><a href="xxx.html">PROBREM</a></li>
     		<li id="menu04"><a href="xxx.html">SOLVE</a></li>
-    		<li id="menu05"><a href="xxx.html">INFOMATION</a></li>
+    		<li id="menu05"><a href="/logout">LOGOUT</a></li>
     	</ul>
     
         <div id="content">
             <div id="graph"></div>
             <h1><a href="/home">ホームにもどる</a></h1>
     	</div>
+    	
     	<script type="text/javascript">
     	
     	(function basic_radar(container) {
             var s1 = {
-            label: @user_id,
-            data: [[0, @param1],[1, @param2],[2, @param3],[3, @param4],[4, @param5],[5, @param6]]},
+            label: "Aさん",
+            data: [[0, 100],[1, 100],[2, 100],[3, 100],[4, 100],[5, 100]]},
             graph, ticks;
             ticks = [
             [0, "項目1"],
@@ -50,8 +51,8 @@
                     minorHorizontalLines: true},  //細かい（マイナーな）水平の罫線を表示する
                 yaxis: {    //yaxisはy軸。この場合は中心から各頂点への軸
                     min: 0,
-                    max: 10,
-                    minorTickFreq: 2},  //小目盛りのテキストを表示する頻度
+                    max: 100,
+                    minorTickFreq: 10},  //小目盛りのテキストを表示する頻度
                 xaxis: {ticks: ticks},  //xaxisはx軸。変数ticksを各頂点に表示
                 legend: {
                     position: 'se',

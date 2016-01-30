@@ -46,10 +46,10 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
     	<!-- メインメニュー -->
     	<ul id="menu">
     		<li id="menu01"><a href="/login">LOGIN</a></li>
-    		<li id="menu02"><a href="xxx.html">HOME</a></li>
+    		<li id="menu02"><a href="/home">HOME</a></li>
     		<li id="menu03"><a href="xxx.html">PROBREM</a></li>
     		<li id="menu04"><a href="xxx.html">SOLVE</a></li>
-    		<li id="menu05"><a href="xxx.html">INFOMATION</a></li>
+    		<li id="menu05"><a href="/logout">LOGOUT</a></li>
     	</ul>
     
     <div id="content">
@@ -79,9 +79,9 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object top extends top_Scope0.top
               /*
                   -- GENERATED --
-                  DATE: Mon Jan 11 18:07:08 JST 2016
+                  DATE: Sat Jan 30 20:32:58 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/top.scala.html
-                  HASH: 1dab4856a32532a7f22e13d37c6382be96241f8a
+                  HASH: 3666a113541820615e59b33761bf943634ba5635
                   MATRIX: 823->0|1213->364|1227->370|1288->410
                   LINES: 32->1|37->6|37->6|37->6
                   -- GENERATED --

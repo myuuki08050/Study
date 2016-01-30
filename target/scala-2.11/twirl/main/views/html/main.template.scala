@@ -50,7 +50,7 @@ Seq[Any](format.raw/*1.35*/("""
     		<li id="menu02"><a href="xxx.html">HOME</a></li>
     		<li id="menu03"><a href="xxx.html">PROBREM</a></li>
     		<li id="menu04"><a href="xxx.html">SOLVE</a></li>
-    		<li id="menu05"><a href="xxx.html">INFOMATION</a></li>
+    		<li id="menu05"><a href="/logout">LOGOUT</a></li>
     	</ul>
     	
     	<div id="content">
@@ -88,10 +88,10 @@ Seq[Any](format.raw/*1.35*/("""
 object main extends main_Scope0.main
               /*
                   -- GENERATED --
-                  DATE: Tue Jan 26 03:32:59 JST 2016
+                  DATE: Fri Jan 29 21:30:34 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/main.scala.html
-                  HASH: c894716157efc64c2c26adb0d3c56ce1e06cb60d
-                  MATRIX: 754->1|882->34|910->36|1295->395|1309->401|1370->441|1950->994|1965->1000|2013->1039|2053->1041|2091->1052|2106->1058|2154->1085|2192->1096|2207->1102|2260->1134|2298->1144|2375->1190|2420->1208
+                  HASH: 9b4e85ea2f072dfd8878e07738cdaacbeeadbfba
+                  MATRIX: 754->1|882->34|910->36|1295->395|1309->401|1370->441|1945->989|1960->995|2008->1034|2048->1036|2086->1047|2101->1053|2149->1080|2187->1091|2202->1097|2255->1129|2293->1139|2370->1185|2415->1203
                   LINES: 27->1|32->1|34->3|39->8|39->8|39->8|59->28|59->28|59->28|59->28|60->29|60->29|60->29|61->30|61->30|61->30|62->31|63->32|65->34
                   -- GENERATED --
               */

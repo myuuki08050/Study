@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/git_local/activator-1.3.6-minimal/SolveSystem2/conf/routes
-// @DATE:Tue Jan 26 05:52:32 JST 2016
+// @DATE:Sat Jan 30 20:53:02 JST 2016
 
 package controllers;
 
@@ -14,7 +14,6 @@ public class routes {
   public static final controllers.ReverseDorilManage DorilManage = new controllers.ReverseDorilManage(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseApplication Application = new controllers.ReverseApplication(RoutesPrefix.byNamePrefix());
   public static final controllers.ReverseShimonManage ShimonManage = new controllers.ReverseShimonManage(RoutesPrefix.byNamePrefix());
-  public static final controllers.ReverseUserInf UserInf = new controllers.ReverseUserInf(RoutesPrefix.byNamePrefix());
 
   public static class javascript {
     
@@ -23,7 +22,6 @@ public class routes {
     public static final controllers.javascript.ReverseDorilManage DorilManage = new controllers.javascript.ReverseDorilManage(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseApplication Application = new controllers.javascript.ReverseApplication(RoutesPrefix.byNamePrefix());
     public static final controllers.javascript.ReverseShimonManage ShimonManage = new controllers.javascript.ReverseShimonManage(RoutesPrefix.byNamePrefix());
-    public static final controllers.javascript.ReverseUserInf UserInf = new controllers.javascript.ReverseUserInf(RoutesPrefix.byNamePrefix());
   }
 
 }

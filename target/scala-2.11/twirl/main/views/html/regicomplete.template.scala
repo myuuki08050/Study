@@ -45,7 +45,7 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
         	<!-- メインメニュー -->
         	<ul id="menu">
         		<li id="menu01"><a href="/login">LOGIN</a></li>
-        		<li id="menu02"><a href="xxx.html">HOME</a></li>
+        		<li id="menu02"><a href="/home">HOME</a></li>
         		<li id="menu03"><a href="xxx.html">PROBREM</a></li>
         		<li id="menu04"><a href="xxx.html">SOLVE</a></li>
         		<li id="menu05"><a href="xxx.html">INFOMATION</a></li>
@@ -82,9 +82,9 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object regicomplete extends regicomplete_Scope0.regicomplete
               /*
                   -- GENERATED --
-                  DATE: Tue Jan 26 04:34:41 JST 2016
+                  DATE: Sat Jan 30 20:31:12 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/regicomplete.scala.html
-                  HASH: 42f1003a2b4a8c9b251b09e3f8c850e523a6cc4f
+                  HASH: 2243ccd328b0220c54489d3fd485e995fbcf2dc1
                   MATRIX: 841->0|1226->359|1240->365|1301->405
                   LINES: 32->1|37->6|37->6|37->6
                   -- GENERATED --

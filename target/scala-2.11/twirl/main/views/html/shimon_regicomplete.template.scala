@@ -46,10 +46,10 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
     	<!-- メインメニュー -->
     	<ul id="menu">
     		<li id="menu01"><a href="/login">LOGIN</a></li>
-    		<li id="menu02"><a href="xxx.html">HOME</a></li>
+    		<li id="menu02"><a href="/home">HOME</a></li>
     		<li id="menu03"><a href="xxx.html">PROBREM</a></li>
     		<li id="menu04"><a href="xxx.html">SOLVE</a></li>
-    		<li id="menu05"><a href="xxx.html">INFOMATION</a></li>
+    		<li id="menu05"><a href="/logout">LOGOUT</a></li>
     	</ul>
     
         <div id="content">
@@ -83,9 +83,9 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object shimon_regicomplete extends shimon_regicomplete_Scope0.shimon_regicomplete
               /*
                   -- GENERATED --
-                  DATE: Mon Jan 18 21:08:49 JST 2016
+                  DATE: Sat Jan 30 20:32:58 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/shimon_regicomplete.scala.html
-                  HASH: aa1819bcdb1bec93c74126be9213501f1b2331d7
+                  HASH: f746b586d5dfc096b45132a4f4e3e7448f9fa4a8
                   MATRIX: 855->0|1245->364|1259->370|1320->410
                   LINES: 32->1|37->6|37->6|37->6
                   -- GENERATED --

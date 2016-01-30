@@ -12,15 +12,21 @@ import javax.validation.constraints.NotNull;
 public class Shimon extends Model {
  
     @Id
-    public int problem_id;
+    public Long id;
  
     public String problem_name;
     
     public String solve_name;
     
+    @CreatedTimestamp
+    public Date createDate;
+ 
+    @Version
+    public Date updateDate;
+    
     public static Find<Long,Shimon> finder = new Find<Long,Shimon>(){};
   
     public String toString() {
-        return "Problem [problem_id=" + String.valueOf(problem_id) + ", problem_name=" + problem_name + ", solve_name=" + problem_name + "]"; 
+        return "Problem [id=" + String.valueOf(id) + ", problem_name=" + problem_name + ", solve_name=" + problem_name + "]"; 
     }
 }

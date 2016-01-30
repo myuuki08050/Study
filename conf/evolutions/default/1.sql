@@ -4,17 +4,21 @@
 # --- !Ups
 
 create table doril (
-  problem_id                integer not null,
+  problem_id                bigint not null,
   problem_name              varchar(255),
   solve_name                varchar(255),
+  create_date               timestamp not null,
+  update_date               timestamp not null,
   constraint pk_doril primary key (problem_id))
 ;
 
 create table shimon (
-  problem_id                integer not null,
+  id                        bigint not null,
   problem_name              varchar(255),
   solve_name                varchar(255),
-  constraint pk_shimon primary key (problem_id))
+  create_date               timestamp not null,
+  update_date               timestamp not null,
+  constraint pk_shimon primary key (id))
 ;
 
 create table user (
@@ -23,10 +27,13 @@ create table user (
   password                  varchar(255),
   logintimes                integer,
   is_admin                  boolean,
+  create_date               timestamp not null,
+  update_date               timestamp not null,
   constraint pk_user primary key (id))
 ;
 
 create table user_model (
+  id                        bigint not null,
   user_id                   bigint,
   param1                    integer not null,
   param2                    integer not null,
@@ -35,7 +42,8 @@ create table user_model (
   param5                    integer not null,
   param6                    integer not null,
   create_date               timestamp not null,
-  update_date               timestamp not null)
+  update_date               timestamp not null,
+  constraint pk_user_model primary key (id))
 ;
 
 create sequence doril_seq;
@@ -43,6 +51,8 @@ create sequence doril_seq;
 create sequence shimon_seq;
 
 create sequence user_seq;
+
+create sequence user_model_seq;
 
 alter table user_model add constraint fk_user_model_user_1 foreign key (user_id) references user (id) on delete restrict on update restrict;
 create index ix_user_model_user_1 on user_model (user_id);
@@ -68,4 +78,6 @@ drop sequence if exists doril_seq;
 drop sequence if exists shimon_seq;
 
 drop sequence if exists user_seq;
+
+drop sequence if exists user_model_seq;
 

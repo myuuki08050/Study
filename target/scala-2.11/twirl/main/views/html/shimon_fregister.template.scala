@@ -49,10 +49,10 @@ Seq[Any](format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
     	<!-- メインメニュー -->
     	<ul id="menu">
     		<li id="menu01"><a href="/login">LOGIN</a></li>
-    		<li id="menu02"><a href="xxx.html">HOME</a></li>
+    		<li id="menu02"><a href="/home">HOME</a></li>
     		<li id="menu03"><a href="xxx.html">PROBREM</a></li>
     		<li id="menu04"><a href="xxx.html">SOLVE</a></li>
-    		<li id="menu05"><a href="xxx.html">INFOMATION</a></li>
+    		<li id="menu05"><a href="/logout">LOGOUT</a></li>
     	</ul>
     
         <div id="content">
@@ -94,10 +94,10 @@ Seq[Any](format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object shimon_fregister extends shimon_fregister_Scope0.shimon_fregister_Scope1.shimon_fregister
               /*
                   -- GENERATED --
-                  DATE: Tue Jan 19 02:15:46 JST 2016
+                  DATE: Sat Jan 30 20:32:58 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/shimon_fregister.scala.html
-                  HASH: 9427d95cf3e999c97dc35fa3e67a3a5b6ca2bb27
-                  MATRIX: 904->20|1294->384|1308->390|1369->430|2022->1056|2111->1136|2151->1138|2197->1156|2487->1415|2543->1443
+                  HASH: 0e4ca354f000827c6584c5c1522327caff329208
+                  MATRIX: 904->20|1294->384|1308->390|1369->430|2014->1048|2103->1128|2143->1130|2189->1148|2479->1407|2535->1435
                   LINES: 35->3|40->8|40->8|40->8|61->29|61->29|61->29|62->30|69->37|71->39
                   -- GENERATED --
               */

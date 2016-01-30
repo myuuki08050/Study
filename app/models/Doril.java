@@ -12,11 +12,17 @@ import javax.validation.constraints.NotNull;
 public class Doril extends Model {
  
     @Id
-    public int problem_id;
+    public Long problem_id;
  
     public String problem_name;
     
     public String solve_name;
+    
+    @CreatedTimestamp
+    public Date createDate;
+ 
+    @Version
+    public Date updateDate;
     
     public static Find<Long,Doril> finder = new Find<Long,Doril>(){};
   

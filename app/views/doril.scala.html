@@ -1,4 +1,4 @@
-@(problem_state: String)(programs: List[String])(tags: List[String])(smallproblems: List[String])(subprograms: List[String])(solves: List[String])
+@(doril_state: String)(doril_tag: String)
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -17,72 +17,22 @@
     	<!-- メインメニュー -->
     	<ul id="menu">
     		<li id="menu01"><a href="/login">LOGIN</a></li>
-    		<li id="menu02"><a href="xxx.html">HOME</a></li>
+    		<li id="menu02"><a href="/home">HOME</a></li>
     		<li id="menu03"><a href="xxx.html">PROBREM</a></li>
     		<li id="menu04"><a href="xxx.html">SOLVE</a></li>
-    		<li id="menu05"><a href="xxx.html">INFOMATION</a></li>
+    		<li id="menu05"><a href="/logout">LOGOUT</a></li>
     	</ul>
-    	
-    	<script type="text/javascript">
-            function ChangeTab(tabname) {
-            // タブメニュー実装
-            document.getElementById('tab1').style.display = 'none';
-            document.getElementById('tab2').style.display = 'none';
-            document.getElementById('tab3').style.display = 'none';
-            // タブメニュー実装
-            document.getElementById(tabname).style.display = 'block';
-        }
-        </script>
-        
+    
         <div id="content">
-    	
-    	<div class="tabbox">
-        
-        <p class="tabs">
-            <a href="#tab1" class="tab1" onclick="ChangeTab('tab1'); return false;">大問</a>
-            <a href="#tab2" class="tab2" onclick="ChangeTab('tab2'); return false;">タグ</a>
-            <a href="#tab3" class="tab3" onclick="ChangeTab('tab3'); return false;">回答</a>
-        </p>
-        
-        <div id="tab1" class="tab">
-            @problem_state
-            
-            @for(program <- programs) {
-                <div>@program</div>
-            }
-            
+            <div>@doril_state</div>
+            <div>(タグ：@doril_tag)</div>
+            <br>
+            <form action="/doril_solve" method="POST">
+                <input type="submit" id="image-btn1" name="d_solve" value="maru" />
+                <input type="submit" id="image-btn2" name="d_solve" value="batu" />
+            </form>
+            </div>
         </div>
-
-        <div id="tab2" class="tab">
-        
-            @for(tag <- tags) {
-                <div>@tag</div>
-            }
-            
-　      </div>
-
-        <div id="tab3" class="tab">
-        
-            @for(smallproblem <- smallproblems) {
-                <div>@smallproblem</div>
-                @for(subprogram <- subprograms) {
-                    <div>@subprogram</div>
-                }
-                @for(solve <- solves) {
-                    <div>@solve</div>
-                }
-                
-            }
-            
-        </div>
-   
-        </div>
-        </div>
-        
-        <script type="text/javascript">
-            ChangeTab('tab1');
-        </script>
-        
     </div>    
     </body>
 </html>
