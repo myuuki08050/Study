@@ -4,18 +4,25 @@
 # --- !Ups
 
 create table doril (
-  problem_id                bigint not null,
-  problem_name              varchar(255),
-  solve_name                varchar(255),
+  id                        bigint not null,
+  tag                       varchar(255) not null,
+  problem_name              varchar(255) not null,
+  solve_name                varchar(255) not null,
   create_date               timestamp not null,
   update_date               timestamp not null,
-  constraint pk_doril primary key (problem_id))
+  constraint pk_doril primary key (id))
 ;
 
 create table shimon (
   id                        bigint not null,
-  problem_name              varchar(255),
-  solve_name                varchar(255),
+  tag1                      boolean not null,
+  tag2                      boolean not null,
+  tag3                      boolean not null,
+  tag4                      boolean not null,
+  tag5                      boolean not null,
+  tag6                      boolean not null,
+  problem_name              varchar(255) not null,
+  solve_name                varchar(255) not null,
   create_date               timestamp not null,
   update_date               timestamp not null,
   constraint pk_shimon primary key (id))

@@ -20,7 +20,7 @@ import java.net.*;
 
 public class DorilManage extends Controller {
     //何問出題するか
-    public static final int doril_size = 5;
+    public static final int doril_max = 5;
     
     @Authenticated(MySecured.class)
     public Result ShowFDorilregi(){
@@ -31,36 +31,39 @@ public class DorilManage extends Controller {
     public Result ShowDoril(){
         
         List<Doril> doril_s = Doril.finder.all();
-        int doril_num = 1/*doril_s.size() */;
-        int seed = 0;
+        int doril_num = doril_s.size();
+        int seed = -1;
         Doril d = new Doril();
         
-        String doril_state = new String();
+        List<String> doril_state = new ArrayList<String>();
         String doril_tag = new String();
 
         BufferedReader br = null;
         Random rnd = new Random();
         
         //問題を出題中かキャッシュから判断する
-        if((int)Cache.get("doril_size") < doril_size){
+        if((int)Cache.get("doril_size") < doril_max){
             if(Cache.get("doril_seed") == null){
                 if(doril_num > 0){
-                    seed = 1 + rnd.nextInt(doril_num);
-                
+                    seed = rnd.nextInt(doril_num);
                     Cache.remove("doril_seed");
                     Cache.set("doril_seed", seed);
                     
                     int ssize = (int)Cache.get("doril_size") + 1;
                     Cache.set("doril_size",ssize);
                 
-                    if(true/*seed > 0*/){
-                        //d = dorils.get(seed);
+                    if(seed >= 0){
+                        d = doril_s.get(seed);
                         try{
-                            File file = Play.application().getFile("/public/problems/doril/" + "sample_doril.txt"/*d.problem_name*/);
+                            File file = Play.application().getFile("/public/problems/doril/" + d.problem_name);
                             br = new BufferedReader(new InputStreamReader(new FileInputStream(file),"UTF-8"));
                     
                             //問題文の読み込み
-                            doril_state = br.readLine();
+                            String tmp = br.readLine();
+                            for(int i=0;i < Integer.parseInt(tmp);i++){
+                                doril_state.add(br.readLine());
+                            }
+                            
                             Cache.remove("doril_state");
                             Cache.set("doril_state", doril_state);
                         
@@ -82,11 +85,18 @@ public class DorilManage extends Controller {
                 }
             }
             else{
-                doril_state = (String)Cache.get("doril_state");
+                doril_state = new ArrayList<String>((ArrayList<String>)Cache.get("doril_state"));
                 doril_tag = (String)Cache.get("doril_tag");
             }
         }
         else{
+            Cache.remove("doril_size");
+            Cache.remove("doril_seed");
+            Cache.remove("doril_state");
+            Cache.remove("doril_tag");
+            Cache.remove("doril_slv_seed");
+            Cache.remove("doril_solve");
+            Cache.remove("doril_commentary");
             return ok(error.render("ドリル終了ですの"));
         }
             
@@ -103,15 +113,15 @@ public class DorilManage extends Controller {
         Doril d = new Doril();
         int seed = (int)Cache.get("doril_seed");
         String doril_solve = new String();
-        String doril_commentary = new String();
+        List<String> doril_commentary = new ArrayList<String>();
         BufferedReader br = null;
         
         if(Cache.get("doril_slv_seed") == null){
-            //d = dorils_s.get(seed);
+            d = doril_s.get(seed);
             Cache.remove("doril_slv_seed");
             Cache.set("doril_slv_seed", seed);
             try{
-                File file = Play.application().getFile("/public/problems/doril_solve/" + "sample_doril_ans.txt"/*d.solve_name*/);
+                File file = Play.application().getFile("/public/problems/doril_solve/" + d.solve_name);
                 br = new BufferedReader(new InputStreamReader(new FileInputStream(file),"UTF-8"));
                 
                 //回答の読み込み
@@ -120,7 +130,11 @@ public class DorilManage extends Controller {
                 Cache.set("doril_solve", doril_solve);
                 
                 //解説の読み込み
-                doril_commentary = br.readLine();
+                String tmp = br.readLine();
+                for(int i=0 ; i < Integer.parseInt(tmp);i++){
+                    doril_commentary.add(br.readLine());
+                }
+                
                 Cache.remove("doril_commentary");
                 Cache.set("doril_commentary", doril_commentary);
                 
@@ -137,25 +151,21 @@ public class DorilManage extends Controller {
         }
         else{
             doril_solve = (String)Cache.get("doril_solve");
-            doril_commentary = (String)Cache.get("doril_commentary");
+            doril_commentary = new ArrayList<String>((ArrayList<String>)Cache.get("doril_commentary"));
         }
         
         if(input.data().get("d_solve").equals(doril_solve)){
             //正解によるパラメータ変化
-                
-            return ok(error.render("正解なのだ"));
+            return redirect(routes.ModelManage.d_changeUserModel((String)Cache.get("doril_tag"),5,"true"));
         }
         else{
             //不正解によるパラメータ変化
-            
-            return ok(error.render(input.data().get("d_solve") + " = " + doril_solve));
+            return redirect(routes.ModelManage.d_changeUserModel((String)Cache.get("doril_tag"),-5,"false"));
         }
-            
-        // ok(error.render(input.data().get("d_solve1")));
     }
     
     @Authenticated(MySecured.class)
-     public Result MakeDoril(){
+    public Result MakeDoril(){
         String fileName = "";
         String fileName2 = "";
         MultipartFormData body = request().body().asMultipartFormData();
@@ -191,14 +201,39 @@ public class DorilManage extends Controller {
              return redirect(routes.DorilManage.ShowFDorilregi());
         }
         
-        List<Doril> dorils = Doril.finder.all();
-        
         //データベースへの登録
         Doril newdoril = new Doril();
         newdoril.problem_name = fileName;
         newdoril.solve_name = fileName2;
-        newdoril.save();
         
+        try{
+            //ファイルを開いてタグを取り出し、データベースに登録
+            File file = Play.application().getFile("/public/problems/doril/" + fileName);
+            BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file),"UTF-8"));
+            
+            List<String> dummy = new ArrayList<String>();
+            String tag = new String();
+
+            //タグまでのデータを仮読み込み
+            String tmp1 = br.readLine();
+            for(int i=0; i < Integer.parseInt(tmp1);i++){
+                dummy.add(br.readLine());
+            }
+            
+            //tag
+            tag = br.readLine();
+            newdoril.tag = tag;
+            
+        }catch (IOException ioe){
+            return badRequest(ioe.toString());        
+        }catch (Exception e){
+            StringWriter stringWriter = new StringWriter();
+            PrintWriter printWriter = new PrintWriter( stringWriter );
+            e.printStackTrace( printWriter );
+            return badRequest(stringWriter.toString());
+        }
+        
+        newdoril.save();
         return ok(doril_regicomplete.render());
     
     }

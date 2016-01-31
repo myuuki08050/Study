@@ -21,15 +21,15 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class shimon extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template6[String,List[String],List[String],String,List[String],List[String],play.twirl.api.HtmlFormat.Appendable] {
+class shimon extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template8[List[String],List[String],List[String],List[String],List[String],List[String],List[String],List[String],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(problem_state: String)(programs: List[String])(tags: List[String])(smallproblems: String)(subprograms: List[String])(solves: List[String]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(problem_state: List[String])(problem_condition: List[String])(programs: List[String])(tags: List[String])(smallproblemstate: List[String])(smallproblemcondition: List[String])(subprograms: List[String])(solves: List[String]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.141*/("""
+Seq[Any](format.raw/*1.227*/("""
 
 """),format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -55,82 +55,107 @@ Seq[Any](format.raw/*1.141*/("""
     	</ul>
     	
     	<script type="text/javascript">
-            function ChangeTab(tabname) """),format.raw/*27.41*/("""{"""),format.raw/*27.42*/("""
+            function ChangeTab1(tabname) """),format.raw/*27.42*/("""{"""),format.raw/*27.43*/("""
             """),format.raw/*28.13*/("""// タブメニュー実装
             document.getElementById('tab1').style.display = 'none';
             document.getElementById('tab2').style.display = 'none';
-            document.getElementById('tab3').style.display = 'none';
             // タブメニュー実装
             document.getElementById(tabname).style.display = 'block';
-        """),format.raw/*34.9*/("""}"""),format.raw/*34.10*/("""
-        """),format.raw/*35.9*/("""</script>
+            """),format.raw/*33.13*/("""}"""),format.raw/*33.14*/("""
+            
+            """),format.raw/*35.13*/("""function ChangeTab2(tabname) """),format.raw/*35.42*/("""{"""),format.raw/*35.43*/("""
+            """),format.raw/*36.13*/("""// タブメニュー実装
+            document.getElementById('tab3').style.display = 'none';
+            document.getElementById('tab4').style.display = 'none';
+            // タブメニュー実装
+            document.getElementById(tabname).style.display = 'block';
+            """),format.raw/*41.13*/("""}"""),format.raw/*41.14*/("""
+        """),format.raw/*42.9*/("""</script>
         
         <div id="content">
     	
-    	<div class="tabbox">
+    	<div class="tabbox1">
         
         <p class="tabs">
-            <a href="#tab1" class="tab1" onclick="ChangeTab('tab1'); return false;">問題</a>
-            <a href="#tab2" class="tab2" onclick="ChangeTab('tab2'); return false;">設問</a>
-            <a href="#tab3" class="tab3" onclick="ChangeTab('tab3'); return false;">回答</a>
-            
+            <a href="#tab1" class="tab1" onclick="ChangeTab1('tab1'); return false;">問題・条件</a>
+            <a href="#tab2" class="tab2" onclick="ChangeTab1('tab2'); return false;">プログラム</a>
         </p>
         
-        <div id="tab1" class="tab">
-            <div>"""),_display_(/*49.19*/problem_state),format.raw/*49.32*/("""</div>
- 
+         <div id="tab1" class="tab">
+            """),_display_(/*54.14*/for((obj,i) <- problem_state.zipWithIndex) yield /*54.56*/ {_display_(Seq[Any](format.raw/*54.58*/("""
+                """),format.raw/*55.17*/("""<div>"""),_display_(/*55.23*/{obj}),format.raw/*55.28*/("""</div>
+            """)))}),format.raw/*56.14*/("""
             
-            """),_display_(/*52.14*/for((obj,i) <- programs.zipWithIndex) yield /*52.51*/ {_display_(Seq[Any](format.raw/*52.53*/("""
-                """),format.raw/*53.17*/("""<div>"""),_display_(/*53.23*/{obj}),format.raw/*53.28*/("""</div>
-            """)))}),format.raw/*54.14*/("""
-            
-            """),format.raw/*56.13*/("""<br>
-            
-            """),_display_(/*58.14*/for((obj,i) <- tags.zipWithIndex) yield /*58.47*/ {_display_(Seq[Any](format.raw/*58.49*/("""
-                """),format.raw/*59.17*/("""<div> 付加タグ"""),_display_(/*59.28*/{i+1}),format.raw/*59.33*/(""" """),format.raw/*59.34*/(""": """),_display_(/*59.37*/{obj}),format.raw/*59.42*/("""</div>
+            """),_display_(/*58.14*/for((obj,i) <- problem_condition.zipWithIndex) yield /*58.60*/ {_display_(Seq[Any](format.raw/*58.62*/("""
+                """),format.raw/*59.17*/("""<li>"""),_display_(/*59.22*/{obj}),format.raw/*59.27*/("""</li>
             """)))}),format.raw/*60.14*/("""
             
+            """),_display_(/*62.14*/for((obj,i) <- tags.zipWithIndex) yield /*62.47*/ {_display_(Seq[Any](format.raw/*62.49*/("""
+                """),format.raw/*63.17*/("""<div> 付加タグ"""),_display_(/*63.28*/{i+1}),format.raw/*63.33*/(""" """),format.raw/*63.34*/(""": """),_display_(/*63.37*/{obj}),format.raw/*63.42*/("""</div>
+            """)))}),format.raw/*64.14*/("""
             
-        """),format.raw/*63.9*/("""</div>
-
+         """),format.raw/*66.10*/("""</div>
+ 
         <div id="tab2" class="tab">
         
-            """),_display_(/*67.14*/smallproblems),format.raw/*67.27*/("""
-            """),_display_(/*68.14*/for(subprogram <- subprograms) yield /*68.44*/ {_display_(Seq[Any](format.raw/*68.46*/("""
-                """),format.raw/*69.17*/("""<div>"""),_display_(/*69.23*/subprogram),format.raw/*69.33*/("""</div>
-            """)))}),format.raw/*70.14*/("""
-            
-"""),format.raw/*72.1*/("""　      </div>
-
+            """),_display_(/*70.14*/for((obj,i) <- programs.zipWithIndex) yield /*70.51*/ {_display_(Seq[Any](format.raw/*70.53*/("""
+                """),format.raw/*71.17*/("""<div>"""),_display_(/*71.23*/{obj}),format.raw/*71.28*/("""</div>
+            """)))}),format.raw/*72.14*/("""
+        
+        """),format.raw/*74.9*/("""</div>
+        </div>
+        <br><br>
+        <dic class="tabbox2">
+        
+        <p class="tabs2">
+            <a href="#tab3" class="tab3" onclick="ChangeTab2('tab3'); return false;">設問・条件</a>
+            <a href="#tab4" class="tab4" onclick="ChangeTab2('tab4'); return false;">回答</a>
+        </p>
+        
+       
         <div id="tab3" class="tab">
+    
+            """),_display_(/*87.14*/for(state <- smallproblemstate) yield /*87.45*/ {_display_(Seq[Any](format.raw/*87.47*/("""
+                """),format.raw/*88.17*/("""<div>"""),_display_(/*88.23*/state),format.raw/*88.28*/("""</div>
+            """)))}),format.raw/*89.14*/("""
             
-        """),_display_(/*76.10*/if(solves.size() == 0)/*76.32*/{_display_(Seq[Any](format.raw/*76.33*/("""
-            """),format.raw/*77.13*/("""<form action="/shimon_solve" method="POST">
+            """),_display_(/*91.14*/for(condition <- smallproblemcondition) yield /*91.53*/ {_display_(Seq[Any](format.raw/*91.55*/("""
+                """),format.raw/*92.17*/("""<li>"""),_display_(/*92.22*/condition),format.raw/*92.31*/("""</li>
+            """)))}),format.raw/*93.14*/("""
+            
+            """),_display_(/*95.14*/for(subprogram <- subprograms) yield /*95.44*/ {_display_(Seq[Any](format.raw/*95.46*/("""
+                """),format.raw/*96.17*/("""<div>"""),_display_(/*96.23*/subprogram),format.raw/*96.33*/("""</div>
+            """)))}),format.raw/*97.14*/("""
+            
+"""),format.raw/*99.1*/("""　      </div>
+
+        <div id="tab4" class="tab">
+            
+        """),_display_(/*103.10*/if(solves.size() == 0)/*103.32*/{_display_(Seq[Any](format.raw/*103.33*/("""
+            """),format.raw/*104.13*/("""<form action="/shimon_solve" method="POST">
             <input type="text" name="solve"/>
             <br>
             <input type="submit" value="SOLVE"/>
             </form>
-        """)))}/*82.11*/else/*82.16*/{_display_(Seq[Any](format.raw/*82.17*/("""
-            """),format.raw/*83.13*/("""<form action="/shimon_solve" method="POST">
-            """),_display_(/*84.14*/for(solve <- solves) yield /*84.34*/ {_display_(Seq[Any](format.raw/*84.36*/(""" 
-                """),format.raw/*85.17*/("""<div>
-                """),_display_(/*86.18*/solve),format.raw/*86.23*/("""
-                """),format.raw/*87.17*/("""<input type="radio" name=solve value="""),_display_(/*87.55*/solve),format.raw/*87.60*/(""" """),format.raw/*87.61*/("""/>
-                </div>
-            
-            """)))}),format.raw/*90.14*/("""
-            """),format.raw/*91.13*/("""<br>
-            <input type="submit" value="SOLVE"/>
+        """)))}/*109.11*/else/*109.16*/{_display_(Seq[Any](format.raw/*109.17*/("""
+            """),format.raw/*110.13*/("""<form action="/shimon_solve" method="POST">
+            """),_display_(/*111.14*/for(solve <- solves) yield /*111.34*/ {_display_(Seq[Any](format.raw/*111.36*/(""" 
+                """),format.raw/*112.17*/("""<input type="radio" name=solve value="""),_display_(/*112.55*/solve),format.raw/*112.60*/(""" """),format.raw/*112.61*/("""/>
+                """),_display_(/*113.18*/solve),format.raw/*113.23*/("""
+                """),format.raw/*114.17*/("""<br>
+            """)))}),format.raw/*115.14*/("""
+            """),format.raw/*116.13*/("""<input type="submit" value="SOLVE"/>
             </form>
-        """)))}),format.raw/*94.10*/("""  
+        """)))}),format.raw/*118.10*/("""  
             
-        """),format.raw/*96.9*/("""</div>
+        """),format.raw/*120.9*/("""</div>
    
         </div>
         </div>
         
         <script type="text/javascript">
-            ChangeTab('tab1');
+            ChangeTab1('tab1');
+            ChangeTab2('tab3');
         </script>
         
     </div>    
@@ -140,9 +165,9 @@ Seq[Any](format.raw/*1.141*/("""
     }
   }
 
-  def render(problem_state:String,programs:List[String],tags:List[String],smallproblems:String,subprograms:List[String],solves:List[String]): play.twirl.api.HtmlFormat.Appendable = apply(problem_state)(programs)(tags)(smallproblems)(subprograms)(solves)
+  def render(problem_state:List[String],problem_condition:List[String],programs:List[String],tags:List[String],smallproblemstate:List[String],smallproblemcondition:List[String],subprograms:List[String],solves:List[String]): play.twirl.api.HtmlFormat.Appendable = apply(problem_state)(problem_condition)(programs)(tags)(smallproblemstate)(smallproblemcondition)(subprograms)(solves)
 
-  def f:((String) => (List[String]) => (List[String]) => (String) => (List[String]) => (List[String]) => play.twirl.api.HtmlFormat.Appendable) = (problem_state) => (programs) => (tags) => (smallproblems) => (subprograms) => (solves) => apply(problem_state)(programs)(tags)(smallproblems)(subprograms)(solves)
+  def f:((List[String]) => (List[String]) => (List[String]) => (List[String]) => (List[String]) => (List[String]) => (List[String]) => (List[String]) => play.twirl.api.HtmlFormat.Appendable) = (problem_state) => (problem_condition) => (programs) => (tags) => (smallproblemstate) => (smallproblemcondition) => (subprograms) => (solves) => apply(problem_state)(problem_condition)(programs)(tags)(smallproblemstate)(smallproblemcondition)(subprograms)(solves)
 
   def ref: this.type = this
 
@@ -155,11 +180,11 @@ Seq[Any](format.raw/*1.141*/("""
 object shimon extends shimon_Scope0.shimon
               /*
                   -- GENERATED --
-                  DATE: Sat Jan 30 20:31:12 JST 2016
+                  DATE: Sun Jan 31 20:36:00 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/shimon.scala.html
-                  HASH: 7371ef332656b21d9f0ba6d8b89e92cbf686ba5e
-                  MATRIX: 806->1|1041->140|1069->142|1454->501|1468->507|1529->547|2135->1125|2164->1126|2205->1139|2550->1457|2579->1458|2615->1467|3116->1941|3150->1954|3212->1989|3265->2026|3305->2028|3350->2045|3383->2051|3409->2056|3460->2076|3514->2102|3572->2133|3621->2166|3661->2168|3706->2185|3744->2196|3770->2201|3799->2202|3829->2205|3855->2210|3906->2230|3968->2265|4061->2331|4095->2344|4136->2358|4182->2388|4222->2390|4267->2407|4300->2413|4331->2423|4382->2443|4423->2457|4523->2530|4554->2552|4593->2553|4634->2566|4838->2752|4851->2757|4890->2758|4931->2771|5015->2828|5051->2848|5091->2850|5137->2868|5187->2891|5213->2896|5258->2913|5323->2951|5349->2956|5378->2957|5461->3009|5502->3022|5616->3105|5667->3129
-                  LINES: 27->1|32->1|34->3|39->8|39->8|39->8|58->27|58->27|59->28|65->34|65->34|66->35|80->49|80->49|83->52|83->52|83->52|84->53|84->53|84->53|85->54|87->56|89->58|89->58|89->58|90->59|90->59|90->59|90->59|90->59|90->59|91->60|94->63|98->67|98->67|99->68|99->68|99->68|100->69|100->69|100->69|101->70|103->72|107->76|107->76|107->76|108->77|113->82|113->82|113->82|114->83|115->84|115->84|115->84|116->85|117->86|117->86|118->87|118->87|118->87|118->87|121->90|122->91|125->94|127->96
+                  HASH: fba0dc7f515fdf174bfc84979bd9a221bf169e5b
+                  MATRIX: 844->1|1165->226|1193->228|1578->587|1592->593|1653->633|2260->1212|2289->1213|2330->1226|2612->1480|2641->1481|2695->1507|2752->1536|2781->1537|2822->1550|3104->1804|3133->1805|3169->1814|3571->2189|3629->2231|3669->2233|3714->2250|3747->2256|3773->2261|3824->2281|3878->2308|3940->2354|3980->2356|4025->2373|4057->2378|4083->2383|4133->2402|4187->2429|4236->2462|4276->2464|4321->2481|4359->2492|4385->2497|4414->2498|4444->2501|4470->2506|4521->2526|4572->2549|4666->2616|4719->2653|4759->2655|4804->2672|4837->2678|4863->2683|4914->2703|4959->2721|5361->3096|5408->3127|5448->3129|5493->3146|5526->3152|5552->3157|5603->3177|5657->3204|5712->3243|5752->3245|5797->3262|5829->3267|5859->3276|5909->3295|5963->3322|6009->3352|6049->3354|6094->3371|6127->3377|6158->3387|6209->3407|6250->3421|6351->3494|6383->3516|6423->3517|6465->3530|6670->3716|6684->3721|6724->3722|6766->3735|6851->3792|6888->3812|6929->3814|6976->3832|7042->3870|7069->3875|7099->3876|7147->3896|7174->3901|7220->3918|7270->3936|7312->3949|7410->4015|7462->4039
+                  LINES: 27->1|32->1|34->3|39->8|39->8|39->8|58->27|58->27|59->28|64->33|64->33|66->35|66->35|66->35|67->36|72->41|72->41|73->42|85->54|85->54|85->54|86->55|86->55|86->55|87->56|89->58|89->58|89->58|90->59|90->59|90->59|91->60|93->62|93->62|93->62|94->63|94->63|94->63|94->63|94->63|94->63|95->64|97->66|101->70|101->70|101->70|102->71|102->71|102->71|103->72|105->74|118->87|118->87|118->87|119->88|119->88|119->88|120->89|122->91|122->91|122->91|123->92|123->92|123->92|124->93|126->95|126->95|126->95|127->96|127->96|127->96|128->97|130->99|134->103|134->103|134->103|135->104|140->109|140->109|140->109|141->110|142->111|142->111|142->111|143->112|143->112|143->112|143->112|144->113|144->113|145->114|146->115|147->116|149->118|151->120
                   -- GENERATED --
               */
           

@@ -24,32 +24,32 @@ public class UserModel extends Model {
     @NotNull
     @Constraints.Min(0)
     @Constraints.Max(100)
-    public int param1;
+    public int param1;  /* 標準入出力 */
     
     @NotNull
     @Constraints.Min(0)
     @Constraints.Max(100)
-    public int param2;
+    public int param2;  /* ファイル入出力 */
     
     @NotNull
     @Constraints.Min(0)
     @Constraints.Max(100)
-    public int param3;
+    public int param3;  /* 自作関数 */
     
     @NotNull
     @Constraints.Min(0)
     @Constraints.Max(100)
-    public int param4;
+    public int param4;  /* ポインタ */
     
     @NotNull
     @Constraints.Min(0)
     @Constraints.Max(100)
-    public int param5;
+    public int param5;  /* 再帰 */
     
     @NotNull
     @Constraints.Min(0)
     @Constraints.Max(100)
-    public int param6;
+    public int param6;  /* 構造体 */
  
     @CreatedTimestamp
     public Date createDate;

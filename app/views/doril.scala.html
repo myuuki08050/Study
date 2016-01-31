@@ -1,4 +1,4 @@
-@(doril_state: String)(doril_tag: String)
+@(doril_state: List[String])(doril_tag: String)
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -24,7 +24,9 @@
     	</ul>
     
         <div id="content">
-            <div>@doril_state</div>
+            @for((obj,i) <- doril_state.zipWithIndex) {
+                <div>@{obj}</div>
+            }
             <div>(タグ：@doril_tag)</div>
             <br>
             <form action="/doril_solve" method="POST">

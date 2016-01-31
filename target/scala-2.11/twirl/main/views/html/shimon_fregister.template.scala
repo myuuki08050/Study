@@ -68,7 +68,7 @@ Seq[Any](format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
                 <input type="submit" value="UPLOAD">
             """)))}),format.raw/*37.14*/("""
             
-            """),format.raw/*39.13*/("""<h1><a href="/shimon_fregi">ホームにもどる</a></h1>
+            """),format.raw/*39.13*/("""<h1><a href="/home">ホームにもどる</a></h1>
     	</div>
         
     </div>    
@@ -94,9 +94,9 @@ Seq[Any](format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object shimon_fregister extends shimon_fregister_Scope0.shimon_fregister_Scope1.shimon_fregister
               /*
                   -- GENERATED --
-                  DATE: Sat Jan 30 20:32:58 JST 2016
+                  DATE: Sun Jan 31 05:59:40 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/shimon_fregister.scala.html
-                  HASH: 0e4ca354f000827c6584c5c1522327caff329208
+                  HASH: b5823e24494e2dc4d35eb5679300cf795fe02ce2
                   MATRIX: 904->20|1294->384|1308->390|1369->430|2014->1048|2103->1128|2143->1130|2189->1148|2479->1407|2535->1435
                   LINES: 35->3|40->8|40->8|40->8|61->29|61->29|61->29|62->30|69->37|71->39
                   -- GENERATED --

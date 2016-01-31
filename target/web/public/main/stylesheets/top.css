@@ -191,13 +191,13 @@ div#content {
 /*============================================
 タブメニュー用
 =============================================*/
-div.tabbox {
+div.tabbox1 {
   margin: 15px 0 0 0;
   padding: 0px;
   width: 600px;
-  height: 600px;
 }
 /* ▼ タブ部分のマージンとパディング領域を設定 */
+/* タブ1 */
 p.tabs {
   margin: 0px;
   padding: 0px;
@@ -231,23 +231,57 @@ p.tabs a.tab2 {
   color: #666;
   font-weight: 600;
 }
-p.tabs a.tab3 {
+p.tabs a:hover {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+div.tabbox2 {
+  margin: 15px 0 0 0;
+  padding: 0px;
+  width: 600px;
+}
+/* タブ2 */
+p.tabs2 {
+  margin: 0px;
+  padding: 0px;
+}
+p.tabs2 a {
+  /* ▼ リンクをタブのように見せる */
+  display: block;
+  width: 100px;
+  float: left;
+  margin: 0px 3px 0px 0px;
+  padding: 3px;
+  text-align: center;
+  font-size: 12px;
+}
+/* ▼ タブごとの配色設定 */
+p.tabs2 a.tab3 {
   text-decoration: none;
   background-color: #fafafa;
   border-right: 1px solid #dcdcdc;
   border-left: 1px solid #dcdcdc;
-  border-top: 3px solid rgba(0, 0, 170, 0.85);
+  border-top: 3px solid rgba(170, 0, 0, 0.85);
   color: #666;
   font-weight: 600;
 }
-p.tabs a:hover {
+p.tabs2 a.tab4 {
+  text-decoration: none;
+  background-color: #fafafa;
+  border-right: 1px solid #dcdcdc;
+  border-left: 1px solid #dcdcdc;
+  border-top: 3px solid rgba(0, 170, 0, 0.85);
+  color: #666;
+  font-weight: 600;
+}
+p.tabs2 a:hover {
   opacity: 0.7;
   filter: alpha(opacity=70);
 }
 /* ▼ タブ中身のボックス */
 div.tab {
   /* ▼ ボックス共通の装飾 */
-  height: 270px;
+  weight: 600px;
   clear: left;
 }
 /* ▼ 各ボックスの配色設定 */
@@ -260,6 +294,10 @@ div#tab2 {
   background-color: #fbfbfb;
 }
 div#tab3 {
+  border: 2px solid #DDD;
+  background-color: #fbfbfb;
+}
+div#tab4 {
   border: 2px solid #DDD;
   background-color: #fbfbfb;
 }

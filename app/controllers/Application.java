@@ -112,15 +112,14 @@ public class Application extends Controller {
             
             //ユーザーモデルの初期化
             UserModel newusrmodel = new UserModel();
-            newusrmodel.param1 = 0;
-            newusrmodel.param2 = 0;
-            newusrmodel.param3 = 0;
-            newusrmodel.param4 = 0;
-            newusrmodel.param5 = 0;
-            newusrmodel.param6 = 0;
+            newusrmodel.param1 = 50;
+            newusrmodel.param2 = 50;
+            newusrmodel.param3 = 50;
+            newusrmodel.param4 = 50;
+            newusrmodel.param5 = 50;
+            newusrmodel.param6 = 50;
             
             newuser.children.add(newusrmodel);
-            
             newuser.save();
                         
             //データベースの内容表示

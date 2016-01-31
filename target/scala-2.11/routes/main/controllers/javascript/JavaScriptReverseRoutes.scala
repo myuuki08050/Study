@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/git_local/activator-1.3.6-minimal/SolveSystem2/conf/routes
-// @DATE:Sat Jan 30 20:53:02 JST 2016
+// @DATE:Mon Feb 01 03:57:30 JST 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:33
+  // @LINE:37
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:34
+    // @LINE:38
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -33,7 +33,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:33
+    // @LINE:37
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -45,7 +45,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:26
+  // @LINE:17
   class ReverseModelManage(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -53,7 +53,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:26
+    // @LINE:30
     def ShowUserModel: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ModelManage.ShowUserModel",
       """
@@ -63,9 +63,37 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:27
+    def d_changeUserModel: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ModelManage.d_changeUserModel",
+      """
+        function(param,chng_param,judge) {
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "doril_change" + _qS([(""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("param", param), (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("chng_param", chng_param), (""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("judge", judge)])})
+          }
+        
+        }
+      """
+    )
+  
+    // @LINE:17
+    def s_changeUserModel: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ModelManage.s_changeUserModel",
+      """
+        function(param1_chng,param2_chng,param3_chng,param4_chng,param5_chng,param6_chng) {
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "shimon_change" + _qS([(""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("param1_chng", param1_chng), (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("param2_chng", param2_chng), (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("param3_chng", param3_chng), (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("param4_chng", param4_chng), (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("param5_chng", param5_chng), (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("param6_chng", param6_chng)])})
+          }
+        
+        }
+      """
+    )
+  
   }
 
-  // @LINE:20
+  // @LINE:22
   class ReverseDorilManage(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -73,7 +101,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:23
+    // @LINE:25
     def CheckAnserDoril: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.DorilManage.CheckAnserDoril",
       """
@@ -87,7 +115,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:20
+    // @LINE:22
     def ShowDoril: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.DorilManage.ShowDoril",
       """
@@ -97,7 +125,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:25
+    // @LINE:29
     def MakeDoril: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.DorilManage.MakeDoril",
       """
@@ -107,7 +135,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:21
+    // @LINE:23
     def ShowFDorilregi: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.DorilManage.ShowFDorilregi",
       """
@@ -131,7 +159,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:30
+    // @LINE:34
     def showError: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.showError",
       """
@@ -141,7 +169,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:28
+    // @LINE:32
     def auth: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.auth",
       """
@@ -185,7 +213,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:27
+    // @LINE:31
     def logout: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.logout",
       """
@@ -229,7 +257,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:19
+    // @LINE:21
     def MakeShimon: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ShimonManage.MakeShimon",
       """
@@ -253,7 +281,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:17
+    // @LINE:19
     def ShowFShimonregi: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ShimonManage.ShowFShimonregi",
       """

@@ -1,3 +1,3 @@
-[error] C:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\ModelManage.java:36:  エラー: 不適合な型: List<UserModel>をUserModelに変換できません:
-[error]             usrmodel = usr.children;
-[error]                           ^
+[error] C:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\DorilManage.java:20:  エラー: ';'がありません
+[error] import java.lang
+[error]                 ^

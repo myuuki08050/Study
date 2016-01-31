@@ -12,10 +12,16 @@ import javax.validation.constraints.NotNull;
 public class Doril extends Model {
  
     @Id
-    public Long problem_id;
+    public Long id;
+    
+    // "標準入出力"～"構造体"
+    @NotNull
+    public String tag;
  
+    @NotNull
     public String problem_name;
     
+    @NotNull
     public String solve_name;
     
     @CreatedTimestamp
@@ -25,8 +31,6 @@ public class Doril extends Model {
     public Date updateDate;
     
     public static Find<Long,Doril> finder = new Find<Long,Doril>(){};
-  
-    public String toString() {
-        return "Problem [problem_id=" + String.valueOf(problem_id) + ", problem_name=" + problem_name + ", solve_name=" + solve_name + "]"; 
-    }
+
+
 }

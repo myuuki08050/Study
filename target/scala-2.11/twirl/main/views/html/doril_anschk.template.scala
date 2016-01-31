@@ -21,15 +21,15 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class doril_anschk extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template2[String,String,play.twirl.api.HtmlFormat.Appendable] {
+class doril_anschk extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template2[String,List[String],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(doril_state: String)(doril_tag: String):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(judge: String)(commentary: List[String]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.42*/("""
+Seq[Any](format.raw/*1.43*/("""
 
 """),format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -37,13 +37,13 @@ Seq[Any](format.raw/*1.42*/("""
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" media="screen" href=""""),_display_(/*8.54*/routes/*8.60*/.Assets.versioned("stylesheets/top.css")),format.raw/*8.100*/("""">
-        <title>Doril Solve</title>
+        <title>"""),_display_(/*9.17*/judge),format.raw/*9.22*/("""</title>
     </head>
     <body>
      <div id="pagebody">
     
     	<!-- ヘッダ -->
-    	<div id="header"><h1>Doril Solve</h1></div>
+    	<div id="header"><h1>"""),_display_(/*15.28*/judge),format.raw/*15.33*/("""</h1></div>
     	
     	<!-- メインメニュー -->
     	<ul id="menu">
@@ -55,15 +55,22 @@ Seq[Any](format.raw/*1.42*/("""
     	</ul>
     
         <div id="content">
-            <div>"""),_display_(/*27.19*/doril_state),format.raw/*27.30*/("""</div>
-            <div>(タグ："""),_display_(/*28.23*/doril_tag),format.raw/*28.32*/(""")</div>
-            <br>
-            <form action="/doril_solve" method="POST">
-                <input type="submit" id="image-btn1" name=d_solve value="maru" />
-                <input type="submit" id="image-btn2" name=d_solve value="batu" />
-            </form>
-            </div>
-        </div>
+            """),_display_(/*27.14*/if(judge == "true")/*27.33*/{_display_(Seq[Any](format.raw/*27.34*/("""
+                """),format.raw/*28.17*/("""<h1>Correct Answer</h1>
+            """)))}/*29.15*/else/*29.20*/{_display_(Seq[Any](format.raw/*29.21*/("""
+                """),format.raw/*30.17*/("""<h1>Wrong Answer</h1>
+            """)))}),format.raw/*31.14*/("""
+            
+            """),format.raw/*33.13*/("""<div>[解説]</div>
+            
+            """),_display_(/*35.14*/for((obj,i) <- commentary.zipWithIndex) yield /*35.53*/ {_display_(Seq[Any](format.raw/*35.55*/("""
+                """),format.raw/*36.17*/("""<div>"""),_display_(/*36.23*/{obj}),format.raw/*36.28*/("""</div>
+            """)))}),format.raw/*37.14*/("""
+            
+            """),_display_(/*39.14*/helper/*39.20*/.form(action = routes.DorilManage.ShowDoril)/*39.64*/ {_display_(Seq[Any](format.raw/*39.66*/("""
+                """),format.raw/*40.17*/("""<input type="submit" value="次へ"/>
+            """)))}),format.raw/*41.14*/("""
+        """),format.raw/*42.9*/("""</div>
     </div>    
     </body>
 </html>"""))
@@ -71,9 +78,9 @@ Seq[Any](format.raw/*1.42*/("""
     }
   }
 
-  def render(doril_state:String,doril_tag:String): play.twirl.api.HtmlFormat.Appendable = apply(doril_state)(doril_tag)
+  def render(judge:String,commentary:List[String]): play.twirl.api.HtmlFormat.Appendable = apply(judge)(commentary)
 
-  def f:((String) => (String) => play.twirl.api.HtmlFormat.Appendable) = (doril_state) => (doril_tag) => apply(doril_state)(doril_tag)
+  def f:((String) => (List[String]) => play.twirl.api.HtmlFormat.Appendable) = (judge) => (commentary) => apply(judge)(commentary)
 
   def ref: this.type = this
 
@@ -86,11 +93,11 @@ Seq[Any](format.raw/*1.42*/("""
 object doril_anschk extends doril_anschk_Scope0.doril_anschk
               /*
                   -- GENERATED --
-                  DATE: Sat Jan 30 23:27:56 JST 2016
+                  DATE: Mon Feb 01 04:42:12 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/doril_anschk.scala.html
-                  HASH: c5441377096e1a6eede33f312ebbf952db9fe563
-                  MATRIX: 766->1|901->41|931->45|1321->409|1335->415|1396->455|1985->1017|2017->1028|2074->1058|2104->1067
-                  LINES: 27->1|32->1|34->3|39->8|39->8|39->8|58->27|58->27|59->28|59->28
+                  HASH: 9fb22306ff5dd22b94c5c5bd9b98661104b133d2
+                  MATRIX: 772->1|908->42|938->46|1328->410|1342->416|1403->456|1449->476|1474->481|1614->594|1640->599|2071->1003|2099->1022|2138->1023|2184->1041|2241->1080|2254->1085|2293->1086|2339->1104|2406->1140|2462->1168|2533->1212|2588->1251|2628->1253|2674->1271|2707->1277|2733->1282|2785->1303|2841->1332|2856->1338|2909->1382|2949->1384|2995->1402|3074->1450|3111->1460
+                  LINES: 27->1|32->1|34->3|39->8|39->8|39->8|40->9|40->9|46->15|46->15|58->27|58->27|58->27|59->28|60->29|60->29|60->29|61->30|62->31|64->33|66->35|66->35|66->35|67->36|67->36|67->36|68->37|70->39|70->39|70->39|70->39|71->40|72->41|73->42
                   -- GENERATED --
               */
           

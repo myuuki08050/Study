@@ -1,4 +1,4 @@
-@(problem_state: String)(programs: List[String])(tags: List[String])(smallproblems: String)(subprograms: List[String])(solves: List[String])
+@(problem_state: List[String])(problem_condition: List[String])(programs: List[String])(tags: List[String])(smallproblemstate: List[String])(smallproblemcondition: List[String])(subprograms: List[String])(solves: List[String])
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -24,54 +24,81 @@
     	</ul>
     	
     	<script type="text/javascript">
-            function ChangeTab(tabname) {
+            function ChangeTab1(tabname) {
             // タブメニュー実装
             document.getElementById('tab1').style.display = 'none';
             document.getElementById('tab2').style.display = 'none';
-            document.getElementById('tab3').style.display = 'none';
             // タブメニュー実装
             document.getElementById(tabname).style.display = 'block';
-        }
+            }
+            
+            function ChangeTab2(tabname) {
+            // タブメニュー実装
+            document.getElementById('tab3').style.display = 'none';
+            document.getElementById('tab4').style.display = 'none';
+            // タブメニュー実装
+            document.getElementById(tabname).style.display = 'block';
+            }
         </script>
         
         <div id="content">
     	
-    	<div class="tabbox">
+    	<div class="tabbox1">
         
         <p class="tabs">
-            <a href="#tab1" class="tab1" onclick="ChangeTab('tab1'); return false;">問題</a>
-            <a href="#tab2" class="tab2" onclick="ChangeTab('tab2'); return false;">設問</a>
-            <a href="#tab3" class="tab3" onclick="ChangeTab('tab3'); return false;">回答</a>
-            
+            <a href="#tab1" class="tab1" onclick="ChangeTab1('tab1'); return false;">問題・条件</a>
+            <a href="#tab2" class="tab2" onclick="ChangeTab1('tab2'); return false;">プログラム</a>
         </p>
         
-        <div id="tab1" class="tab">
-            <div>@problem_state</div>
- 
-            
-            @for((obj,i) <- programs.zipWithIndex) {
+         <div id="tab1" class="tab">
+            @for((obj,i) <- problem_state.zipWithIndex) {
                 <div>@{obj}</div>
             }
             
-            <br>
+            @for((obj,i) <- problem_condition.zipWithIndex) {
+                <li>@{obj}</li>
+            }
             
             @for((obj,i) <- tags.zipWithIndex) {
                 <div> 付加タグ@{i+1} : @{obj}</div>
             }
             
-            
-        </div>
-
+         </div>
+ 
         <div id="tab2" class="tab">
         
-            @smallproblems
+            @for((obj,i) <- programs.zipWithIndex) {
+                <div>@{obj}</div>
+            }
+        
+        </div>
+        </div>
+        <br><br>
+        <dic class="tabbox2">
+        
+        <p class="tabs2">
+            <a href="#tab3" class="tab3" onclick="ChangeTab2('tab3'); return false;">設問・条件</a>
+            <a href="#tab4" class="tab4" onclick="ChangeTab2('tab4'); return false;">回答</a>
+        </p>
+        
+       
+        <div id="tab3" class="tab">
+    
+            @for(state <- smallproblemstate) {
+                <div>@state</div>
+            }
+            
+            @for(condition <- smallproblemcondition) {
+                <li>@condition</li>
+            }
+            
             @for(subprogram <- subprograms) {
                 <div>@subprogram</div>
             }
             
 　      </div>
 
-        <div id="tab3" class="tab">
+        <div id="tab4" class="tab">
             
         @if(solves.size() == 0){
             <form action="/shimon_solve" method="POST">
@@ -82,13 +109,10 @@
         } else {
             <form action="/shimon_solve" method="POST">
             @for(solve <- solves) { 
-                <div>
-                @solve
                 <input type="radio" name=solve value=@solve />
-                </div>
-            
+                @solve
+                <br>
             }
-            <br>
             <input type="submit" value="SOLVE"/>
             </form>
         }  
@@ -99,7 +123,8 @@
         </div>
         
         <script type="text/javascript">
-            ChangeTab('tab1');
+            ChangeTab1('tab1');
+            ChangeTab2('tab3');
         </script>
         
     </div>    

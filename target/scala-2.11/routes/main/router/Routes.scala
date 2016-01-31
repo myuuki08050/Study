@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/git_local/activator-1.3.6-minimal/SolveSystem2/conf/routes
-// @DATE:Sat Jan 30 20:53:02 JST 2016
+// @DATE:Mon Feb 01 03:57:30 JST 2016
 
 package router
 
@@ -20,11 +20,11 @@ class Routes(
   Application_4: controllers.Application,
   // @LINE:13
   ShimonManage_2: controllers.ShimonManage,
-  // @LINE:20
-  DorilManage_1: controllers.DorilManage,
-  // @LINE:26
+  // @LINE:17
   ModelManage_0: controllers.ModelManage,
-  // @LINE:33
+  // @LINE:22
+  DorilManage_1: controllers.DorilManage,
+  // @LINE:37
   Assets_3: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -35,19 +35,19 @@ class Routes(
     Application_4: controllers.Application,
     // @LINE:13
     ShimonManage_2: controllers.ShimonManage,
-    // @LINE:20
-    DorilManage_1: controllers.DorilManage,
-    // @LINE:26
+    // @LINE:17
     ModelManage_0: controllers.ModelManage,
-    // @LINE:33
+    // @LINE:22
+    DorilManage_1: controllers.DorilManage,
+    // @LINE:37
     Assets_3: controllers.Assets
-  ) = this(errorHandler, Application_4, ShimonManage_2, DorilManage_1, ModelManage_0, Assets_3, "/")
+  ) = this(errorHandler, Application_4, ShimonManage_2, ModelManage_0, DorilManage_1, Assets_3, "/")
 
   import ReverseRouteContext.empty
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, Application_4, ShimonManage_2, DorilManage_1, ModelManage_0, Assets_3, prefix)
+    new Routes(errorHandler, Application_4, ShimonManage_2, ModelManage_0, DorilManage_1, Assets_3, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -65,6 +65,8 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """shimon""", """controllers.ShimonManage.ShowShimon()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """shimon_solve""", """controllers.ShimonManage.CheckAnserShimon()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """shimon_solve""", """controllers.ShimonManage.CheckAnserShimon()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """shimon_change""", """controllers.ModelManage.s_changeUserModel(param1_chng:Int, param2_chng:Int, param3_chng:Int, param4_chng:Int, param5_chng:Int, param6_chng:Int)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """shimon_change""", """controllers.ModelManage.s_changeUserModel(param1_chng:Int, param2_chng:Int, param3_chng:Int, param4_chng:Int, param5_chng:Int, param6_chng:Int)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """shimon_fregi""", """controllers.ShimonManage.ShowFShimonregi()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """shimon_fregi""", """controllers.ShimonManage.ShowFShimonregi()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """shimon_regicomp""", """controllers.ShimonManage.MakeShimon()"""),
@@ -73,6 +75,8 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """doril_fregi""", """controllers.DorilManage.ShowFDorilregi()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """doril_solve""", """controllers.DorilManage.CheckAnserDoril()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """doril_solve""", """controllers.DorilManage.CheckAnserDoril()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """doril_change""", """controllers.ModelManage.d_changeUserModel(param:String, chng_param:Int, judge:String)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """doril_change""", """controllers.ModelManage.d_changeUserModel(param:String, chng_param:Int, judge:String)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """doril_regicomp""", """controllers.DorilManage.MakeDoril()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """user_model""", """controllers.ModelManage.ShowUserModel()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.Application.logout()"""),
@@ -259,10 +263,44 @@ class Routes(
   )
 
   // @LINE:17
-  private[this] lazy val controllers_ShimonManage_ShowFShimonregi10_route = Route("GET",
+  private[this] lazy val controllers_ModelManage_s_changeUserModel10_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("shimon_change")))
+  )
+  private[this] lazy val controllers_ModelManage_s_changeUserModel10_invoker = createInvoker(
+    ModelManage_0.s_changeUserModel(fakeValue[Int], fakeValue[Int], fakeValue[Int], fakeValue[Int], fakeValue[Int], fakeValue[Int]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ModelManage",
+      "s_changeUserModel",
+      Seq(classOf[Int], classOf[Int], classOf[Int], classOf[Int], classOf[Int], classOf[Int]),
+      "GET",
+      """""",
+      this.prefix + """shimon_change"""
+    )
+  )
+
+  // @LINE:18
+  private[this] lazy val controllers_ModelManage_s_changeUserModel11_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("shimon_change")))
+  )
+  private[this] lazy val controllers_ModelManage_s_changeUserModel11_invoker = createInvoker(
+    ModelManage_0.s_changeUserModel(fakeValue[Int], fakeValue[Int], fakeValue[Int], fakeValue[Int], fakeValue[Int], fakeValue[Int]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ModelManage",
+      "s_changeUserModel",
+      Seq(classOf[Int], classOf[Int], classOf[Int], classOf[Int], classOf[Int], classOf[Int]),
+      "POST",
+      """""",
+      this.prefix + """shimon_change"""
+    )
+  )
+
+  // @LINE:19
+  private[this] lazy val controllers_ShimonManage_ShowFShimonregi12_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("shimon_fregi")))
   )
-  private[this] lazy val controllers_ShimonManage_ShowFShimonregi10_invoker = createInvoker(
+  private[this] lazy val controllers_ShimonManage_ShowFShimonregi12_invoker = createInvoker(
     ShimonManage_2.ShowFShimonregi(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -275,11 +313,11 @@ class Routes(
     )
   )
 
-  // @LINE:18
-  private[this] lazy val controllers_ShimonManage_ShowFShimonregi11_route = Route("POST",
+  // @LINE:20
+  private[this] lazy val controllers_ShimonManage_ShowFShimonregi13_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("shimon_fregi")))
   )
-  private[this] lazy val controllers_ShimonManage_ShowFShimonregi11_invoker = createInvoker(
+  private[this] lazy val controllers_ShimonManage_ShowFShimonregi13_invoker = createInvoker(
     ShimonManage_2.ShowFShimonregi(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -292,11 +330,11 @@ class Routes(
     )
   )
 
-  // @LINE:19
-  private[this] lazy val controllers_ShimonManage_MakeShimon12_route = Route("POST",
+  // @LINE:21
+  private[this] lazy val controllers_ShimonManage_MakeShimon14_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("shimon_regicomp")))
   )
-  private[this] lazy val controllers_ShimonManage_MakeShimon12_invoker = createInvoker(
+  private[this] lazy val controllers_ShimonManage_MakeShimon14_invoker = createInvoker(
     ShimonManage_2.MakeShimon(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -309,11 +347,11 @@ class Routes(
     )
   )
 
-  // @LINE:20
-  private[this] lazy val controllers_DorilManage_ShowDoril13_route = Route("POST",
+  // @LINE:22
+  private[this] lazy val controllers_DorilManage_ShowDoril15_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("doril")))
   )
-  private[this] lazy val controllers_DorilManage_ShowDoril13_invoker = createInvoker(
+  private[this] lazy val controllers_DorilManage_ShowDoril15_invoker = createInvoker(
     DorilManage_1.ShowDoril(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -326,62 +364,62 @@ class Routes(
     )
   )
 
-  // @LINE:21
-  private[this] lazy val controllers_DorilManage_ShowFDorilregi14_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("doril_fregi")))
-  )
-  private[this] lazy val controllers_DorilManage_ShowFDorilregi14_invoker = createInvoker(
-    DorilManage_1.ShowFDorilregi(),
-    HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.DorilManage",
-      "ShowFDorilregi",
-      Nil,
-      "GET",
-      """""",
-      this.prefix + """doril_fregi"""
-    )
-  )
-
-  // @LINE:22
-  private[this] lazy val controllers_DorilManage_ShowFDorilregi15_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("doril_fregi")))
-  )
-  private[this] lazy val controllers_DorilManage_ShowFDorilregi15_invoker = createInvoker(
-    DorilManage_1.ShowFDorilregi(),
-    HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.DorilManage",
-      "ShowFDorilregi",
-      Nil,
-      "POST",
-      """""",
-      this.prefix + """doril_fregi"""
-    )
-  )
-
   // @LINE:23
-  private[this] lazy val controllers_DorilManage_CheckAnserDoril16_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("doril_solve")))
+  private[this] lazy val controllers_DorilManage_ShowFDorilregi16_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("doril_fregi")))
   )
-  private[this] lazy val controllers_DorilManage_CheckAnserDoril16_invoker = createInvoker(
-    DorilManage_1.CheckAnserDoril(),
+  private[this] lazy val controllers_DorilManage_ShowFDorilregi16_invoker = createInvoker(
+    DorilManage_1.ShowFDorilregi(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.DorilManage",
-      "CheckAnserDoril",
+      "ShowFDorilregi",
       Nil,
       "GET",
       """""",
-      this.prefix + """doril_solve"""
+      this.prefix + """doril_fregi"""
     )
   )
 
   // @LINE:24
-  private[this] lazy val controllers_DorilManage_CheckAnserDoril17_route = Route("POST",
+  private[this] lazy val controllers_DorilManage_ShowFDorilregi17_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("doril_fregi")))
+  )
+  private[this] lazy val controllers_DorilManage_ShowFDorilregi17_invoker = createInvoker(
+    DorilManage_1.ShowFDorilregi(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.DorilManage",
+      "ShowFDorilregi",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """doril_fregi"""
+    )
+  )
+
+  // @LINE:25
+  private[this] lazy val controllers_DorilManage_CheckAnserDoril18_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("doril_solve")))
   )
-  private[this] lazy val controllers_DorilManage_CheckAnserDoril17_invoker = createInvoker(
+  private[this] lazy val controllers_DorilManage_CheckAnserDoril18_invoker = createInvoker(
+    DorilManage_1.CheckAnserDoril(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.DorilManage",
+      "CheckAnserDoril",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """doril_solve"""
+    )
+  )
+
+  // @LINE:26
+  private[this] lazy val controllers_DorilManage_CheckAnserDoril19_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("doril_solve")))
+  )
+  private[this] lazy val controllers_DorilManage_CheckAnserDoril19_invoker = createInvoker(
     DorilManage_1.CheckAnserDoril(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -394,11 +432,45 @@ class Routes(
     )
   )
 
-  // @LINE:25
-  private[this] lazy val controllers_DorilManage_MakeDoril18_route = Route("POST",
+  // @LINE:27
+  private[this] lazy val controllers_ModelManage_d_changeUserModel20_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("doril_change")))
+  )
+  private[this] lazy val controllers_ModelManage_d_changeUserModel20_invoker = createInvoker(
+    ModelManage_0.d_changeUserModel(fakeValue[String], fakeValue[Int], fakeValue[String]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ModelManage",
+      "d_changeUserModel",
+      Seq(classOf[String], classOf[Int], classOf[String]),
+      "GET",
+      """""",
+      this.prefix + """doril_change"""
+    )
+  )
+
+  // @LINE:28
+  private[this] lazy val controllers_ModelManage_d_changeUserModel21_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("doril_change")))
+  )
+  private[this] lazy val controllers_ModelManage_d_changeUserModel21_invoker = createInvoker(
+    ModelManage_0.d_changeUserModel(fakeValue[String], fakeValue[Int], fakeValue[String]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ModelManage",
+      "d_changeUserModel",
+      Seq(classOf[String], classOf[Int], classOf[String]),
+      "POST",
+      """""",
+      this.prefix + """doril_change"""
+    )
+  )
+
+  // @LINE:29
+  private[this] lazy val controllers_DorilManage_MakeDoril22_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("doril_regicomp")))
   )
-  private[this] lazy val controllers_DorilManage_MakeDoril18_invoker = createInvoker(
+  private[this] lazy val controllers_DorilManage_MakeDoril22_invoker = createInvoker(
     DorilManage_1.MakeDoril(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -411,11 +483,11 @@ class Routes(
     )
   )
 
-  // @LINE:26
-  private[this] lazy val controllers_ModelManage_ShowUserModel19_route = Route("POST",
+  // @LINE:30
+  private[this] lazy val controllers_ModelManage_ShowUserModel23_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user_model")))
   )
-  private[this] lazy val controllers_ModelManage_ShowUserModel19_invoker = createInvoker(
+  private[this] lazy val controllers_ModelManage_ShowUserModel23_invoker = createInvoker(
     ModelManage_0.ShowUserModel(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -428,11 +500,11 @@ class Routes(
     )
   )
 
-  // @LINE:27
-  private[this] lazy val controllers_Application_logout20_route = Route("GET",
+  // @LINE:31
+  private[this] lazy val controllers_Application_logout24_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("logout")))
   )
-  private[this] lazy val controllers_Application_logout20_invoker = createInvoker(
+  private[this] lazy val controllers_Application_logout24_invoker = createInvoker(
     Application_4.logout(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -445,11 +517,11 @@ class Routes(
     )
   )
 
-  // @LINE:28
-  private[this] lazy val controllers_Application_auth21_route = Route("POST",
+  // @LINE:32
+  private[this] lazy val controllers_Application_auth25_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("auth")))
   )
-  private[this] lazy val controllers_Application_auth21_invoker = createInvoker(
+  private[this] lazy val controllers_Application_auth25_invoker = createInvoker(
     Application_4.auth(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -462,11 +534,11 @@ class Routes(
     )
   )
 
-  // @LINE:29
-  private[this] lazy val controllers_Application_NewRegister22_route = Route("POST",
+  // @LINE:33
+  private[this] lazy val controllers_Application_NewRegister26_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("newregi")))
   )
-  private[this] lazy val controllers_Application_NewRegister22_invoker = createInvoker(
+  private[this] lazy val controllers_Application_NewRegister26_invoker = createInvoker(
     Application_4.NewRegister(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -479,11 +551,11 @@ class Routes(
     )
   )
 
-  // @LINE:30
-  private[this] lazy val controllers_Application_showError23_route = Route("GET",
+  // @LINE:34
+  private[this] lazy val controllers_Application_showError27_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("error")))
   )
-  private[this] lazy val controllers_Application_showError23_invoker = createInvoker(
+  private[this] lazy val controllers_Application_showError27_invoker = createInvoker(
     Application_4.showError(fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -496,11 +568,11 @@ class Routes(
     )
   )
 
-  // @LINE:33
-  private[this] lazy val controllers_Assets_versioned24_route = Route("GET",
+  // @LINE:37
+  private[this] lazy val controllers_Assets_versioned28_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned24_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned28_invoker = createInvoker(
     Assets_3.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -513,11 +585,11 @@ class Routes(
     )
   )
 
-  // @LINE:34
-  private[this] lazy val controllers_Assets_at25_route = Route("GET",
+  // @LINE:38
+  private[this] lazy val controllers_Assets_at29_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_at25_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_at29_invoker = createInvoker(
     Assets_3.at(fakeValue[String], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -594,99 +666,123 @@ class Routes(
       }
   
     // @LINE:17
-    case controllers_ShimonManage_ShowFShimonregi10_route(params) =>
-      call { 
-        controllers_ShimonManage_ShowFShimonregi10_invoker.call(ShimonManage_2.ShowFShimonregi())
+    case controllers_ModelManage_s_changeUserModel10_route(params) =>
+      call(params.fromQuery[Int]("param1_chng", None), params.fromQuery[Int]("param2_chng", None), params.fromQuery[Int]("param3_chng", None), params.fromQuery[Int]("param4_chng", None), params.fromQuery[Int]("param5_chng", None), params.fromQuery[Int]("param6_chng", None)) { (param1_chng, param2_chng, param3_chng, param4_chng, param5_chng, param6_chng) =>
+        controllers_ModelManage_s_changeUserModel10_invoker.call(ModelManage_0.s_changeUserModel(param1_chng, param2_chng, param3_chng, param4_chng, param5_chng, param6_chng))
       }
   
     // @LINE:18
-    case controllers_ShimonManage_ShowFShimonregi11_route(params) =>
-      call { 
-        controllers_ShimonManage_ShowFShimonregi11_invoker.call(ShimonManage_2.ShowFShimonregi())
+    case controllers_ModelManage_s_changeUserModel11_route(params) =>
+      call(params.fromQuery[Int]("param1_chng", None), params.fromQuery[Int]("param2_chng", None), params.fromQuery[Int]("param3_chng", None), params.fromQuery[Int]("param4_chng", None), params.fromQuery[Int]("param5_chng", None), params.fromQuery[Int]("param6_chng", None)) { (param1_chng, param2_chng, param3_chng, param4_chng, param5_chng, param6_chng) =>
+        controllers_ModelManage_s_changeUserModel11_invoker.call(ModelManage_0.s_changeUserModel(param1_chng, param2_chng, param3_chng, param4_chng, param5_chng, param6_chng))
       }
   
     // @LINE:19
-    case controllers_ShimonManage_MakeShimon12_route(params) =>
+    case controllers_ShimonManage_ShowFShimonregi12_route(params) =>
       call { 
-        controllers_ShimonManage_MakeShimon12_invoker.call(ShimonManage_2.MakeShimon())
+        controllers_ShimonManage_ShowFShimonregi12_invoker.call(ShimonManage_2.ShowFShimonregi())
       }
   
     // @LINE:20
-    case controllers_DorilManage_ShowDoril13_route(params) =>
+    case controllers_ShimonManage_ShowFShimonregi13_route(params) =>
       call { 
-        controllers_DorilManage_ShowDoril13_invoker.call(DorilManage_1.ShowDoril())
+        controllers_ShimonManage_ShowFShimonregi13_invoker.call(ShimonManage_2.ShowFShimonregi())
       }
   
     // @LINE:21
-    case controllers_DorilManage_ShowFDorilregi14_route(params) =>
+    case controllers_ShimonManage_MakeShimon14_route(params) =>
       call { 
-        controllers_DorilManage_ShowFDorilregi14_invoker.call(DorilManage_1.ShowFDorilregi())
+        controllers_ShimonManage_MakeShimon14_invoker.call(ShimonManage_2.MakeShimon())
       }
   
     // @LINE:22
-    case controllers_DorilManage_ShowFDorilregi15_route(params) =>
+    case controllers_DorilManage_ShowDoril15_route(params) =>
       call { 
-        controllers_DorilManage_ShowFDorilregi15_invoker.call(DorilManage_1.ShowFDorilregi())
+        controllers_DorilManage_ShowDoril15_invoker.call(DorilManage_1.ShowDoril())
       }
   
     // @LINE:23
-    case controllers_DorilManage_CheckAnserDoril16_route(params) =>
+    case controllers_DorilManage_ShowFDorilregi16_route(params) =>
       call { 
-        controllers_DorilManage_CheckAnserDoril16_invoker.call(DorilManage_1.CheckAnserDoril())
+        controllers_DorilManage_ShowFDorilregi16_invoker.call(DorilManage_1.ShowFDorilregi())
       }
   
     // @LINE:24
-    case controllers_DorilManage_CheckAnserDoril17_route(params) =>
+    case controllers_DorilManage_ShowFDorilregi17_route(params) =>
       call { 
-        controllers_DorilManage_CheckAnserDoril17_invoker.call(DorilManage_1.CheckAnserDoril())
+        controllers_DorilManage_ShowFDorilregi17_invoker.call(DorilManage_1.ShowFDorilregi())
       }
   
     // @LINE:25
-    case controllers_DorilManage_MakeDoril18_route(params) =>
+    case controllers_DorilManage_CheckAnserDoril18_route(params) =>
       call { 
-        controllers_DorilManage_MakeDoril18_invoker.call(DorilManage_1.MakeDoril())
+        controllers_DorilManage_CheckAnserDoril18_invoker.call(DorilManage_1.CheckAnserDoril())
       }
   
     // @LINE:26
-    case controllers_ModelManage_ShowUserModel19_route(params) =>
+    case controllers_DorilManage_CheckAnserDoril19_route(params) =>
       call { 
-        controllers_ModelManage_ShowUserModel19_invoker.call(ModelManage_0.ShowUserModel())
+        controllers_DorilManage_CheckAnserDoril19_invoker.call(DorilManage_1.CheckAnserDoril())
       }
   
     // @LINE:27
-    case controllers_Application_logout20_route(params) =>
-      call { 
-        controllers_Application_logout20_invoker.call(Application_4.logout())
+    case controllers_ModelManage_d_changeUserModel20_route(params) =>
+      call(params.fromQuery[String]("param", None), params.fromQuery[Int]("chng_param", None), params.fromQuery[String]("judge", None)) { (param, chng_param, judge) =>
+        controllers_ModelManage_d_changeUserModel20_invoker.call(ModelManage_0.d_changeUserModel(param, chng_param, judge))
       }
   
     // @LINE:28
-    case controllers_Application_auth21_route(params) =>
-      call { 
-        controllers_Application_auth21_invoker.call(Application_4.auth())
+    case controllers_ModelManage_d_changeUserModel21_route(params) =>
+      call(params.fromQuery[String]("param", None), params.fromQuery[Int]("chng_param", None), params.fromQuery[String]("judge", None)) { (param, chng_param, judge) =>
+        controllers_ModelManage_d_changeUserModel21_invoker.call(ModelManage_0.d_changeUserModel(param, chng_param, judge))
       }
   
     // @LINE:29
-    case controllers_Application_NewRegister22_route(params) =>
+    case controllers_DorilManage_MakeDoril22_route(params) =>
       call { 
-        controllers_Application_NewRegister22_invoker.call(Application_4.NewRegister())
+        controllers_DorilManage_MakeDoril22_invoker.call(DorilManage_1.MakeDoril())
       }
   
     // @LINE:30
-    case controllers_Application_showError23_route(params) =>
-      call(params.fromQuery[String]("errorstring", None)) { (errorstring) =>
-        controllers_Application_showError23_invoker.call(Application_4.showError(errorstring))
+    case controllers_ModelManage_ShowUserModel23_route(params) =>
+      call { 
+        controllers_ModelManage_ShowUserModel23_invoker.call(ModelManage_0.ShowUserModel())
+      }
+  
+    // @LINE:31
+    case controllers_Application_logout24_route(params) =>
+      call { 
+        controllers_Application_logout24_invoker.call(Application_4.logout())
+      }
+  
+    // @LINE:32
+    case controllers_Application_auth25_route(params) =>
+      call { 
+        controllers_Application_auth25_invoker.call(Application_4.auth())
       }
   
     // @LINE:33
-    case controllers_Assets_versioned24_route(params) =>
-      call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned24_invoker.call(Assets_3.versioned(path, file))
+    case controllers_Application_NewRegister26_route(params) =>
+      call { 
+        controllers_Application_NewRegister26_invoker.call(Application_4.NewRegister())
       }
   
     // @LINE:34
-    case controllers_Assets_at25_route(params) =>
+    case controllers_Application_showError27_route(params) =>
+      call(params.fromQuery[String]("errorstring", None)) { (errorstring) =>
+        controllers_Application_showError27_invoker.call(Application_4.showError(errorstring))
+      }
+  
+    // @LINE:37
+    case controllers_Assets_versioned28_route(params) =>
+      call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
+        controllers_Assets_versioned28_invoker.call(Assets_3.versioned(path, file))
+      }
+  
+    // @LINE:38
+    case controllers_Assets_at29_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_at25_invoker.call(Assets_3.at(path, file))
+        controllers_Assets_at29_invoker.call(Assets_3.at(path, file))
       }
   }
 }
