@@ -17,23 +17,21 @@
 	width:@width; height:@height;   /*背景画像に合わせたサイズ指定*/
     background-image:url(@filename);/*背景画像*/
 }
-
-/*============================================
-全般的なスタイル
-============================================*/
 * {
 	margin:0; padding:0; 	/*全要素のマージン・パディングをリセット*/
-	line-height:1.5;	    /*全要素の行の高さを1.5倍にする*/
-	color:@all-char-col;		/*文字色*/
-} 
+	line-height:1.5;	/*全要素の行の高さを1.5倍にする*/
+	color:#333333;		/*文字色*/
 
+} 
 body {
-	background-color:@all-back-col;	/*ページ全体の背景色*/
-	text-align:center;		        /*IE6以下でセンタリングするための対策*/
+	background-color:#999999;	/*ページ全体の背景色*/
+	text-align:center;		/*IE6以下でセンタリングするための対策*/
 }
 
 div#pagebody {
-	width:796px; Height:796px; margin:0 auto;	     /*内容全体をセンタリング*/
+    width:796px; margin:0 auto;	   
+    height: 100%;
+    padding: 0;                                     /*内容全体をセンタリング*/
 	text-align:left;	                            /*テキストの配置を左揃えにする*/
 	background-image:url("images/bg_pagebody.gif");	/*内容全体の背景*/
 	background-repeat:repeat-y;		                /*背景画像を縦方向に繰り返す*/
@@ -92,9 +90,10 @@ li#menu05 {
 コンテンツ
 ============================================*/
 div#content {
-	width:776px; margin:10px 10px 10px 25px; /*幅の指定と位置調整*/
+	width:796px; 	        /*幅の指定と位置調整*/
+    min-height: 100%;
+    text-align:left;
 	display:inline;			/*IE6のマージン算出のバグ対策*/
-	float:left;			/*サブメニューのカラムを左寄せにする*/
 }
 
 #image-btn1{
@@ -103,7 +102,6 @@ div#content {
     background: url("images/maru_icon.jpg");
     background-position: center center;
     background-repeat: no-repeat;
-    
     overflow: hidden;
     text-indent: 100%;
     white-space: nowrap;
@@ -115,7 +113,6 @@ div#content {
     background: url("images/batu_icon.jpg");
     background-position: center center;
     background-repeat: no-repeat;
-    
     overflow: hidden;
     text-indent: 100%;
     white-space: nowrap;
@@ -124,8 +121,11 @@ div#content {
 /*============================================
 タブメニュー用
 =============================================*/
-
-div.tabbox1 { margin: 15px 0 0 0; padding: 0px; width:600px;}
+div.tabbox1 { 
+    margin: 10px 0px 0px 0px; 
+    padding: 0px; 
+    width:600px;
+}
 /* ▼ タブ部分のマージンとパディング領域を設定 */
 /* タブ1 */
 p.tabs { margin: 0px; padding: 0px; }
@@ -140,6 +140,11 @@ p.tabs a {
 p.tabs a.tab1 {text-decoration:none; background-color:#fafafa;border-right:1px solid #dcdcdc;border-left:1px solid #dcdcdc;border-top: 3px solid rgba(170, 0, 0, 0.85);  color: #666; font-weight:600;}
 p.tabs a.tab2 {text-decoration:none; background-color:#fafafa;border-right:1px solid #dcdcdc;border-left:1px solid #dcdcdc;border-top: 3px solid rgba(0, 170, 0, 0.85);  color: #666; font-weight:600;}
 p.tabs a:hover {opacity:0.7;filter:alpha(opacity=70);}
+/* ▼ タブ中身のボックス */
+div.tab {
+   /* ▼ ボックス共通の装飾 */
+    clear: left;
+}
 
 div.tabbox2 { margin: 15px 0 0 0; padding: 0px; width:600px;}
 /* タブ2 */
@@ -156,16 +161,16 @@ p.tabs2 a.tab3 {text-decoration:none; background-color:#fafafa;border-right:1px 
 p.tabs2 a.tab4 {text-decoration:none; background-color:#fafafa;border-right:1px solid #dcdcdc;border-left:1px solid #dcdcdc;border-top: 3px solid rgba(0, 170, 0, 0.85);  color: #666; font-weight:600;}
 p.tabs2 a:hover {opacity:0.7;filter:alpha(opacity=70);}
 /* ▼ タブ中身のボックス */
-div.tab {
+div.ttab {
    /* ▼ ボックス共通の装飾 */
-   weight: 600px;  clear: left;
+   clear: left;
 }
 /* ▼ 各ボックスの配色設定 */
 div#tab1 { border: 2px solid #DDD; background-color: #fbfbfb; }
 div#tab2 { border: 2px solid #DDD; background-color: #fbfbfb; }
 div#tab3 { border: 2px solid #DDD; background-color: #fbfbfb; }
 div#tab4 { border: 2px solid #DDD; background-color: #fbfbfb; }
-div.tab p { margin: 0.5em; }
+div.ttab p { margin: 0.5em; }
 
 div#graph {
     width : 500px;

@@ -20,7 +20,7 @@ import java.net.*;
 
 public class DorilManage extends Controller {
     //何問出題するか
-    public static final int doril_max = 5;
+    public static final int doril_max = 3;
     
     @Authenticated(MySecured.class)
     public Result ShowFDorilregi(){
@@ -39,13 +39,18 @@ public class DorilManage extends Controller {
         String doril_tag = new String();
 
         BufferedReader br = null;
-        Random rnd = new Random();
+        Random rnd = null;
         
         //問題を出題中かキャッシュから判断する
         if((int)Cache.get("doril_size") < doril_max){
             if(Cache.get("doril_seed") == null){
                 if(doril_num > 0){
-                    seed = rnd.nextInt(doril_num);
+                    List<Integer> a_d_s  = new ArrayList<Integer>((ArrayList<Integer>)Cache.get("already_doril_seed"));
+                    do{
+                        rnd = new Random();
+                        seed = rnd.nextInt(doril_num);    
+                    }while(a_d_s.contains(seed));
+                    
                     Cache.remove("doril_seed");
                     Cache.set("doril_seed", seed);
                     
@@ -91,12 +96,7 @@ public class DorilManage extends Controller {
         }
         else{
             Cache.remove("doril_size");
-            Cache.remove("doril_seed");
-            Cache.remove("doril_state");
-            Cache.remove("doril_tag");
-            Cache.remove("doril_slv_seed");
-            Cache.remove("doril_solve");
-            Cache.remove("doril_commentary");
+            Cache.remove("already_shimon_seed");
             return ok(error.render("ドリル終了ですの"));
         }
             
@@ -154,7 +154,12 @@ public class DorilManage extends Controller {
             doril_commentary = new ArrayList<String>((ArrayList<String>)Cache.get("doril_commentary"));
         }
         
+        //キャッシュをリセット
+        Cache.remove("doril_seed");
+        Cache.remove("doril_slv_seed");
+        
         if(input.data().get("d_solve").equals(doril_solve)){
+            
             //正解によるパラメータ変化
             return redirect(routes.ModelManage.d_changeUserModel((String)Cache.get("doril_tag"),5,"true"));
         }
@@ -162,6 +167,8 @@ public class DorilManage extends Controller {
             //不正解によるパラメータ変化
             return redirect(routes.ModelManage.d_changeUserModel((String)Cache.get("doril_tag"),-5,"false"));
         }
+        
+        
     }
     
     @Authenticated(MySecured.class)

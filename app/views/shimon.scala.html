@@ -50,7 +50,7 @@
             <a href="#tab2" class="tab2" onclick="ChangeTab1('tab2'); return false;">プログラム</a>
         </p>
         
-         <div id="tab1" class="tab">
+        <div id="tab1" class="tab">
             @for((obj,i) <- problem_state.zipWithIndex) {
                 <div>@{obj}</div>
             }
@@ -73,7 +73,9 @@
         
         </div>
         </div>
-        <br><br>
+        
+        <br>
+        
         <dic class="tabbox2">
         
         <p class="tabs2">
@@ -82,7 +84,7 @@
         </p>
         
        
-        <div id="tab3" class="tab">
+        <div id="tab3" class="ttab">
     
             @for(state <- smallproblemstate) {
                 <div>@state</div>
@@ -98,7 +100,7 @@
             
 　      </div>
 
-        <div id="tab4" class="tab">
+        <div id="tab4" class="ttab">
             
         @if(solves.size() == 0){
             <form action="/shimon_solve" method="POST">

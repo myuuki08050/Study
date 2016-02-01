@@ -7,9 +7,6 @@
 関数各種
 ============================================*/
 /* リストの設定を行う関数 */
-/*============================================
-全般的なスタイル
-============================================*/
 * {
   margin: 0;
   padding: 0;
@@ -27,8 +24,9 @@ body {
 }
 div#pagebody {
   width: 796px;
-  Height: 796px;
   margin: 0 auto;
+  height: 100%;
+  padding: 0;
   /*内容全体をセンタリング*/
   text-align: left;
   /*テキストの配置を左揃えにする*/
@@ -160,13 +158,12 @@ li#menu05 {
 コンテンツ
 ============================================*/
 div#content {
-  width: 776px;
-  margin: 10px 10px 10px 25px;
+  width: 796px;
   /*幅の指定と位置調整*/
+  min-height: 100%;
+  text-align: left;
   display: inline;
   /*IE6のマージン算出のバグ対策*/
-  float: left;
-  /*サブメニューのカラムを左寄せにする*/
 }
 #image-btn1 {
   width: 72px;
@@ -192,7 +189,7 @@ div#content {
 タブメニュー用
 =============================================*/
 div.tabbox1 {
-  margin: 15px 0 0 0;
+  margin: 10px 0px 0px 0px;
   padding: 0px;
   width: 600px;
 }
@@ -234,6 +231,11 @@ p.tabs a.tab2 {
 p.tabs a:hover {
   opacity: 0.7;
   filter: alpha(opacity=70);
+}
+/* ▼ タブ中身のボックス */
+div.tab {
+  /* ▼ ボックス共通の装飾 */
+  clear: left;
 }
 div.tabbox2 {
   margin: 15px 0 0 0;
@@ -279,9 +281,8 @@ p.tabs2 a:hover {
   filter: alpha(opacity=70);
 }
 /* ▼ タブ中身のボックス */
-div.tab {
+div.ttab {
   /* ▼ ボックス共通の装飾 */
-  weight: 600px;
   clear: left;
 }
 /* ▼ 各ボックスの配色設定 */
@@ -301,7 +302,7 @@ div#tab4 {
   border: 2px solid #DDD;
   background-color: #fbfbfb;
 }
-div.tab p {
+div.ttab p {
   margin: 0.5em;
 }
 div#graph {

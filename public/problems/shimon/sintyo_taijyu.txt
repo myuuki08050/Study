@@ -1,0 +1,79 @@
+1
+次のプログラムは、テキストファイルから身長体重を読み出し、それを構造体に格納して画面表示するプログラムである。
+7
+<テキストファイル[Health_check.txt]の中身>
+名前<char[ ]>,体重<double>,身長<double>
+名前<char[ ]>,体重<double>,身長<double>
+・
+・
+・
+名前<char[ ]>,体重<double>,身長<double>
+41
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct HealthData {
+    char name[255];
+    double weight;
+    double height;
+};
+
+int main(void)
+{
+	FILE *fp;
+	char s[257];
+    char *split_code;
+    int i,j,filesize;
+
+    struct HealthData data[256];
+
+	if ((fp = fopen("Health_check.txt", "r")) == NULL) {
+		printf("file open error!!\n");
+		exit(EXIT_FAILURE);
+	}
+
+	for(i=0;fgets(s, 257, fp) != NULL;i++){
+        split_code = strtok(s, ",");
+        strcpy(data[i].name,split_code);
+        split_code = strtok(NULL, ",");
+        data[i].weight = atof(split_code);
+        split_code = strtok(NULL, ",");
+        data[i].height = atof(split_code);
+        filesize = i;
+    }
+
+    for(j=0;j<tmp+1;j++){
+         printf("name: %s,weight: /* ① */,height: /* ① */\n",data[j].name,data[j].weight,data[j].height);
+    }
+
+	fclose(fp);
+	return 0;
+}
+4
+標準入出力
+ポインタ
+ファイル入出力
+構造体
+2
+2
+(1),①に適切な表記を、次の選択肢から選べ。
+ただし、身長・体重は整数部分が有効数字4桁、小数部分が有効数字1桁でdouble型として出力されるものとする。
+0
+0
+5
+%4.1d
+%41d
+%f
+%4.1f
+%41f 
+1
+(2),このプログラムは、最高何行のデータを構造体に読み込めるか？
+0
+0
+5
+128
+255
+256
+257
+512

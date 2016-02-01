@@ -1,0 +1,15 @@
+maru
+13
+main関数は再帰呼び出しできます。
+例えば、以下のようなプログラムも実行可能です。
+#include <stdio.h>
+int main(int argc, char *argv[]) {
+  int i;
+  if (argc > 0) {
+    for (i = 0; i < argc; i++)
+      printf(" %s", argv[i]);
+    printf("\n");
+    main(argc - 1, argv);
+  }
+  return 0;
+}

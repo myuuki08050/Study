@@ -1,17 +1,22 @@
 package controllers;
 
-import java.util.*;
-import java.lang.*;
+import play.*;
 import play.mvc.*;
-import play.mvc.Security.Authenticated;
-import play.data.Form;
+import views.html.*;
 import play.data.DynamicForm;
+import play.data.Form;
 import static play.data.Form.form;
+import play.mvc.Security.Authenticated;
+import play.cache.Cache;
+import play.mvc.Http.MultipartFormData;
+import play.mvc.Http.MultipartFormData.FilePart;
+import java.util.*;
+import models.*;
+import views.html.*;
 import com.avaje.ebean.Model;
 import com.avaje.ebean.Model.Find;
-import views.html.*;
-import models.*;
-import play.cache.Cache;
+import java.io.*;
+import java.net.*;
 
 public class Application extends Controller {
     
@@ -34,7 +39,10 @@ public class Application extends Controller {
 	        return redirect(routes.Application.showLogin());
 	    }
 	    Cache.set("shimon_size", 0);
+	    List<Integer> dummy = new ArrayList<Integer>();
+	    Cache.set("already_shimon_seed", dummy);
 	    Cache.set("doril_size", 0);
+	    Cache.set("already_doril_seed", dummy);
 		return ok(home.render(session("user_id"), session("logintimes"),session("isAdmin")));
 	}
 	

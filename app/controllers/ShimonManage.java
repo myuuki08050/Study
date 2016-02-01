@@ -20,7 +20,7 @@ import java.net.*;
 
 public class ShimonManage extends Controller {
     //何問出題するか
-    public static final int shimon_max = 5;
+    public static final int shimon_max = 2;
     
     public static class SmallProblem {
         List<String> sproblem_state = new ArrayList<String>();
@@ -103,7 +103,7 @@ public class ShimonManage extends Controller {
         String probrem_url[] = new String[2];
         
         BufferedReader br = null;
-        Random rnd = new Random();
+        Random rnd = null;
         
         //小問を扱うための内部クラス
         
@@ -113,13 +113,17 @@ public class ShimonManage extends Controller {
         if((int)Cache.get("shimon_size") < shimon_max){
             if(Cache.get("shimon_seed") == null){
                 if(shimon_num > 0){
-                    seed = rnd.nextInt(shimon_num);
-                
+                    List<Integer> a_s_s  = new ArrayList<Integer>((ArrayList<Integer>)Cache.get("already_shimon_seed"));
+                        do{
+                            rnd = new Random();
+                            seed = rnd.nextInt(shimon_num);
+                        } while(a_s_s.contains(seed));
+                    
                     Cache.remove("shimon_seed");
                     Cache.set("shimon_seed", seed);
                     
-                    int ssize = (int)Cache.get("shimon_size") + 1;
-                    Cache.set("shimon_size",ssize);
+                    a_s_s.add(seed);
+                    Cache.set("already_shimon_seed", a_s_s);
                 
                     if(seed >= 0){
                         s = shimon_s.get(seed);
@@ -226,8 +230,9 @@ public class ShimonManage extends Controller {
             int now = (int)Cache.get("shimon_now_question");
             
             if(now >= s_problems.size()){
+                int ssize = (int)Cache.get("shimon_size") + 1;
+                Cache.set("shimon_size",ssize);
                 Cache.remove("shimon_seed");
-                Cache.remove("shimon_size");
                 Cache.remove("shimon_state");
                 Cache.remove("shimon_condition");
                 Cache.remove("shimon_program");
@@ -236,7 +241,7 @@ public class ShimonManage extends Controller {
                 Cache.remove("shimon_now_question");
                 Cache.remove("shimon_answer");
                 Cache.remove("shimon_slv_seed");
-                return ok(error.render("大問終了です。"));
+                return redirect(routes.ShimonManage.ShowShimon());
             }
             else{
                 d_sprobst.clear();
@@ -258,6 +263,8 @@ public class ShimonManage extends Controller {
             }
         }
         else{
+            Cache.remove("already_shimon_seed");
+            Cache.remove("shimon_size");
             return ok(error.render("試問終了ですの"));
         }
             
