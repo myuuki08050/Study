@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/git_local/activator-1.3.6-minimal/SolveSystem2/conf/routes
-// @DATE:Mon Feb 01 03:57:30 JST 2016
+// @DATE:Tue Feb 02 15:05:57 JST 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:37
+  // @LINE:45
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:38
+    // @LINE:46
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -33,7 +33,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:37
+    // @LINE:45
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -101,26 +101,26 @@ package controllers.javascript {
     }
 
   
-    // @LINE:25
-    def CheckAnserDoril: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.DorilManage.CheckAnserDoril",
-      """
-        function() {
-        
-          if (true) {
-            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "doril_solve"})
-          }
-        
-        }
-      """
-    )
-  
     // @LINE:22
     def ShowDoril: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.DorilManage.ShowDoril",
       """
         function() {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "doril"})
+        }
+      """
+    )
+  
+    // @LINE:23
+    def ShowFDorilregi: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DorilManage.ShowFDorilregi",
+      """
+        function() {
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "doril_fregi"})
+          }
+        
         }
       """
     )
@@ -135,14 +135,42 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:23
-    def ShowFDorilregi: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.DorilManage.ShowFDorilregi",
+    // @LINE:25
+    def CheckAnserDoril: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DorilManage.CheckAnserDoril",
       """
         function() {
         
           if (true) {
-            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "doril_fregi"})
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "doril_solve"})
+          }
+        
+        }
+      """
+    )
+  
+    // @LINE:37
+    def showDorilDB: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DorilManage.showDorilDB",
+      """
+        function() {
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "dorildb_show"})
+          }
+        
+        }
+      """
+    )
+  
+    // @LINE:39
+    def deleteDorilbyID: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.DorilManage.deleteDorilbyID",
+      """
+        function() {
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "doril_delete"})
           }
         
         }
@@ -267,6 +295,34 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:15
+    def CheckAnserShimon: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ShimonManage.CheckAnserShimon",
+      """
+        function() {
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "shimon_solve"})
+          }
+        
+        }
+      """
+    )
+  
+    // @LINE:41
+    def deleteShimonbyID: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ShimonManage.deleteShimonbyID",
+      """
+        function() {
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "shimon_delete"})
+          }
+        
+        }
+      """
+    )
+  
     // @LINE:13
     def ShowShimon: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ShimonManage.ShowShimon",
@@ -281,6 +337,20 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:35
+    def showShimonDB: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ShimonManage.showShimonDB",
+      """
+        function() {
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "shimondb_show"})
+          }
+        
+        }
+      """
+    )
+  
     // @LINE:19
     def ShowFShimonregi: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ShimonManage.ShowFShimonregi",
@@ -289,20 +359,6 @@ package controllers.javascript {
         
           if (true) {
             return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "shimon_fregi"})
-          }
-        
-        }
-      """
-    )
-  
-    // @LINE:15
-    def CheckAnserShimon: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.ShimonManage.CheckAnserShimon",
-      """
-        function() {
-        
-          if (true) {
-            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "shimon_solve"})
           }
         
         }

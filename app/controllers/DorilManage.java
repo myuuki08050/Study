@@ -54,6 +54,9 @@ public class DorilManage extends Controller {
                     Cache.remove("doril_seed");
                     Cache.set("doril_seed", seed);
                     
+                    a_d_s.add(seed);
+                    Cache.set("already_doril_seed", a_d_s);
+                    
                     int ssize = (int)Cache.get("doril_size") + 1;
                     Cache.set("doril_size",ssize);
                 
@@ -168,7 +171,6 @@ public class DorilManage extends Controller {
             return redirect(routes.ModelManage.d_changeUserModel((String)Cache.get("doril_tag"),-5,"false"));
         }
         
-        
     }
     
     @Authenticated(MySecured.class)
@@ -244,4 +246,26 @@ public class DorilManage extends Controller {
         return ok(doril_regicomplete.render());
     
     }
+    
+    public Result showDorilDB(){
+        List<Doril> doril_s = Doril.finder.all();
+        StringBuilder msg = new StringBuilder();
+        for (Doril doril : doril_s) {
+            msg.append(doril.toString()).append("\n");
+        }
+        return ok(error.render(msg.toString()));
+    }
+    
+    public Result deleteDorilbyID(){
+        String[] params = { "del" };
+        DynamicForm input = Form.form();
+        input = input.bindFromRequest(params);
+        Doril deldoril = Doril.finder.byId(new Long(Long.parseLong(input.data().get("del"))));
+        if(deldoril == null){
+            return ok(error.render("ID = " + input.data().get("del") + "番が見つかりませんでした。\n"));
+        }
+        deldoril.delete();
+        return ok(error.render("ID = " + input.data().get("del") + "番のデリート完了。\n"));
+    }
+    
 }

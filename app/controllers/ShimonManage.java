@@ -398,7 +398,11 @@ public class ShimonManage extends Controller {
             File file = text.getFile();
             if (contentType.equals("text/plain")) {
                 String fullPath = Play.application().path().getPath() + "/public/problems/shimon";
-                file.renameTo(new File(fullPath, fileName));
+                File newFile = new File(fullPath, fileName);
+                if(newFile.exists()){
+                    newFile.delete();
+                }
+                file.renameTo(newFile);
             }
         } 
         else {
@@ -413,7 +417,11 @@ public class ShimonManage extends Controller {
             File file = text2.getFile();
             if (contentType.equals("text/plain")) {
                 String fullPath = Play.application().path().getPath() + "/public/problems/shimon_solve";
-                file.renameTo(new File(fullPath, fileName2));
+                File newFile = new File(fullPath, fileName2);
+                if(newFile.exists()){
+                    newFile.delete();
+                }
+                file.renameTo(newFile);
             }
         } 
         else {
@@ -435,6 +443,7 @@ public class ShimonManage extends Controller {
         try{
             //ファイルを開いてタグを取り出し、データベースに登録
             File file = Play.application().getFile("/public/problems/shimon/" + fileName);
+            
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file),"UTF-8"));
             List<String> dummy = new ArrayList<String>();
             String tag = new String();
@@ -492,6 +501,27 @@ public class ShimonManage extends Controller {
         
         newshimon.save();
         return ok(shimon_regicomplete.render());
+    }
+    
+    public Result showShimonDB(){
+        List<Shimon> shimon_s = Shimon.finder.all();
+        StringBuilder msg = new StringBuilder();
+        for (Shimon shimon : shimon_s) {
+            msg.append(shimon.toString()).append("\n");
+        }
+        return ok(error.render(msg.toString()));
+    }
+    
+    public Result deleteShimonbyID(){
+        String[] params = { "del" };
+        DynamicForm input = Form.form();
+        input = input.bindFromRequest(params);
+        Shimon delshimon = Shimon.finder.byId(new Long(Long.parseLong(input.data().get("del"))));
+        if(delshimon == null){
+            return ok(error.render("ID = " + input.data().get("del") + "番が見つかりませんでした。\n"));
+        }
+        delshimon.delete();
+        return ok(error.render("ID = " + input.data().get("del") + "番のデリート完了。\n"));
     }
 }
     

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/git_local/activator-1.3.6-minimal/SolveSystem2/conf/routes
-// @DATE:Mon Feb 01 03:57:30 JST 2016
+// @DATE:Tue Feb 02 15:05:57 JST 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -13,20 +13,20 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers {
 
-  // @LINE:37
+  // @LINE:45
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:38
+    // @LINE:46
     def at(file:String): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
     }
   
-    // @LINE:37
+    // @LINE:45
     def versioned(file:Asset): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[Asset]].unbind("file", file))
@@ -84,6 +84,32 @@ package controllers {
     }
 
   
+    // @LINE:22
+    def ShowDoril(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "doril")
+    }
+  
+    // @LINE:23
+    def ShowFDorilregi(): Call = {
+    
+      () match {
+      
+        // @LINE:23
+        case ()  =>
+          import ReverseRouteContext.empty
+          Call("GET", _prefix + { _defaultPrefix } + "doril_fregi")
+      
+      }
+    
+    }
+  
+    // @LINE:29
+    def MakeDoril(): Call = {
+      import ReverseRouteContext.empty
+      Call("POST", _prefix + { _defaultPrefix } + "doril_regicomp")
+    }
+  
     // @LINE:25
     def CheckAnserDoril(): Call = {
     
@@ -98,27 +124,29 @@ package controllers {
     
     }
   
-    // @LINE:22
-    def ShowDoril(): Call = {
-      import ReverseRouteContext.empty
-      Call("POST", _prefix + { _defaultPrefix } + "doril")
-    }
-  
-    // @LINE:29
-    def MakeDoril(): Call = {
-      import ReverseRouteContext.empty
-      Call("POST", _prefix + { _defaultPrefix } + "doril_regicomp")
-    }
-  
-    // @LINE:23
-    def ShowFDorilregi(): Call = {
+    // @LINE:37
+    def showDorilDB(): Call = {
     
       () match {
       
-        // @LINE:23
+        // @LINE:37
         case ()  =>
           import ReverseRouteContext.empty
-          Call("GET", _prefix + { _defaultPrefix } + "doril_fregi")
+          Call("GET", _prefix + { _defaultPrefix } + "dorildb_show")
+      
+      }
+    
+    }
+  
+    // @LINE:39
+    def deleteDorilbyID(): Call = {
+    
+      () match {
+      
+        // @LINE:39
+        case ()  =>
+          import ReverseRouteContext.empty
+          Call("GET", _prefix + { _defaultPrefix } + "doril_delete")
       
       }
     
@@ -212,6 +240,34 @@ package controllers {
       Call("POST", _prefix + { _defaultPrefix } + "shimon_regicomp")
     }
   
+    // @LINE:15
+    def CheckAnserShimon(): Call = {
+    
+      () match {
+      
+        // @LINE:15
+        case ()  =>
+          import ReverseRouteContext.empty
+          Call("GET", _prefix + { _defaultPrefix } + "shimon_solve")
+      
+      }
+    
+    }
+  
+    // @LINE:41
+    def deleteShimonbyID(): Call = {
+    
+      () match {
+      
+        // @LINE:41
+        case ()  =>
+          import ReverseRouteContext.empty
+          Call("GET", _prefix + { _defaultPrefix } + "shimon_delete")
+      
+      }
+    
+    }
+  
     // @LINE:13
     def ShowShimon(): Call = {
     
@@ -226,6 +282,20 @@ package controllers {
     
     }
   
+    // @LINE:35
+    def showShimonDB(): Call = {
+    
+      () match {
+      
+        // @LINE:35
+        case ()  =>
+          import ReverseRouteContext.empty
+          Call("GET", _prefix + { _defaultPrefix } + "shimondb_show")
+      
+      }
+    
+    }
+  
     // @LINE:19
     def ShowFShimonregi(): Call = {
     
@@ -235,20 +305,6 @@ package controllers {
         case ()  =>
           import ReverseRouteContext.empty
           Call("GET", _prefix + { _defaultPrefix } + "shimon_fregi")
-      
-      }
-    
-    }
-  
-    // @LINE:15
-    def CheckAnserShimon(): Call = {
-    
-      () match {
-      
-        // @LINE:15
-        case ()  =>
-          import ReverseRouteContext.empty
-          Call("GET", _prefix + { _defaultPrefix } + "shimon_solve")
       
       }
     

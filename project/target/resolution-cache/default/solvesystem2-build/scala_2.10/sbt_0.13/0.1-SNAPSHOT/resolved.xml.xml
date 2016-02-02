@@ -4,7 +4,7 @@
 		module="solvesystem2-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20160202024648"
+		publication="20160202145824"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

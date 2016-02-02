@@ -47,4 +47,8 @@ public class Shimon extends Model {
     
     public static Find<Long,Shimon> finder = new Find<Long,Shimon>(){};
  
+    public String toString() {
+        return "Shimon [id=" + id + ", tag1=" + tag1 + ", tag2=" + tag2 + ", tag3=" + tag3 + ", tag4=" + tag4 + ", tag5=" + tag5 + ", tag6=" + tag6 
+        + ", problem_name="+ problem_name + ", solve_name="+ solve_name +", createDate=" + createDate + ", updateDate=" + updateDate + "]";
+    }
 }

@@ -67,8 +67,12 @@ Seq[Any](format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
                 <br>
                 <input type="submit" value="UPLOAD">
             """)))}),format.raw/*37.14*/("""
-            
-            """),format.raw/*39.13*/("""<h1><a href="/home">ホームにもどる</a></h1>
+        """),format.raw/*38.9*/("""<h1><a href="/dorildb_show">データベースを表示する</a></h1>
+            """),_display_(/*39.14*/form(action = routes.DorilManage.deleteDorilbyID)/*39.63*/ {_display_(Seq[Any](format.raw/*39.65*/("""
+                """),format.raw/*40.17*/("""<input type="number" name="del"/><br>
+                <input type="submit" value="DELETE">
+            """)))}),format.raw/*42.14*/("""
+        """),format.raw/*43.9*/("""<h1><a href="/home">ホームにもどる</a></h1>
     	</div>
         
     </div>    
@@ -94,11 +98,11 @@ Seq[Any](format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object doril_fregister extends doril_fregister_Scope0.doril_fregister_Scope1.doril_fregister
               /*
                   -- GENERATED --
-                  DATE: Sat Jan 30 20:27:56 JST 2016
+                  DATE: Tue Feb 02 14:48:28 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/doril_fregister.scala.html
-                  HASH: ffe8b7eb2b7e34a5a45f7b731c91de3416206010
-                  MATRIX: 901->20|1291->384|1305->390|1366->430|2009->1046|2096->1124|2136->1126|2182->1144|2470->1401|2526->1429
-                  LINES: 35->3|40->8|40->8|40->8|61->29|61->29|61->29|62->30|69->37|71->39
+                  HASH: fd7739bbf3ab8763e21bf057930aaeb289914c18
+                  MATRIX: 901->20|1291->384|1305->390|1366->430|2009->1046|2096->1124|2136->1126|2182->1144|2470->1401|2507->1411|2597->1474|2655->1523|2695->1525|2741->1543|2878->1649|2915->1659
+                  LINES: 35->3|40->8|40->8|40->8|61->29|61->29|61->29|62->30|69->37|70->38|71->39|71->39|71->39|72->40|74->42|75->43
                   -- GENERATED --
               */
           

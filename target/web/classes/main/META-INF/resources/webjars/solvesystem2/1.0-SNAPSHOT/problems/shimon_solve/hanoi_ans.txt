@@ -1,0 +1,3 @@
+2
+n==1
+hanoi(n - 1, from, via, to);

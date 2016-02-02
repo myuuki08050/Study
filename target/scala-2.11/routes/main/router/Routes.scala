@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/git_local/activator-1.3.6-minimal/SolveSystem2/conf/routes
-// @DATE:Mon Feb 01 03:57:30 JST 2016
+// @DATE:Tue Feb 02 15:05:57 JST 2016
 
 package router
 
@@ -24,7 +24,7 @@ class Routes(
   ModelManage_0: controllers.ModelManage,
   // @LINE:22
   DorilManage_1: controllers.DorilManage,
-  // @LINE:37
+  // @LINE:45
   Assets_3: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -39,7 +39,7 @@ class Routes(
     ModelManage_0: controllers.ModelManage,
     // @LINE:22
     DorilManage_1: controllers.DorilManage,
-    // @LINE:37
+    // @LINE:45
     Assets_3: controllers.Assets
   ) = this(errorHandler, Application_4, ShimonManage_2, ModelManage_0, DorilManage_1, Assets_3, "/")
 
@@ -83,6 +83,14 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """auth""", """controllers.Application.auth()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """newregi""", """controllers.Application.NewRegister()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """error""", """controllers.Application.showError(errorstring:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """shimondb_show""", """controllers.ShimonManage.showShimonDB()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """shimondb_show""", """controllers.ShimonManage.showShimonDB()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """dorildb_show""", """controllers.DorilManage.showDorilDB()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """dorildb_show""", """controllers.DorilManage.showDorilDB()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """doril_delete""", """controllers.DorilManage.deleteDorilbyID()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """doril_delete""", """controllers.DorilManage.deleteDorilbyID()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """shimon_delete""", """controllers.ShimonManage.deleteShimonbyID()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """shimon_delete""", """controllers.ShimonManage.deleteShimonbyID()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""", """controllers.Assets.at(path:String = "/public", file:String)"""),
     Nil
@@ -568,11 +576,147 @@ class Routes(
     )
   )
 
+  // @LINE:35
+  private[this] lazy val controllers_ShimonManage_showShimonDB28_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("shimondb_show")))
+  )
+  private[this] lazy val controllers_ShimonManage_showShimonDB28_invoker = createInvoker(
+    ShimonManage_2.showShimonDB(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ShimonManage",
+      "showShimonDB",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """shimondb_show"""
+    )
+  )
+
+  // @LINE:36
+  private[this] lazy val controllers_ShimonManage_showShimonDB29_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("shimondb_show")))
+  )
+  private[this] lazy val controllers_ShimonManage_showShimonDB29_invoker = createInvoker(
+    ShimonManage_2.showShimonDB(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ShimonManage",
+      "showShimonDB",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """shimondb_show"""
+    )
+  )
+
   // @LINE:37
-  private[this] lazy val controllers_Assets_versioned28_route = Route("GET",
+  private[this] lazy val controllers_DorilManage_showDorilDB30_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("dorildb_show")))
+  )
+  private[this] lazy val controllers_DorilManage_showDorilDB30_invoker = createInvoker(
+    DorilManage_1.showDorilDB(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.DorilManage",
+      "showDorilDB",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """dorildb_show"""
+    )
+  )
+
+  // @LINE:38
+  private[this] lazy val controllers_DorilManage_showDorilDB31_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("dorildb_show")))
+  )
+  private[this] lazy val controllers_DorilManage_showDorilDB31_invoker = createInvoker(
+    DorilManage_1.showDorilDB(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.DorilManage",
+      "showDorilDB",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """dorildb_show"""
+    )
+  )
+
+  // @LINE:39
+  private[this] lazy val controllers_DorilManage_deleteDorilbyID32_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("doril_delete")))
+  )
+  private[this] lazy val controllers_DorilManage_deleteDorilbyID32_invoker = createInvoker(
+    DorilManage_1.deleteDorilbyID(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.DorilManage",
+      "deleteDorilbyID",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """doril_delete"""
+    )
+  )
+
+  // @LINE:40
+  private[this] lazy val controllers_DorilManage_deleteDorilbyID33_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("doril_delete")))
+  )
+  private[this] lazy val controllers_DorilManage_deleteDorilbyID33_invoker = createInvoker(
+    DorilManage_1.deleteDorilbyID(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.DorilManage",
+      "deleteDorilbyID",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """doril_delete"""
+    )
+  )
+
+  // @LINE:41
+  private[this] lazy val controllers_ShimonManage_deleteShimonbyID34_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("shimon_delete")))
+  )
+  private[this] lazy val controllers_ShimonManage_deleteShimonbyID34_invoker = createInvoker(
+    ShimonManage_2.deleteShimonbyID(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ShimonManage",
+      "deleteShimonbyID",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """shimon_delete"""
+    )
+  )
+
+  // @LINE:42
+  private[this] lazy val controllers_ShimonManage_deleteShimonbyID35_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("shimon_delete")))
+  )
+  private[this] lazy val controllers_ShimonManage_deleteShimonbyID35_invoker = createInvoker(
+    ShimonManage_2.deleteShimonbyID(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ShimonManage",
+      "deleteShimonbyID",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """shimon_delete"""
+    )
+  )
+
+  // @LINE:45
+  private[this] lazy val controllers_Assets_versioned36_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned28_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned36_invoker = createInvoker(
     Assets_3.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -585,11 +729,11 @@ class Routes(
     )
   )
 
-  // @LINE:38
-  private[this] lazy val controllers_Assets_at29_route = Route("GET",
+  // @LINE:46
+  private[this] lazy val controllers_Assets_at37_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_at29_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_at37_invoker = createInvoker(
     Assets_3.at(fakeValue[String], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -773,16 +917,64 @@ class Routes(
         controllers_Application_showError27_invoker.call(Application_4.showError(errorstring))
       }
   
+    // @LINE:35
+    case controllers_ShimonManage_showShimonDB28_route(params) =>
+      call { 
+        controllers_ShimonManage_showShimonDB28_invoker.call(ShimonManage_2.showShimonDB())
+      }
+  
+    // @LINE:36
+    case controllers_ShimonManage_showShimonDB29_route(params) =>
+      call { 
+        controllers_ShimonManage_showShimonDB29_invoker.call(ShimonManage_2.showShimonDB())
+      }
+  
     // @LINE:37
-    case controllers_Assets_versioned28_route(params) =>
-      call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned28_invoker.call(Assets_3.versioned(path, file))
+    case controllers_DorilManage_showDorilDB30_route(params) =>
+      call { 
+        controllers_DorilManage_showDorilDB30_invoker.call(DorilManage_1.showDorilDB())
       }
   
     // @LINE:38
-    case controllers_Assets_at29_route(params) =>
+    case controllers_DorilManage_showDorilDB31_route(params) =>
+      call { 
+        controllers_DorilManage_showDorilDB31_invoker.call(DorilManage_1.showDorilDB())
+      }
+  
+    // @LINE:39
+    case controllers_DorilManage_deleteDorilbyID32_route(params) =>
+      call { 
+        controllers_DorilManage_deleteDorilbyID32_invoker.call(DorilManage_1.deleteDorilbyID())
+      }
+  
+    // @LINE:40
+    case controllers_DorilManage_deleteDorilbyID33_route(params) =>
+      call { 
+        controllers_DorilManage_deleteDorilbyID33_invoker.call(DorilManage_1.deleteDorilbyID())
+      }
+  
+    // @LINE:41
+    case controllers_ShimonManage_deleteShimonbyID34_route(params) =>
+      call { 
+        controllers_ShimonManage_deleteShimonbyID34_invoker.call(ShimonManage_2.deleteShimonbyID())
+      }
+  
+    // @LINE:42
+    case controllers_ShimonManage_deleteShimonbyID35_route(params) =>
+      call { 
+        controllers_ShimonManage_deleteShimonbyID35_invoker.call(ShimonManage_2.deleteShimonbyID())
+      }
+  
+    // @LINE:45
+    case controllers_Assets_versioned36_route(params) =>
+      call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
+        controllers_Assets_versioned36_invoker.call(Assets_3.versioned(path, file))
+      }
+  
+    // @LINE:46
+    case controllers_Assets_at37_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_at29_invoker.call(Assets_3.at(path, file))
+        controllers_Assets_at37_invoker.call(Assets_3.at(path, file))
       }
   }
 }

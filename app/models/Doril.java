@@ -31,6 +31,11 @@ public class Doril extends Model {
     public Date updateDate;
     
     public static Find<Long,Doril> finder = new Find<Long,Doril>(){};
+    
+    public String toString() {
+        return "Doril [id=" + id + ", tag=" + tag + ", problem_name="+ problem_name + ", solve_name"+ solve_name +", createDate=" 
+        + createDate + ", updateDate=" + updateDate + "]";
+    }
 
 
 }

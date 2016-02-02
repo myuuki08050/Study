@@ -35,8 +35,12 @@
                 <br>
                 <input type="submit" value="UPLOAD">
             }
-            
-            <h1><a href="/home">ホームにもどる</a></h1>
+        <h1><a href="/dorildb_show">データベースを表示する</a></h1>
+            @form(action = routes.DorilManage.deleteDorilbyID) {
+                <input type="number" name="del"/><br>
+                <input type="submit" value="DELETE">
+            }
+        <h1><a href="/home">ホームにもどる</a></h1>
     	</div>
         
     </div>    

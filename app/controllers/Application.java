@@ -138,7 +138,19 @@ public class Application extends Controller {
             //return ok(regicomplete.render(""/*msg.toString()*/,"",""));
         }
         return ok(regicomplete.render());
-    }        
+    } 
+    public Result showUserdb(){
+        List<User> user_s = User.finder.all();
+        StringBuilder msg = new StringBuilder();
+        for (User user : user_s) {
+            //msg.append(user.toString()).append("\n");
+        }
+        return ok(error.render(msg.toString()));        
+    }
+    
+    public Result deleteRegister(){
+        return ok(error.render("ID = " /*+ input.data().get("del") + "番のデリート完了。\n" */));
+    }
 	
 	public Result logout() {
 		session().clear();
