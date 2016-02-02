@@ -1,3 +1,3 @@
-[error] C:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:153:  エラー: return文が指定されていません
-[error]     }
-[error]     ^
+[error] C:\git_local\activator-1.3.6-minimal\SolveSystem2\app\controllers\Application.java:159:  エラー: シンボルを見つけられません
+[error]         if(session("user_id").eqauls(deluser.user_id)){
+[error]                              ^

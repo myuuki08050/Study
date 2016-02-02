@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/git_local/activator-1.3.6-minimal/SolveSystem2/conf/routes
-// @DATE:Tue Feb 02 15:05:57 JST 2016
+// @DATE:Tue Feb 02 22:58:48 JST 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -13,20 +13,20 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers {
 
-  // @LINE:45
+  // @LINE:49
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:46
+    // @LINE:50
     def at(file:String): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
     }
   
-    // @LINE:45
+    // @LINE:49
     def versioned(file:Asset): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[Asset]].unbind("file", file))
@@ -138,12 +138,12 @@ package controllers {
     
     }
   
-    // @LINE:39
+    // @LINE:41
     def deleteDorilbyID(): Call = {
     
       () match {
       
-        // @LINE:39
+        // @LINE:41
         case ()  =>
           import ReverseRouteContext.empty
           Call("GET", _prefix + { _defaultPrefix } + "doril_delete")
@@ -185,6 +185,20 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "register")
     }
   
+    // @LINE:39
+    def showUserDB(): Call = {
+    
+      () match {
+      
+        // @LINE:39
+        case ()  =>
+          import ReverseRouteContext.empty
+          Call("GET", _prefix + { _defaultPrefix } + "userdb_show")
+      
+      }
+    
+    }
+  
     // @LINE:12
     def NewRegister(): Call = {
     
@@ -203,6 +217,20 @@ package controllers {
     def logout(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "logout")
+    }
+  
+    // @LINE:45
+    def deleteUserbyID(): Call = {
+    
+      () match {
+      
+        // @LINE:45
+        case ()  =>
+          import ReverseRouteContext.empty
+          Call("GET", _prefix + { _defaultPrefix } + "user_delete")
+      
+      }
+    
     }
   
     // @LINE:9
@@ -254,12 +282,12 @@ package controllers {
     
     }
   
-    // @LINE:41
+    // @LINE:43
     def deleteShimonbyID(): Call = {
     
       () match {
       
-        // @LINE:41
+        // @LINE:43
         case ()  =>
           import ReverseRouteContext.empty
           Call("GET", _prefix + { _defaultPrefix } + "shimon_delete")

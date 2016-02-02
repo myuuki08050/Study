@@ -53,12 +53,10 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
     	</ul>
     
         <div id="content">
-            ドリルの登録が完了しました
+            <a>ドリルの登録が完了しました！</a>
         
             <h1><a href="/home">ホームにもどる</a></h1>
     	</div>
-    	
- 
         
     </div>    
     </body>
@@ -82,9 +80,9 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object doril_regicomplete extends doril_regicomplete_Scope0.doril_regicomplete
               /*
                   -- GENERATED --
-                  DATE: Sat Jan 30 20:31:12 JST 2016
+                  DATE: Wed Feb 03 01:44:29 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/doril_regicomplete.scala.html
-                  HASH: 3e1ede9eded2b1bb2e11fdd5eb12f8b28fcaf0d8
+                  HASH: b2aa6da7fbd3398edb8cc961db6aed600f406f68
                   MATRIX: 853->0|1243->364|1257->370|1318->410
                   LINES: 32->1|37->6|37->6|37->6
                   -- GENERATED --

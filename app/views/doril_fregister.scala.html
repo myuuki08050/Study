@@ -25,22 +25,27 @@
     
         <div id="content">
         <h1>試問登録</h1>
-        ファイルをアップロードできます。
-            @form(action = routes.DorilManage.MakeDoril, 'enctype -> "multipart/form-data") {
+        <a>ファイルをアップロードできます。</a><br>
+            @form(action = routes.DorilManage.MakeDoril, 'enctype -> "multipart/form-data", 'class -> "subform") {
                 問題ファイル:
-                <input type="file" name="doril_file">
-                <br>
+                <input type="file" name="doril_file" >
                 正答ファイル:
                 <input type="file" name="s_doril_file">
-                <br>
-                <input type="submit" value="UPLOAD">
+                <input type="submit" value="UPLOAD" />
             }
-        <h1><a href="/dorildb_show">データベースを表示する</a></h1>
-            @form(action = routes.DorilManage.deleteDorilbyID) {
-                <input type="number" name="del"/><br>
-                <input type="submit" value="DELETE">
+            
+            <h1>ドリルデータベース表示</h1>
+            <form action="/dorildb_show" method="POST" >
+                <input type="submit" value="試問回答" class="subform"/>
+            </form>
+            
+            <h1>ID：nのドリルデータ削除</h1>
+            @form(action = routes.DorilManage.deleteDorilbyID, 'class -> "subform") {
+                <input type="number" name="del" />
+                <input type="submit" value="DELETE" />
             }
-        <h1><a href="/home">ホームにもどる</a></h1>
+            
+            <h1><a href="/home">ホームにもどる</a></h1>
     	</div>
         
     </div>    

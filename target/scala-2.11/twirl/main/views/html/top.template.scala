@@ -53,7 +53,7 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
     	</ul>
     
     <div id="content">
-        トップ画面です
+        <h1>トップ画面です</h1>
     </div>
         
     
@@ -79,9 +79,9 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object top extends top_Scope0.top
               /*
                   -- GENERATED --
-                  DATE: Sat Jan 30 20:32:58 JST 2016
+                  DATE: Wed Feb 03 02:21:13 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/top.scala.html
-                  HASH: 3666a113541820615e59b33761bf943634ba5635
+                  HASH: 5bfd00d422a88b43f09ed4401ca70055a46b02e8
                   MATRIX: 823->0|1213->364|1227->370|1288->410
                   LINES: 32->1|37->6|37->6|37->6
                   -- GENERATED --

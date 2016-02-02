@@ -25,19 +25,21 @@
     
         <div id="content">
         <h1>試問登録</h1>
-        ファイルをアップロードできます。
-            @form(action = routes.ShimonManage.MakeShimon, 'enctype -> "multipart/form-data") {
+        <a>ファイルをアップロードできます。</a>
+            @form(action = routes.ShimonManage.MakeShimon, 'enctype -> "multipart/form-data", 'class -> "subform") {
                 問題ファイル:
                 <input type="file" name="shimon_file">
-                <br>
                 正答ファイル:
                 <input type="file" name="s_shimon_file">
-                <br>
                 <input type="submit" value="UPLOAD">
             }
-            <h1><a href="/shimondb_show">データベースを表示する</a></h1>
-            @form(action = routes.ShimonManage.deleteShimonbyID) {
-                <input type="number" name="del"/><br>
+            <h1>試問データベース表示</h1>
+            <form action="/shimondb_show" method="POST" >
+                <input type="submit" value="試問回答" class="subform"/>
+            </form>
+            <h1>ID：nの試問データ削除</h1>
+            @form(action = routes.ShimonManage.deleteShimonbyID, 'class -> "subform") {
+                <input type="number" name="del"/>
                 <input type="submit" value="DELETE">
             }
             <h1><a href="/home">ホームにもどる</a></h1>

@@ -1,6 +1,7 @@
 @(user_id: String)(logintime: String)(isAdmin: String)
 
 @import play.cache.Cache;
+@import helper._
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -25,43 +26,52 @@
     	</ul>
 
         <div id="content">
-            ようこそ @user_id さん。あなたは @logintime 回目のログインです。
-            ゆっくりしていってね！
+            <a>ようこそ @user_id さん。あなたは @logintime 回目のログインです。
+            ゆっくりしていってね！</a>
             
             @if(isAdmin == "false"){
         
             <h1>試問回答画面へ</h1>
-            <form action="/shimon" method="POST">
-                <input type="submit" value="試問回答"/>
+            <form action="/shimon" method="POST" >
+                <input type="submit" value="試問回答" class="subform"/>
             </form>
             
             <h1>ドリル回答画面へ</h1>
             <form action="/doril" method="POST">
-                <input type="submit" value="ドリル回答"/>
+                <input type="submit" value="ドリル回答" class="subform"/>
             </form>
             
             <h1>モデル確認画面へ</h1>
             <form action="/user_model" method="POST">
-                <input type="submit" value="モデル確認"/>
+                <input type="submit" value="モデル確認" class="subform"/>
             </form>
             
             } else {
             
             <h1>試問登録画面へ</h1>
             <form action="/shimon_fregi" method="POST">
-                <input type="submit" value="試問登録"/>
+                <input type="submit" value="試問登録" class="subform"/>
             </form>
             
             <h1>ドリル登録画面へ</h1>
             <form action="/doril_fregi" method="POST">
-                <input type="submit" value="ドリル登録"/>
+                <input type="submit" value="ドリル登録" class="subform"/>
             </form>
+            
+            <h1>ユーザデータベース表示</h1>
+            <form action="/userdb_show" method="POST">
+                <input type="submit" value="表示" class="subform"/>
+            </form>
+            
+            <h1>ID：nのユーザデータ削除</h1>
+            @form(action = routes.Application.deleteUserbyID) {
+                <input type="number" name="del" class="subform"/><br>
+                <input type="submit" value="DELETE" class="subform">
+            }
             
             }
             
-            
         </div>
-        
-
+        </div>
     </body>
 </html>

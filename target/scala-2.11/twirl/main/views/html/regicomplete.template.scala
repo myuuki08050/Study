@@ -52,10 +52,10 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
         	</ul>
         	
         	<div id="content">
-            <h1>COMPLETE REGISTER!</h1>
-                登録が完了しました。
-        
-            <h1><a href="/login">ログイン画面にもどる</a></h1>
+                <h1>COMPLETE REGISTER!</h1>
+                <a>登録が完了しました。</a>
+            
+                <h1><a href="/login">ログイン画面にもどる</a></h1>
             
             </div>
             
@@ -82,9 +82,9 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object regicomplete extends regicomplete_Scope0.regicomplete
               /*
                   -- GENERATED --
-                  DATE: Sat Jan 30 20:31:12 JST 2016
+                  DATE: Wed Feb 03 01:54:04 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/regicomplete.scala.html
-                  HASH: 2243ccd328b0220c54489d3fd485e995fbcf2dc1
+                  HASH: 628907270a7678351a3ba2bfb9e331aec43f2d7d
                   MATRIX: 841->0|1226->359|1240->365|1301->405
                   LINES: 32->1|37->6|37->6|37->6
                   -- GENERATED --

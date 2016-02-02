@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/git_local/activator-1.3.6-minimal/SolveSystem2/conf/routes
-// @DATE:Tue Feb 02 15:05:57 JST 2016
+// @DATE:Tue Feb 02 22:58:48 JST 2016
 
 package router
 
@@ -24,7 +24,7 @@ class Routes(
   ModelManage_0: controllers.ModelManage,
   // @LINE:22
   DorilManage_1: controllers.DorilManage,
-  // @LINE:45
+  // @LINE:49
   Assets_3: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -39,7 +39,7 @@ class Routes(
     ModelManage_0: controllers.ModelManage,
     // @LINE:22
     DorilManage_1: controllers.DorilManage,
-    // @LINE:45
+    // @LINE:49
     Assets_3: controllers.Assets
   ) = this(errorHandler, Application_4, ShimonManage_2, ModelManage_0, DorilManage_1, Assets_3, "/")
 
@@ -87,10 +87,14 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """shimondb_show""", """controllers.ShimonManage.showShimonDB()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """dorildb_show""", """controllers.DorilManage.showDorilDB()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """dorildb_show""", """controllers.DorilManage.showDorilDB()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """userdb_show""", """controllers.Application.showUserDB()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """userdb_show""", """controllers.Application.showUserDB()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """doril_delete""", """controllers.DorilManage.deleteDorilbyID()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """doril_delete""", """controllers.DorilManage.deleteDorilbyID()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """shimon_delete""", """controllers.ShimonManage.deleteShimonbyID()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """shimon_delete""", """controllers.ShimonManage.deleteShimonbyID()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """user_delete""", """controllers.Application.deleteUserbyID()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """user_delete""", """controllers.Application.deleteUserbyID()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""", """controllers.Assets.at(path:String = "/public", file:String)"""),
     Nil
@@ -645,10 +649,44 @@ class Routes(
   )
 
   // @LINE:39
-  private[this] lazy val controllers_DorilManage_deleteDorilbyID32_route = Route("GET",
+  private[this] lazy val controllers_Application_showUserDB32_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("userdb_show")))
+  )
+  private[this] lazy val controllers_Application_showUserDB32_invoker = createInvoker(
+    Application_4.showUserDB(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "showUserDB",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """userdb_show"""
+    )
+  )
+
+  // @LINE:40
+  private[this] lazy val controllers_Application_showUserDB33_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("userdb_show")))
+  )
+  private[this] lazy val controllers_Application_showUserDB33_invoker = createInvoker(
+    Application_4.showUserDB(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "showUserDB",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """userdb_show"""
+    )
+  )
+
+  // @LINE:41
+  private[this] lazy val controllers_DorilManage_deleteDorilbyID34_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("doril_delete")))
   )
-  private[this] lazy val controllers_DorilManage_deleteDorilbyID32_invoker = createInvoker(
+  private[this] lazy val controllers_DorilManage_deleteDorilbyID34_invoker = createInvoker(
     DorilManage_1.deleteDorilbyID(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -661,11 +699,11 @@ class Routes(
     )
   )
 
-  // @LINE:40
-  private[this] lazy val controllers_DorilManage_deleteDorilbyID33_route = Route("POST",
+  // @LINE:42
+  private[this] lazy val controllers_DorilManage_deleteDorilbyID35_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("doril_delete")))
   )
-  private[this] lazy val controllers_DorilManage_deleteDorilbyID33_invoker = createInvoker(
+  private[this] lazy val controllers_DorilManage_deleteDorilbyID35_invoker = createInvoker(
     DorilManage_1.deleteDorilbyID(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -678,11 +716,11 @@ class Routes(
     )
   )
 
-  // @LINE:41
-  private[this] lazy val controllers_ShimonManage_deleteShimonbyID34_route = Route("GET",
+  // @LINE:43
+  private[this] lazy val controllers_ShimonManage_deleteShimonbyID36_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("shimon_delete")))
   )
-  private[this] lazy val controllers_ShimonManage_deleteShimonbyID34_invoker = createInvoker(
+  private[this] lazy val controllers_ShimonManage_deleteShimonbyID36_invoker = createInvoker(
     ShimonManage_2.deleteShimonbyID(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -695,11 +733,11 @@ class Routes(
     )
   )
 
-  // @LINE:42
-  private[this] lazy val controllers_ShimonManage_deleteShimonbyID35_route = Route("POST",
+  // @LINE:44
+  private[this] lazy val controllers_ShimonManage_deleteShimonbyID37_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("shimon_delete")))
   )
-  private[this] lazy val controllers_ShimonManage_deleteShimonbyID35_invoker = createInvoker(
+  private[this] lazy val controllers_ShimonManage_deleteShimonbyID37_invoker = createInvoker(
     ShimonManage_2.deleteShimonbyID(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -713,10 +751,44 @@ class Routes(
   )
 
   // @LINE:45
-  private[this] lazy val controllers_Assets_versioned36_route = Route("GET",
+  private[this] lazy val controllers_Application_deleteUserbyID38_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user_delete")))
+  )
+  private[this] lazy val controllers_Application_deleteUserbyID38_invoker = createInvoker(
+    Application_4.deleteUserbyID(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "deleteUserbyID",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """user_delete"""
+    )
+  )
+
+  // @LINE:46
+  private[this] lazy val controllers_Application_deleteUserbyID39_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user_delete")))
+  )
+  private[this] lazy val controllers_Application_deleteUserbyID39_invoker = createInvoker(
+    Application_4.deleteUserbyID(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "deleteUserbyID",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """user_delete"""
+    )
+  )
+
+  // @LINE:49
+  private[this] lazy val controllers_Assets_versioned40_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned36_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned40_invoker = createInvoker(
     Assets_3.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -729,11 +801,11 @@ class Routes(
     )
   )
 
-  // @LINE:46
-  private[this] lazy val controllers_Assets_at37_route = Route("GET",
+  // @LINE:50
+  private[this] lazy val controllers_Assets_at41_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_at37_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_at41_invoker = createInvoker(
     Assets_3.at(fakeValue[String], fakeValue[String]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -942,39 +1014,63 @@ class Routes(
       }
   
     // @LINE:39
-    case controllers_DorilManage_deleteDorilbyID32_route(params) =>
+    case controllers_Application_showUserDB32_route(params) =>
       call { 
-        controllers_DorilManage_deleteDorilbyID32_invoker.call(DorilManage_1.deleteDorilbyID())
+        controllers_Application_showUserDB32_invoker.call(Application_4.showUserDB())
       }
   
     // @LINE:40
-    case controllers_DorilManage_deleteDorilbyID33_route(params) =>
+    case controllers_Application_showUserDB33_route(params) =>
       call { 
-        controllers_DorilManage_deleteDorilbyID33_invoker.call(DorilManage_1.deleteDorilbyID())
+        controllers_Application_showUserDB33_invoker.call(Application_4.showUserDB())
       }
   
     // @LINE:41
-    case controllers_ShimonManage_deleteShimonbyID34_route(params) =>
+    case controllers_DorilManage_deleteDorilbyID34_route(params) =>
       call { 
-        controllers_ShimonManage_deleteShimonbyID34_invoker.call(ShimonManage_2.deleteShimonbyID())
+        controllers_DorilManage_deleteDorilbyID34_invoker.call(DorilManage_1.deleteDorilbyID())
       }
   
     // @LINE:42
-    case controllers_ShimonManage_deleteShimonbyID35_route(params) =>
+    case controllers_DorilManage_deleteDorilbyID35_route(params) =>
       call { 
-        controllers_ShimonManage_deleteShimonbyID35_invoker.call(ShimonManage_2.deleteShimonbyID())
+        controllers_DorilManage_deleteDorilbyID35_invoker.call(DorilManage_1.deleteDorilbyID())
+      }
+  
+    // @LINE:43
+    case controllers_ShimonManage_deleteShimonbyID36_route(params) =>
+      call { 
+        controllers_ShimonManage_deleteShimonbyID36_invoker.call(ShimonManage_2.deleteShimonbyID())
+      }
+  
+    // @LINE:44
+    case controllers_ShimonManage_deleteShimonbyID37_route(params) =>
+      call { 
+        controllers_ShimonManage_deleteShimonbyID37_invoker.call(ShimonManage_2.deleteShimonbyID())
       }
   
     // @LINE:45
-    case controllers_Assets_versioned36_route(params) =>
-      call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned36_invoker.call(Assets_3.versioned(path, file))
+    case controllers_Application_deleteUserbyID38_route(params) =>
+      call { 
+        controllers_Application_deleteUserbyID38_invoker.call(Application_4.deleteUserbyID())
       }
   
     // @LINE:46
-    case controllers_Assets_at37_route(params) =>
+    case controllers_Application_deleteUserbyID39_route(params) =>
+      call { 
+        controllers_Application_deleteUserbyID39_invoker.call(Application_4.deleteUserbyID())
+      }
+  
+    // @LINE:49
+    case controllers_Assets_versioned40_route(params) =>
+      call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
+        controllers_Assets_versioned40_invoker.call(Assets_3.versioned(path, file))
+      }
+  
+    // @LINE:50
+    case controllers_Assets_at41_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_at37_invoker.call(Assets_3.at(path, file))
+        controllers_Assets_at41_invoker.call(Assets_3.at(path, file))
       }
   }
 }

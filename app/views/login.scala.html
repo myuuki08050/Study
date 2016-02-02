@@ -25,10 +25,10 @@
     	<div id="content">
         <h1>@title</h1>
     
-        @helper.form(action = routes.Application.auth) {
+        @helper.form(action = routes.Application.auth, 'class -> "subform") {
         	@helper.inputText(form("user_id"))
         	@helper.inputPassword(form("password"))
-        	<input type="submit" value="LOGIN"/>
+        	<br><input type="submit" value="LOGIN" />
         }
         
         <h1><a href="/register">新規登録</a></h1>

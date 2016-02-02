@@ -55,8 +55,8 @@ Seq[Any](format.raw/*1.17*/("""
     	</ul>
     
         <div id="content">
-            """),_display_(/*27.14*/error),format.raw/*27.19*/("""
-        """),format.raw/*28.9*/("""</div>
+            <a>"""),_display_(/*27.17*/error),format.raw/*27.22*/("""</a>
+        </div>
         
     
         </div>
@@ -81,11 +81,11 @@ Seq[Any](format.raw/*1.17*/("""
 object error extends error_Scope0.error
               /*
                   -- GENERATED --
-                  DATE: Fri Jan 29 21:30:34 JST 2016
+                  DATE: Wed Feb 03 01:44:29 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/error.scala.html
-                  HASH: c6c507da137d28aaa073820b86942940a2d6a960
-                  MATRIX: 745->1|855->16|885->20|1275->384|1289->390|1350->430|1925->978|1951->983|1988->993
-                  LINES: 27->1|32->1|34->3|39->8|39->8|39->8|58->27|58->27|59->28
+                  HASH: 1a21e59746e9777786886bc32859ba27de878843
+                  MATRIX: 745->1|855->16|885->20|1275->384|1289->390|1350->430|1928->981|1954->986
+                  LINES: 27->1|32->1|34->3|39->8|39->8|39->8|58->27|58->27
                   -- GENERATED --
               */
           

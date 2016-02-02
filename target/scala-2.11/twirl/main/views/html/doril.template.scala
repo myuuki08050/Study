@@ -40,7 +40,7 @@ Seq[Any](format.raw/*1.48*/("""
         <title>Doril Solve</title>
     </head>
     <body>
-     <div id="pagebody">
+        <div id="pagebody">
     
     	<!-- ヘッダ -->
     	<div id="header"><h1>Doril Solve</h1></div>
@@ -56,17 +56,17 @@ Seq[Any](format.raw/*1.48*/("""
     
         <div id="content">
             """),_display_(/*27.14*/for((obj,i) <- doril_state.zipWithIndex) yield /*27.54*/ {_display_(Seq[Any](format.raw/*27.56*/("""
-                """),format.raw/*28.17*/("""<div>"""),_display_(/*28.23*/{obj}),format.raw/*28.28*/("""</div>
+                """),format.raw/*28.17*/("""<a>"""),_display_(/*28.21*/{obj}),format.raw/*28.26*/("""</a><br>
             """)))}),format.raw/*29.14*/("""
-            """),format.raw/*30.13*/("""<div>(タグ："""),_display_(/*30.23*/doril_tag),format.raw/*30.32*/(""")</div>
-            <br>
+            """),format.raw/*30.13*/("""<a>(タグ："""),_display_(/*30.21*/doril_tag),format.raw/*30.30*/(""")</a>
+            
             <form action="/doril_solve" method="POST">
                 <input type="submit" id="image-btn1" name="d_solve" value="maru" />
                 <input type="submit" id="image-btn2" name="d_solve" value="batu" />
             </form>
-            </div>
+            
         </div>
-    </div>    
+        </div>
     </body>
 </html>"""))
       }
@@ -88,10 +88,10 @@ Seq[Any](format.raw/*1.48*/("""
 object doril extends doril_Scope0.doril
               /*
                   -- GENERATED --
-                  DATE: Mon Feb 01 04:42:12 JST 2016
+                  DATE: Wed Feb 03 01:27:29 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/doril.scala.html
-                  HASH: 0f5973d173ad054909b44899a0e38edb4ae6fbe0
-                  MATRIX: 758->1|899->47|929->51|1319->415|1333->421|1394->461|1978->1018|2034->1058|2074->1060|2120->1078|2153->1084|2179->1089|2231->1110|2273->1124|2310->1134|2340->1143
+                  HASH: eeca909204aaf29f6cc0514fb318a673c753be4b
+                  MATRIX: 758->1|899->47|929->51|1319->415|1333->421|1394->461|1981->1021|2037->1061|2077->1063|2123->1081|2154->1085|2180->1090|2234->1113|2276->1127|2311->1135|2341->1144
                   LINES: 27->1|32->1|34->3|39->8|39->8|39->8|58->27|58->27|58->27|59->28|59->28|59->28|60->29|61->30|61->30|61->30
                   -- GENERATED --
               */

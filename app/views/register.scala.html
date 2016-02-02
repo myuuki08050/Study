@@ -23,19 +23,19 @@
     	</ul>
     	
     	<div id="content">
-        <h1>@title</h1>
-    
-        @helper.form(action = routes.Application.NewRegister) {
-        	@helper.inputText(form("user_id"))
-        	@helper.inputPassword(form("password"))
-            <input type="radio" id="a" name="use_kind" value="nonadmin" checked="checked">
-            <label for="a">通常利用者として登録</label>
-            <input type="radio" id="b" name="use_kind" value="admin">
-            <label for="b">管理者として登録</label><br>
-        	<input type="submit" value="登録"/>
-        }
+            <h1>@title</h1>
         
-        <h1><a href="/login">ログイン画面にもどる</a></h1>
+            @helper.form(action = routes.Application.NewRegister, 'class -> "subform") {
+            	@helper.inputText(form("user_id"))
+            	@helper.inputPassword(form("password"))
+                <input type="radio" name="use_kind" value="nonadmin" checked="checked">
+                <label for="a">通常利用者として登録</label>
+                <input type="radio" name="use_kind" value="admin">
+                <label for="b">管理者として登録</label><br>
+            	<input type="submit" value="登録"/>
+            }
+            
+            <h1><a href="/login">ログイン画面にもどる</a></h1>
         
         </div>
         </div>

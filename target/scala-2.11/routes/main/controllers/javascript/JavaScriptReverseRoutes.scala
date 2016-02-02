@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/git_local/activator-1.3.6-minimal/SolveSystem2/conf/routes
-// @DATE:Tue Feb 02 15:05:57 JST 2016
+// @DATE:Tue Feb 02 22:58:48 JST 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:45
+  // @LINE:49
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:46
+    // @LINE:50
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
@@ -33,7 +33,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:45
+    // @LINE:49
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -163,7 +163,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:39
+    // @LINE:41
     def deleteDorilbyID: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.DorilManage.deleteDorilbyID",
       """
@@ -227,6 +227,20 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:39
+    def showUserDB: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Application.showUserDB",
+      """
+        function() {
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "userdb_show"})
+          }
+        
+        }
+      """
+    )
+  
     // @LINE:12
     def NewRegister: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Application.NewRegister",
@@ -247,6 +261,20 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "logout"})
+        }
+      """
+    )
+  
+    // @LINE:45
+    def deleteUserbyID: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Application.deleteUserbyID",
+      """
+        function() {
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "user_delete"})
+          }
+        
         }
       """
     )
@@ -309,7 +337,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:41
+    // @LINE:43
     def deleteShimonbyID: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ShimonManage.deleteShimonbyID",
       """

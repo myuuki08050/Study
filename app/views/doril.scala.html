@@ -9,7 +9,7 @@
         <title>Doril Solve</title>
     </head>
     <body>
-     <div id="pagebody">
+        <div id="pagebody">
     
     	<!-- ヘッダ -->
     	<div id="header"><h1>Doril Solve</h1></div>
@@ -25,16 +25,16 @@
     
         <div id="content">
             @for((obj,i) <- doril_state.zipWithIndex) {
-                <div>@{obj}</div>
+                <a>@{obj}</a><br>
             }
-            <div>(タグ：@doril_tag)</div>
-            <br>
+            <a>(タグ：@doril_tag)</a>
+            
             <form action="/doril_solve" method="POST">
                 <input type="submit" id="image-btn1" name="d_solve" value="maru" />
                 <input type="submit" id="image-btn2" name="d_solve" value="batu" />
             </form>
-            </div>
+            
         </div>
-    </div>    
+        </div>
     </body>
 </html>

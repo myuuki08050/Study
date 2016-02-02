@@ -57,22 +57,24 @@ Seq[Any](format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
     
         <div id="content">
         <h1>試問登録</h1>
-        ファイルをアップロードできます。
-            """),_display_(/*29.14*/form(action = routes.ShimonManage.MakeShimon, 'enctype -> "multipart/form-data")/*29.94*/ {_display_(Seq[Any](format.raw/*29.96*/("""
+        <a>ファイルをアップロードできます。</a>
+            """),_display_(/*29.14*/form(action = routes.ShimonManage.MakeShimon, 'enctype -> "multipart/form-data", 'class -> "subform")/*29.115*/ {_display_(Seq[Any](format.raw/*29.117*/("""
                 """),format.raw/*30.17*/("""問題ファイル:
                 <input type="file" name="shimon_file">
-                <br>
                 正答ファイル:
                 <input type="file" name="s_shimon_file">
-                <br>
                 <input type="submit" value="UPLOAD">
-            """)))}),format.raw/*37.14*/("""
-            """),format.raw/*38.13*/("""<h1><a href="/shimondb_show">データベースを表示する</a></h1>
-            """),_display_(/*39.14*/form(action = routes.ShimonManage.deleteShimonbyID)/*39.65*/ {_display_(Seq[Any](format.raw/*39.67*/("""
-                """),format.raw/*40.17*/("""<input type="number" name="del"/><br>
+            """)))}),format.raw/*35.14*/("""
+            """),format.raw/*36.13*/("""<h1>試問データベース表示</h1>
+            <form action="/shimondb_show" method="POST" >
+                <input type="submit" value="試問回答" class="subform"/>
+            </form>
+            <h1>ID：nの試問データ削除</h1>
+            """),_display_(/*41.14*/form(action = routes.ShimonManage.deleteShimonbyID, 'class -> "subform")/*41.86*/ {_display_(Seq[Any](format.raw/*41.88*/("""
+                """),format.raw/*42.17*/("""<input type="number" name="del"/>
                 <input type="submit" value="DELETE">
-            """)))}),format.raw/*42.14*/("""
-            """),format.raw/*43.13*/("""<h1><a href="/home">ホームにもどる</a></h1>
+            """)))}),format.raw/*44.14*/("""
+            """),format.raw/*45.13*/("""<h1><a href="/home">ホームにもどる</a></h1>
     	</div>
         
     </div>    
@@ -98,11 +100,11 @@ Seq[Any](format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object shimon_fregister extends shimon_fregister_Scope0.shimon_fregister_Scope1.shimon_fregister
               /*
                   -- GENERATED --
-                  DATE: Tue Feb 02 15:05:58 JST 2016
+                  DATE: Wed Feb 03 03:32:57 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/shimon_fregister.scala.html
-                  HASH: 72c313405348dbab55797c7b6a651852362aec8d
-                  MATRIX: 904->20|1294->384|1308->390|1369->430|2014->1048|2103->1128|2143->1130|2189->1148|2479->1407|2521->1421|2612->1485|2672->1536|2712->1538|2758->1556|2895->1662|2937->1676
-                  LINES: 35->3|40->8|40->8|40->8|61->29|61->29|61->29|62->30|69->37|70->38|71->39|71->39|71->39|72->40|74->42|75->43
+                  HASH: 62adbc1452022fc8631a031a7ca3fcec55fbad4a
+                  MATRIX: 904->20|1294->384|1308->390|1369->430|2021->1055|2132->1156|2173->1158|2219->1176|2465->1391|2507->1405|2752->1623|2833->1695|2873->1697|2919->1715|3052->1817|3094->1831
+                  LINES: 35->3|40->8|40->8|40->8|61->29|61->29|61->29|62->30|67->35|68->36|73->41|73->41|73->41|74->42|76->44|77->45
                   -- GENERATED --
               */
           

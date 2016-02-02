@@ -66,14 +66,14 @@ public class Application extends Controller {
                     else{
                         session("isAdmin", "false");
                     }
-                    
+                    int tmp = user.logintimes + 1;
                     //ユーザ情報更新
-                    user.logintimes = user.logintimes + 1;
+                    user.logintimes = tmp;
                     user.update();
                     flash();
                     
 			        session("user_id", inputForm.get().user_id);
-			        session("logintimes", String.valueOf(user.logintimes));
+			        session("logintimes", String.valueOf(tmp));
 			        
                     return redirect(routes.Application.showHome());
                 }
@@ -139,17 +139,32 @@ public class Application extends Controller {
         }
         return ok(regicomplete.render());
     } 
-    public Result showUserdb(){
+    public Result showUserDB(){
         List<User> user_s = User.finder.all();
         StringBuilder msg = new StringBuilder();
         for (User user : user_s) {
-            //msg.append(user.toString()).append("\n");
+            msg.append(user.toString()).append("\n");
         }
         return ok(error.render(msg.toString()));        
     }
     
-    public Result deleteRegister(){
-        return ok(error.render("ID = " /*+ input.data().get("del") + "番のデリート完了。\n" */));
+    public Result deleteUserbyID(){
+        String[] params = { "del" };
+        DynamicForm input = Form.form();
+        input = input.bindFromRequest(params);
+        User deluser = User.finder.byId(new Long(Long.parseLong(input.data().get("del"))));
+        if(deluser == null){
+            return ok(error.render("ID = " + input.data().get("del") + "番が見つかりませんでした。\n"));
+        }
+        if(session("user_id").equals(deluser.user_id)){
+            return ok(error.render("ログイン中のユーザ、ID = " + input.data().get("del") + "は削除できません。\n"));
+        }
+        /* Userが持つUsermodelも削除 */
+        List<UserModel> usrmodels = deluser.children;
+        usrmodels.clear();
+        /* Userも削除 */
+        deluser.delete();
+        return ok(error.render("ID = " + input.data().get("del") + "番のデリート完了。\n"));
     }
 	
 	public Result logout() {

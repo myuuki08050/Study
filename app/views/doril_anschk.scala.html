@@ -6,13 +6,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/top.css")">
-        <title>@judge</title>
+        <title>Doril Answer</title>
     </head>
     <body>
      <div id="pagebody">
     
     	<!-- ヘッダ -->
-    	<div id="header"><h1>@judge</h1></div>
+    	<div id="header"><h1>Doril Answer</h1></div>
     	
     	<!-- メインメニュー -->
     	<ul id="menu">
@@ -25,19 +25,19 @@
     
         <div id="content">
             @if(judge == "true"){
-                <h1>Correct Answer</h1>
+                <p class="t">Correct Answer</p>
             } else {
-                <h1>Wrong Answer</h1>
+                <p class="f">Wrong Answer</p>
             }
             
-            <div>[解説]</div>
+            <a>[解説]</a><br>
             
             @for((obj,i) <- commentary.zipWithIndex) {
-                <div>@{obj}</div>
+                <a>@{obj}</a><br>
             }
             
             @helper.form(action = routes.DorilManage.ShowDoril) {
-                <input type="submit" value="次へ"/>
+            <input type="submit" value="次へ" class="subform"/>
             }
         </div>
     </div>    

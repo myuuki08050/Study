@@ -56,10 +56,10 @@ Seq[Any](format.raw/*1.35*/("""
     	<div id="content">
         <h1>"""),_display_(/*26.14*/title),format.raw/*26.19*/("""</h1>
     
-        """),_display_(/*28.10*/helper/*28.16*/.form(action = routes.Application.auth)/*28.55*/ {_display_(Seq[Any](format.raw/*28.57*/("""
+        """),_display_(/*28.10*/helper/*28.16*/.form(action = routes.Application.auth, 'class -> "subform")/*28.76*/ {_display_(Seq[Any](format.raw/*28.78*/("""
         	"""),_display_(/*29.11*/helper/*29.17*/.inputText(form("user_id"))),format.raw/*29.44*/("""
         	"""),_display_(/*30.11*/helper/*30.17*/.inputPassword(form("password"))),format.raw/*30.49*/("""
-        	"""),format.raw/*31.10*/("""<input type="submit" value="LOGIN"/>
+        	"""),format.raw/*31.10*/("""<br><input type="submit" value="LOGIN" />
         """)))}),format.raw/*32.10*/("""
         
         """),format.raw/*34.9*/("""<h1><a href="/register">新規登録</a></h1>
@@ -88,10 +88,10 @@ Seq[Any](format.raw/*1.35*/("""
 object login extends login_Scope0.login
               /*
                   -- GENERATED --
-                  DATE: Sat Jan 30 20:31:12 JST 2016
+                  DATE: Wed Feb 03 01:54:04 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/login.scala.html
-                  HASH: 59bb58bdb5b44c070083c94cfe2db0402e969f1d
-                  MATRIX: 756->1|884->34|912->36|1297->395|1311->401|1372->441|1921->963|1947->968|1994->988|2009->994|2057->1033|2097->1035|2135->1046|2150->1052|2198->1079|2236->1090|2251->1096|2304->1128|2342->1138|2419->1184|2464->1202
+                  HASH: bae1145cf65b44c45071f1e9f093d5bafcdf5d53
+                  MATRIX: 756->1|884->34|912->36|1297->395|1311->401|1372->441|1921->963|1947->968|1994->988|2009->994|2078->1054|2118->1056|2156->1067|2171->1073|2219->1100|2257->1111|2272->1117|2325->1149|2363->1159|2445->1210|2490->1228
                   LINES: 27->1|32->1|34->3|39->8|39->8|39->8|57->26|57->26|59->28|59->28|59->28|59->28|60->29|60->29|60->29|61->30|61->30|61->30|62->31|63->32|65->34
                   -- GENERATED --
               */

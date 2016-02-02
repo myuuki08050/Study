@@ -9,7 +9,7 @@
         <title>Shimon Solve</title>
     </head>
     <body>
-     <div id="pagebody">
+    <div id="pagebody">
     
     	<!-- ヘッダ -->
     	<div id="header"><h1>Shimon Solve</h1></div>
@@ -52,15 +52,15 @@
         
         <div id="tab1" class="tab">
             @for((obj,i) <- problem_state.zipWithIndex) {
-                <div>@{obj}</div>
+                <a>@{obj}</a><br>
             }
-            
+            <br>
             @for((obj,i) <- problem_condition.zipWithIndex) {
                 <li>@{obj}</li>
             }
-            
+            <br>
             @for((obj,i) <- tags.zipWithIndex) {
-                <div> 付加タグ@{i+1} : @{obj}</div>
+                <a>付加タグ@{i+1} : @{obj}</a>
             }
             
          </div>
@@ -68,7 +68,7 @@
         <div id="tab2" class="tab">
         
             @for((obj,i) <- programs.zipWithIndex) {
-                <div>@{obj}</div>
+                <p class="program">@{obj}</p>
             }
         
         </div>
@@ -87,15 +87,15 @@
         <div id="tab3" class="ttab">
     
             @for(state <- smallproblemstate) {
-                <div>@state</div>
+                <a>@state</a><br>
             }
             
             @for(condition <- smallproblemcondition) {
-                <li>@condition</li>
+                <a><li>@condition</li></a>
             }
             
             @for(subprogram <- subprograms) {
-                <div>@subprogram</div>
+                <p class="program">@subprogram</p>
             }
             
 　      </div>
@@ -104,23 +104,20 @@
             
         @if(solves.size() == 0){
             <form action="/shimon_solve" method="POST">
-            <input type="text" name="solve"/>
-            <br>
-            <input type="submit" value="SOLVE"/>
+                <input type="text" name="solve" class="subform"/>
+                <input type="submit" value="SOLVE" class="subform"/>
             </form>
         } else {
             <form action="/shimon_solve" method="POST">
             @for(solve <- solves) { 
-                <input type="radio" name=solve value=@solve />
-                @solve
-                <br>
+                <input type="radio" name=solve value=@solve class="subform"/>
+                @solve<br>
             }
-            <input type="submit" value="SOLVE"/>
+            <input type="submit" value="SOLVE" class="subform"/>
             </form>
         }  
             
         </div>
-   
         </div>
         </div>
         

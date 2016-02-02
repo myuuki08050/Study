@@ -57,22 +57,27 @@ Seq[Any](format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
     
         <div id="content">
         <h1>試問登録</h1>
-        ファイルをアップロードできます。
-            """),_display_(/*29.14*/form(action = routes.DorilManage.MakeDoril, 'enctype -> "multipart/form-data")/*29.92*/ {_display_(Seq[Any](format.raw/*29.94*/("""
+        <a>ファイルをアップロードできます。</a><br>
+            """),_display_(/*29.14*/form(action = routes.DorilManage.MakeDoril, 'enctype -> "multipart/form-data", 'class -> "subform")/*29.113*/ {_display_(Seq[Any](format.raw/*29.115*/("""
                 """),format.raw/*30.17*/("""問題ファイル:
-                <input type="file" name="doril_file">
-                <br>
+                <input type="file" name="doril_file" >
                 正答ファイル:
                 <input type="file" name="s_doril_file">
-                <br>
-                <input type="submit" value="UPLOAD">
-            """)))}),format.raw/*37.14*/("""
-        """),format.raw/*38.9*/("""<h1><a href="/dorildb_show">データベースを表示する</a></h1>
-            """),_display_(/*39.14*/form(action = routes.DorilManage.deleteDorilbyID)/*39.63*/ {_display_(Seq[Any](format.raw/*39.65*/("""
-                """),format.raw/*40.17*/("""<input type="number" name="del"/><br>
-                <input type="submit" value="DELETE">
-            """)))}),format.raw/*42.14*/("""
-        """),format.raw/*43.9*/("""<h1><a href="/home">ホームにもどる</a></h1>
+                <input type="submit" value="UPLOAD" />
+            """)))}),format.raw/*35.14*/("""
+            
+            """),format.raw/*37.13*/("""<h1>ドリルデータベース表示</h1>
+            <form action="/dorildb_show" method="POST" >
+                <input type="submit" value="試問回答" class="subform"/>
+            </form>
+            
+            <h1>ID：nのドリルデータ削除</h1>
+            """),_display_(/*43.14*/form(action = routes.DorilManage.deleteDorilbyID, 'class -> "subform")/*43.84*/ {_display_(Seq[Any](format.raw/*43.86*/("""
+                """),format.raw/*44.17*/("""<input type="number" name="del" />
+                <input type="submit" value="DELETE" />
+            """)))}),format.raw/*46.14*/("""
+            
+            """),format.raw/*48.13*/("""<h1><a href="/home">ホームにもどる</a></h1>
     	</div>
         
     </div>    
@@ -98,11 +103,11 @@ Seq[Any](format.raw/*3.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object doril_fregister extends doril_fregister_Scope0.doril_fregister_Scope1.doril_fregister
               /*
                   -- GENERATED --
-                  DATE: Tue Feb 02 14:48:28 JST 2016
+                  DATE: Wed Feb 03 02:21:13 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/doril_fregister.scala.html
-                  HASH: fd7739bbf3ab8763e21bf057930aaeb289914c18
-                  MATRIX: 901->20|1291->384|1305->390|1366->430|2009->1046|2096->1124|2136->1126|2182->1144|2470->1401|2507->1411|2597->1474|2655->1523|2695->1525|2741->1543|2878->1649|2915->1659
-                  LINES: 35->3|40->8|40->8|40->8|61->29|61->29|61->29|62->30|69->37|70->38|71->39|71->39|71->39|72->40|74->42|75->43
+                  HASH: 29c7c31fa5e29835cfd8f4d06f18301935b66379
+                  MATRIX: 901->20|1291->384|1305->390|1366->430|2020->1057|2129->1156|2170->1158|2216->1176|2463->1392|2519->1420|2779->1653|2858->1723|2898->1725|2944->1743|3080->1848|3136->1876
+                  LINES: 35->3|40->8|40->8|40->8|61->29|61->29|61->29|62->30|67->35|69->37|75->43|75->43|75->43|76->44|78->46|80->48
                   -- GENERATED --
               */
           

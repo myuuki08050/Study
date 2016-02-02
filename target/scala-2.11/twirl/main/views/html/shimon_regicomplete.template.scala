@@ -54,7 +54,7 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
     
         <div id="content">
             <h1>COMPLETE REGISTER!</h1>
-            登録が完了しました
+            <a>登録が完了しました</a>
         
             <h1><a href="/home">ホームにもどる</a></h1>
     	</div>
@@ -83,9 +83,9 @@ Seq[Any](format.raw/*1.1*/("""<?xml version="1.0" encoding="UTF-8"?>
 object shimon_regicomplete extends shimon_regicomplete_Scope0.shimon_regicomplete
               /*
                   -- GENERATED --
-                  DATE: Sat Jan 30 20:32:58 JST 2016
+                  DATE: Wed Feb 03 02:21:13 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/shimon_regicomplete.scala.html
-                  HASH: f746b586d5dfc096b45132a4f4e3e7448f9fa4a8
+                  HASH: 5650107686d59511d4f87d3f2d0e58c1265eecb2
                   MATRIX: 855->0|1245->364|1259->370|1320->410
                   LINES: 32->1|37->6|37->6|37->6
                   -- GENERATED --

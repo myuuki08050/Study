@@ -54,19 +54,19 @@ Seq[Any](format.raw/*1.35*/("""
     	</ul>
     	
     	<div id="content">
-        <h1>"""),_display_(/*26.14*/title),format.raw/*26.19*/("""</h1>
-    
-        """),_display_(/*28.10*/helper/*28.16*/.form(action = routes.Application.NewRegister)/*28.62*/ {_display_(Seq[Any](format.raw/*28.64*/("""
-        	"""),_display_(/*29.11*/helper/*29.17*/.inputText(form("user_id"))),format.raw/*29.44*/("""
-        	"""),_display_(/*30.11*/helper/*30.17*/.inputPassword(form("password"))),format.raw/*30.49*/("""
-            """),format.raw/*31.13*/("""<input type="radio" id="a" name="use_kind" value="nonadmin" checked="checked">
-            <label for="a">通常利用者として登録</label>
-            <input type="radio" id="b" name="use_kind" value="admin">
-            <label for="b">管理者として登録</label><br>
-        	<input type="submit" value="登録"/>
-        """)))}),format.raw/*36.10*/("""
+            <h1>"""),_display_(/*26.18*/title),format.raw/*26.23*/("""</h1>
         
-        """),format.raw/*38.9*/("""<h1><a href="/login">ログイン画面にもどる</a></h1>
+            """),_display_(/*28.14*/helper/*28.20*/.form(action = routes.Application.NewRegister, 'class -> "subform")/*28.87*/ {_display_(Seq[Any](format.raw/*28.89*/("""
+            	"""),_display_(/*29.15*/helper/*29.21*/.inputText(form("user_id"))),format.raw/*29.48*/("""
+            	"""),_display_(/*30.15*/helper/*30.21*/.inputPassword(form("password"))),format.raw/*30.53*/("""
+                """),format.raw/*31.17*/("""<input type="radio" name="use_kind" value="nonadmin" checked="checked">
+                <label for="a">通常利用者として登録</label>
+                <input type="radio" name="use_kind" value="admin">
+                <label for="b">管理者として登録</label><br>
+            	<input type="submit" value="登録"/>
+            """)))}),format.raw/*36.14*/("""
+            
+            """),format.raw/*38.13*/("""<h1><a href="/login">ログイン画面にもどる</a></h1>
         
         </div>
         </div>
@@ -92,10 +92,10 @@ Seq[Any](format.raw/*1.35*/("""
 object register extends register_Scope0.register
               /*
                   -- GENERATED --
-                  DATE: Sat Jan 30 20:31:12 JST 2016
+                  DATE: Wed Feb 03 01:56:10 JST 2016
                   SOURCE: C:/git_local/activator-1.3.6-minimal/SolveSystem2/app/views/register.scala.html
-                  HASH: 263b809654576f3e5a202d5ac6be5f795af604ca
-                  MATRIX: 762->1|890->34|918->36|1303->395|1317->401|1378->441|1932->968|1958->973|2005->993|2020->999|2075->1045|2115->1047|2153->1058|2168->1064|2216->1091|2254->1102|2269->1108|2322->1140|2363->1153|2689->1448|2734->1466
+                  HASH: 9be4e1a976f32ac243252aa9de90009da4631087
+                  MATRIX: 762->1|890->34|918->36|1303->395|1317->401|1378->441|1936->972|1962->977|2017->1005|2032->1011|2108->1078|2148->1080|2190->1095|2205->1101|2253->1128|2295->1143|2310->1149|2363->1181|2408->1198|2740->1499|2794->1525
                   LINES: 27->1|32->1|34->3|39->8|39->8|39->8|57->26|57->26|59->28|59->28|59->28|59->28|60->29|60->29|60->29|61->30|61->30|61->30|62->31|67->36|69->38
                   -- GENERATED --
               */
